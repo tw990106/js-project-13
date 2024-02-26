@@ -1,0 +1,31 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.sun-logosize{
+    width: 10rem;
+}
+
+.sun-login{
+    border: 1px solid white;
+    background: black;
+}
+
+.sun-img-origin-1{
+    width: 70%;
+}
+
+.sun-img-origin-area{
+    transform: translate(0,-110%);
+    z-index: -1;
+}
+
+.sun-img-origin-2{
+    width: 60%;
+    opacity: .4;
+    
+}
+
+.vh-85{
+    height: 85vh;
+}
