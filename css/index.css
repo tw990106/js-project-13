@@ -12,7 +12,7 @@ body {
 }
 
 .sun-img-origin-1{
-    width: 70%;
+    width: 60%;
 }
 
 .sun-img-origin-area{
@@ -21,11 +21,76 @@ body {
 }
 
 .sun-img-origin-2{
-    width: 60%;
+    width: 50%;
     opacity: .4;
     
+}
+
+.bg-movies{
+    background-image: url('/img/pc-img-gradatrion-0228.png'),url(https://image.tving.com/ntgs/operation/onboard/2023/12/27/1703657284_1.png/dims/resize/F_webp,2048);
+    background-size: cover;
+    background-repeat: none;
+    background-position: bottom,bottom;
 }
 
 .vh-85{
     height: 85vh;
 }
+
+.move-img {
+    overflow: hidden;
+}
+
+.imgs {
+    display: flex;
+    animation: slideRight 10s linear infinite;
+}
+
+.imgs img {
+    margin-right: 20px;
+    width: 20%;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-110%);
+    }
+}
+
+.video{
+    position: relative;
+    padding-bottom:56.25%;
+  }
+iframe{
+    position: absolute;
+    top: 0;
+    left: 0 ;
+    right: 0;
+    bottom: 0;
+    width:100%;
+    height: 100%;
+  }
+
+  .accordion-item {
+    background-color: transparent !important;
+    border: none;
+}
+
+.accordion-button {
+    background-color: transparent !important;
+    color: white !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.accordion-button.collapsed {
+    background-color: transparent;
+    box-shadow: none;
+}
+
