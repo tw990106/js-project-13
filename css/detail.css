@@ -15,3 +15,11 @@ a{
 li{
     list-style: none;
 }
+body{
+    background-color: black;
+}
+.none{
+    display: none;
+}
+
+/* detail pages */
