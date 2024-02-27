@@ -1,49 +1,61 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
-        </style>
+    </style>
     <title>Document</title>
 </head>
+
 <body class="bg-black">
-    
-    <section class="container">
-        <div class="d-flex justify-content-between py-4">
-            <img class="sun-logosize" src="https://i.namu.wiki/i/jhSTM_3uBtbDFLNUtKFHUXrDd5qTykASS_pAxaoLUWloONfI-WIlRRoQ1qXMfs3QCydY8fDUbVMyONCZA_AECg.svg" alt="">
-            <div>
-                <button class="btn btn-danger me-3">지금가입</button>
-                <button class="btn btn-dark sun-login">로그인</button>
+
+    <section class="container-fluid bg-movies">
+        <section class="container">
+            <div class="d-flex justify-content-between py-4">
+                <img class="sun-logosize"
+                    src="https://i.namu.wiki/i/jhSTM_3uBtbDFLNUtKFHUXrDd5qTykASS_pAxaoLUWloONfI-WIlRRoQ1qXMfs3QCydY8fDUbVMyONCZA_AECg.svg"
+                    alt="">
+                <div>
+                    <button class="btn btn-danger me-3">지금가입</button>
+                    <button class="btn btn-dark sun-login">로그인</button>
+                </div>
             </div>
+        </section>
+        <div class="container d-flex flex-column align-items-center justify-content-center vh-85">
+            <h1 class="text-center text-white mb-5">
+                티빙 오리지널부터<br>
+                드라마 예능,영화,해외시리즈까지!<br>
+                무제한으로 스트리밍해 보세요.
+            </h1>
+            <button class="btn btn-danger py-3 px-5">티빙 로그인</button>
         </div>
     </section>
-    
-    <section class="container d-flex flex-column align-items-center justify-content-center vh-85">
-        <h1 class="text-center text-white mb-5">
-            티빙 오리지널부터<br>
-            드라마 예능,영화,해외시리즈까지!<br>
-            무제한으로 스트리밍해 보세요.
-        </h1>
-        <button class="btn btn-danger py-3 px-5">티빙 로그인</button>
-    </section>
 
-    <section class="container d-flex flex-column vh-85">
+    <section class="container d-flex flex-column ">
         <h1 class="text-center text-white mb-3">티빙 오리지널 시리즈</h1>
         <h3 class="text-center text-white mb-5">오직 티빙에서만 만날수 있는 <br> 오리지널 콘텐츠를 감상해 보세요</h3>
         <div class="d-flex flex-column align-items-center">
-            <img class="sun-img-origin-1" src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20240103/2255/P001751069.jpg/dims/resize/F_webp,2048" alt="">
+            <img class="sun-img-origin-1"
+                src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20240103/2255/P001751069.jpg/dims/resize/F_webp,2048"
+                alt="">
             <div class="d-flex justify-content-center sun-img-origin-area">
-                <img class="sun-img-origin-2 mx-5" src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231127/0620/P001748996.jpg/dims/resize/F_webp,720" alt="">
-                <img class="sun-img-origin-2 mx-5" src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231210/2335/P001746510.jpg/dims/resize/F_webp,720" alt="">
+                <img class="sun-img-origin-2 mx-5"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231127/0620/P001748996.jpg/dims/resize/F_webp,720"
+                    alt="">
+                <img class="sun-img-origin-2 mx-5"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231210/2335/P001746510.jpg/dims/resize/F_webp,720"
+                    alt="">
             </div>
         </div>
     </section>
 
-    <section class="container d-flex flex-column vh-85">
+    <section class="container d-flex flex-column mb-3">
         <h1 class="text-center text-white">요즘 뜨는 모든 콘텐츠</h1>
         <h3 class="text-center text-white">
             tvN JTBC Mnet 프로그램,영화, 해외 시리즈,<br>
@@ -51,6 +63,328 @@
         </h3>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <section class="container-fluid mb-5">
+        <div class="move-img">
+            <div class="imgs">
+                <img class="img-fluid"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231127/0620/P001748996.jpg/dims/resize/F_webp,1024"
+                    alt="">
+                <img class="img-fluid"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231127/0620/P001748996.jpg/dims/resize/F_webp,1024"
+                    alt="">
+                <img class="img-fluid"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231030/0155/P001747179.jpg/dims/resize/F_webp,1024"
+                    alt="">
+                <img class="img-fluid"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231127/0620/P001748996.jpg/dims/resize/F_webp,1024"
+                    alt="">
+                <img class="img-fluid"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231127/0620/P001748996.jpg/dims/resize/F_webp,1024"
+                    alt="">
+                <img class="img-fluid"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231127/0620/P001748996.jpg/dims/resize/F_webp,1024"
+                    alt="">
+                <img class="img-fluid"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231127/0620/P001748996.jpg/dims/resize/F_webp,1024"
+                    alt="">
+                <img class="img-fluid"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231030/0505/P000643144.jpg/dims/resize/F_webp,1024"
+                    alt="">
+                <img class="img-fluid"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231030/0505/P000643144.jpg/dims/resize/F_webp,1024"
+                    alt="">
+                <img class="img-fluid"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231030/0505/P000643144.jpg/dims/resize/F_webp,1024"
+                    alt="">
+            </div>
+        </div>
+        <div class="move-img mt-3">
+            <div class="imgs">
+                <img class="img-fluid"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231127/0620/P001748996.jpg/dims/resize/F_webp,1024"
+                    alt="">
+                <img class="img-fluid"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231127/0620/P001748996.jpg/dims/resize/F_webp,1024"
+                    alt="">
+                <img class="img-fluid"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231030/0155/P001747179.jpg/dims/resize/F_webp,1024"
+                    alt="">
+                <img class="img-fluid"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231127/0620/P001748996.jpg/dims/resize/F_webp,1024"
+                    alt="">
+                <img class="img-fluid"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231127/0620/P001748996.jpg/dims/resize/F_webp,1024"
+                    alt="">
+                <img class="img-fluid"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231127/0620/P001748996.jpg/dims/resize/F_webp,1024"
+                    alt="">
+                <img class="img-fluid"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231127/0620/P001748996.jpg/dims/resize/F_webp,1024"
+                    alt="">
+                <img class="img-fluid"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231030/0505/P000643144.jpg/dims/resize/F_webp,1024"
+                    alt="">
+                <img class="img-fluid"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231030/0505/P000643144.jpg/dims/resize/F_webp,1024"
+                    alt="">
+                <img class="img-fluid"
+                    src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231030/0505/P000643144.jpg/dims/resize/F_webp,1024"
+                    alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="container mb-5">
+        <figure class="video">
+            <iframe width="100%" src="https://www.youtube.com/embed/4Di3J59Mqws?si=lSWO80sre_SKwmSY"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </figure>
+    </section>
+
+    <section class="container d-flex flex-column align-items-center justify-content-center vh-85">
+        <img class="w-25" src="https://www.tving.com/img/tving-new-logo-pc.svg" alt="">
+        <h1 class="text-center text-white">
+            지금 시작해보세요
+        </h1>
+        <button class="btn btn-danger py-3 px-5 mt-3">
+            <h3>티빙 로그인</h3>
+        </button>
+    </section>
+
+    <section class="container d-flex flex-column justify-content-center mb-5">
+        <h1 class="text-center text-white">자주 찾는 질문</h1>
+        <div class="accordion" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed text-white" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        <h4>[기타] 티빙 고객센터 카카오 챗봇 및 실시간 채팅 상담 이용하기</h4>
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body text-light">
+                        <p>새롭게 바뀐 '티빙 카카오 챗봇'에서 궁금한 점을 빠르게 해결해 보세요.&nbsp;<br>
+                            더욱 자세한 내용이 궁금하시다면 상담사 연결을 통해 '실시간 채팅 상담'도 가능합니다.&nbsp;<br>
+                            <br>
+                            <strong>■ 티빙&nbsp;카카오 챗봇 이용 안내&nbsp;</strong><br>
+                            ① 카카오톡에서 'TVING' 검색 후 채널 추가&nbsp;<br>
+                            ② 티빙 카카오 챗봇에서 궁금한 내용 선택하여 손쉽게 이용&nbsp;<br>
+                            <br>
+                            <strong>■ 티빙 실시간 채팅 상담 이용 안내</strong>&nbsp;<br>
+                            ① 티빙 카카오 챗봇 문항에서 [상담사 연결] 선택&nbsp;<br>
+                            ② 상담사에게 궁금한 내용 직접 문의하여 상담 진행&nbsp;<br>
+                            <br>
+                            * 티빙 실시간 채팅 상담은 평일 09:00 ~ 17:00에 이용 가능합니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button text-white collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            <h4>[회원] 티빙 회원가입 방법이 궁금해요.</h4>
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body text-light">
+                            <p>TVING 회원가입은 TVING 계정, SNS 연동 계정, CJ ONE 통합 계정으로 가입이 가능합니다.</p>
+                            <p>* SNS 연동 계정 종류 : Facebook, Naver, Kakao, Apple</p>
+                            <p>&nbsp;</p>
+                            <p>■ 회원가입 방법<br>1) PC (WEB)<br>
+                                ① 티빙 WEB 접속<br>
+                                ② [티빙 시작하기] 클릭<br>
+                                ③ 가입할 계정 유형 선택 (TVING, SNS, CJ ONE 중 유형 선택)<br>
+                                ④ 회원가입하기</p>
+                            <p>&nbsp;</p>
+                            <p>2) MOBILE (APP)<br>
+                                ① 티빙 APP 접속<br>
+                                ② [티빙 시작하기] 클릭<br>
+                                ③ 가입할 계정 유형 선택 (TVING, SNS, CJ ONE 중 유형 선택)<br>
+                                ④ 회원가입하기</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button text-white collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseThree" aria-expanded="false"
+                            aria-controls="flush-collapseThree">
+                            <h4>[로그인] 티빙 로그인 방법이 궁금해요.</h4>
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body text-light">
+                            <p>TVING WEB과 APP은 아래와 같은 방법으로 로그인이 가능합니다.</p>
+                            <p>&nbsp;</p>
+                            <p>■ TVING 로그인 방법<br>1) 티빙 WEB/APP 접속<br>2) '티빙 시작하기' 버튼 클릭<br>3) 계정 선택화면에서 회원가입하신 계정 유형
+                                선택<br>4) 아이디, 비밀번호 입력 후 '로그인하기' 버튼 클릭</p>
+                            <p>&nbsp;</p>
+                            <p>혹시 일치하는 회원정보가 없다는 알림 메시지가 나오신다면 아래 사항을 확인하여 주세요.</p>
+                            <p>&nbsp;</p>
+                            <p>■ TVING 로그인 안될 시 조치 방법<br>1) WEB 브라우저 또는 APP 좌측 상단의 '뒤로가기'를 클릭하여 계정 유형 선택 화면으로 이동<br>2)
+                                회원가입한 유형을 다시 확인하여 선택<br>- CJ ONE 통합회원이신 경우 'CJ ONE으로 시작하기' 선택 (제일 밑에 위치)<br>- TVING ID로
+                                가입하신 경우 'TVING ID로 시작하기' 선택<br>- 네이버, 카카오 등 SNS 연동 계정으로 가입하신 경우 '각 SNS로 시작하기' 선택<br>3)
+                                아이디, 비밀번호 입력 후 '로그인하기' 버튼 클릭하여 로그인</p>
+                            <p>&nbsp;</p>
+                            <p>* 'TVING ID'로 로그인 시도하셨는데 일치하는 회원정보가 없다면 먼저 'CJ ONE으로 시작하기'를 선택하여 확인을 부탁드립니다.<br>* 아이디가
+                                이메일 형태의 계정인데 'TVING ID'로 로그인이 안되시는 경우 SNS 연동 회원일 수 있으며, 네이버, 카카오 등 '각 SNS로 시작하기'를 선택하여
+                                확인을 부탁드립니다.&nbsp;<br>* 계정 유형을 맞게 선택하신 경우 '아이디 찾기', '비밀번호 찾기'를 진행해 주세요.</p>
+                            <p>&nbsp;</p>
+                            <p>지속해서 로그인이 되지 않으시는 경우 1:1 게시판 문의 또는 tving@cj.net 으로 문의해 주시면,<br>신속하게 가입하신 계정 확인하여
+                                답변드리겠습니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button text-white collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-4" aria-expanded="false" aria-controls="flush-4">
+                            <h4>[로그인] 자동 로그아웃이 되었는데, 제 계정을 모르겠어요.</h4>
+                        </button>
+                    </h2>
+                    <div id="flush-4" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body text-light">
+                            <p>APP과 PC WEB 계정 선택 화면에서&nbsp;최근에 마지막으로&nbsp;로그인하신 계정을 확인하실 수 있습니다.<br>최근 로그인하신 계정을
+                                선택하여 주시고,&nbsp;혹시라도 일치하는 회원정보가 없다는 알림 메시지가 나온다면 아래 사항을 확인하여 주세요.</p>
+                            <p>&nbsp;</p>
+                            <p>■ TVING 계정 확인 방법<br>1) 계정 선택 화면 가장 하단 '아이디 찾기' 클릭<br>2) 본인인증으로 찾기 &gt; 본인인증하기<br>3)
+                                가입한 계정 ID들 안내 &nbsp;<br>4) 계정 ID 옆 (유료)로 표기된 계정으로 로그인</p>
+                            <p>&nbsp;</p>
+                            <p>※ 이메일로 찾기 시 확인되지 않으니, 반드시 본인인증으로 찾기로&nbsp;이용 계정 확인해주세요.<br>※ SNS 회원은 해당 SNS 아이디가 아닌
+                                티빙 가입 시 등록한 이메일을 알려드립니다.<br>※ 본인인증이 완료된 계정만 확인이 가능합니다.<br>※ 네이버플러스멤버십 이용권
+                                계정은&nbsp;본인인증찾기로 확인되지 않습니다.</p>
+                            <p>&nbsp;</p>
+                            <p>지속해서 로그인이 되지 않으시는 경우, 1:1 게시판 문의 또는 tving@cj.net 으로 문의해 주시면,<br>신속하게 가입하신 계정 확인하여
+                                답변드리겠습니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button text-white collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-5" aria-expanded="false" aria-controls="flush-5">
+                            <h4>[로그인] 이용권이 있는 계정이 무엇인지 찾고 싶어요.</h4>
+                        </button>
+                    </h2>
+                    <div id="flush-5" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body text-light">
+                            <div>
+                                <p>유료 가입한 계정을 찾고 싶을 때,<br>아래 방법으로 계정을 찾으신 후 계정 유형을 선택하여 로그인하여 주시기 바랍니다.</p>
+                                <p>&nbsp;</p>
+                                <p>■ 이용 계정 확인 방법<br>① 티빙 WEB/APP 접속<br>② [티빙 시작하기] 버튼 클릭<br>③ 가장 하단 [아이디 찾기] 클릭<br>④
+                                    본인인증으로 찾기 → [본인인증하기] 클릭<br>⑤ 가입한 계정 ID들 안내<br>⑥ 계정 ID 옆 (유료)로 표기된 계정으로 로그인</p>
+                                <p>&nbsp;</p>
+                                <p>※ 이메일로 찾기 시 확인되지 않으니, 반드시 본인인증으로 찾기로 이용 계정 확인해주세요.<br>※ SNS 회원은 해당 SNS 아이디가 아닌 티빙 가입
+                                    시 등록한 이메일을 알려드립니다.<br>※ 본인인증이 완료된 계정만 확인이 가능합니다.<br>※ 네이버플러스멤버십 이용권 계정은 본인인증찾기로 확인되지
+                                    않습니다.</p>
+                                <p>보다 자세한 확인이 필요한 경우, [1:1 게시판 문의] 또는 [tving@cj.net]로 문의해 주시면 가입하신 계정 확인하여 답변드리겠습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button text-white collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-6" aria-expanded="false" aria-controls="flush-6">
+                            <h4>[로그인] 로그인이 안될 때 고객문의를 남길 수 있는 방법이 있나요?</h4>
+                        </button>
+                    </h2>
+                    <div id="flush-6" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body text-light">
+                            <div>
+                                <p>로그인이 되지 않으시는 경우 아래 티빙 대표메일로 이메일 문의를 남겨주시면 확인 후 답변드리겠습니다.&nbsp;<br>- 티빙 대표메일 : <a
+                                        href="mailto:tving@cj.net" target="_blank"
+                                        rel="noopener noreferrer">tving@cj.net</a></p>
+                                <p>&nbsp;</p>
+                                <p>문의 내용에 발생 증상 외 기기 모델명, OS 버전, 브라우저, 네트워크 등 상세 정보를 남겨주시면 더욱 빠른 조치가 가능하오니 이용에 참고
+                                    부탁드립니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button text-white collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-7" aria-expanded="false" aria-controls="flush-7">
+                            <h4>[인증] 성인인증은 어떻게 하나요?</h4>
+                        </button>
+                    </h2>
+                    <div id="flush-7" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body text-light">
+                            <div>
+                                <p>만 19세 이상 시청 가능한 콘텐츠는 시청하시려는 프로필의 성인인증이 되어야만 시청 가능합니다.<br>성인 인증은 아래와 같이 진행 가능합니다.</p>
+                                <p>&nbsp;</p>
+                                <p>■ 성인인증 방법 안내<br>1) PC (WEB)<br>① 티빙 WEB 로그인<br>② 만 19세 이상 등급 콘텐츠 접근<br>③ [휴대폰 본인 인증]
+                                    또는 [I-PIN 본인 인증]으로 성인인증 진행</p>
+                                <p>&nbsp;</p>
+                                <p>2) MOBILE (APP)<br>① 티빙 APP 로그인<br>② 우측 상단 [프로필 아이콘] 클릭<br>③ 우측 상단 [톱니바퀴 아이콘] 클릭<br>④
+                                    [프로필 성인인증] 메뉴 클릭<br>③ [휴대폰 본인 인증]으로 성인인증 진행</p>
+                                <p>&nbsp;</p>
+                                <p>성인인증은 인증 후 1년간 유효하며 해마다 갱신하셔야만 그 권한이 유지되며,<br>인증 유효기간은 앱 설정 → [프로필 성인인증] 메뉴에서 확인하실 수
+                                    있습니다.</p>
+                                <p>&nbsp;</p>
+                                <p>* 성인인증 메뉴가 보이지 않으실 경우 앱을 최신 버전으로 업데이트 해주시기 바랍니다.&nbsp;<br>* 성인인증은 계정별 인증이 아닌 프로필별 인증이
+                                    필요합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button text-white collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-8" aria-expanded="false" aria-controls="flush-8">
+                            <h4>[변경] 정기결제수단 변경은 어떻게 하나요?</h4>
+                        </button>
+                    </h2>
+                    <div id="flush-8" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body text-light">
+                            <div>
+                                <p>결제수단 변경은 PC와 모바일웹에서 변경하실 수 있습니다.<br>변경 방법은 아래 경로를 확인해 주세요.<br><br>■ 결제수단 변경
+                                    방법<br>(모바일웹)<br>1. www.tving.com 접속 후 로그인<br>2. 우측 상단 [결제 수단] 클릭<br>3. 변경할 결제 정보 입력
+                                    후 완료<br><br>(PC)<br>1. www.tving.com 접속 후 로그인<br>2. 우측 상단 프로필 클릭<br>3. MY 버튼
+                                    클릭<br>4. 이용권/캐시 내역 메뉴 클릭<br>5. 결제 수단 항목의 [변경] 버튼 클릭<br>6. 변경할 결제 정보 입력 후 완료<br><br>※
+                                    티빙 APP에서는 결제수단 변경이 어렵습니다.<br>※ 결제 수단은 신용카드, 네이버페이, 카카오페이로 변경할 수 있습니다.<br>※ 결제 수단 변경
+                                    시 다음 결제일부터 적용됩니다.<br>※ 결제 중인 휴대폰 결제를 타 결제 수단으로 변경하시는 경우, 더 이상 휴대폰 결제는 이용하실 수 없습니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button text-white collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-9" aria-expanded="false" aria-controls="flush-9">
+                            <h4>[이벤트] 연간 이용권 특별 할인 기간과 금액이 궁금해요.</h4>
+                        </button>
+                    </h2>
+                    <div id="flush-9" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body text-light">
+                            <div>
+                                <p>연간 이용권 할인 이벤트를 안내드립니다.<br><br>※ 연간 이용권 할인 이벤트 안내<br>- 이벤트 기간 : 2023-12-01 ~
+                                    2024-03-31<br>- 이벤트 가격<br>&nbsp; : 베이직 연간 (94,800원 → 66,000원)<br>&nbsp; &nbsp;스탠다드
+                                    연간 (130,800원 → 90,000원)<br>&nbsp; &nbsp;프리미엄 연간 (166,800원 → 114,000원)<br><br>* 연간
+                                    이용권은 PC/모바일웹에서만 구매가 가능합니다.&nbsp;<br>* 연간 이용권은 12월 1일 월간 이용권 신규 구독료 변경 이후에도 3월 31일까지
+                                    티빙 페스타 할인가와 동일한 가격으로 구매하실 수 있습니다.<br>* 작년 동일 기간에 구매하신 연간 이용권 정기결제 유지 시, 할인 가격으로
+                                    결제됩니다.&nbsp;&nbsp;<br>* 할인 기간 동안 월정액 이용권을 연간 이용권으로 변경하셔도 할인 가격이
+                                    적용됩니다.&nbsp;&nbsp;<br>* 할인 기간 동안 연간 이용권을 업/다운그레이드 하셔도 할인 가격이
+                                    적용됩니다.&nbsp;&nbsp;<br>(단, 다운그레이드 시 사용하신 기간은 12개월 정가 기준 일할 차감됩니다.)&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section class="container d-flex justify-content-center mb-5">
+        <button class="btn btn-dark py-3 px-5"><h2>쿠폰등록하기</h2></button>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>
