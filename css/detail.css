@@ -22,5 +22,51 @@ body{
 .none{
     display: none;
 }
+.flex{
+    display: flex;
+}
 
 /* detail pages */
+.detail-bg{
+    background: url('');
+    
+}
+.detail-main{
+    justify-content: space-between;
+    border-bottom: 1px solid #ebebe6;
+    padding: 50px 0;
+}
+.detail-txt{
+    align-self: center;
+    width: 40%;
+}
+.detail-img{
+    width: 30%;
+}
+.vod-list{
+    overflow: hidden;
+    flex-wrap: nowrap;
+    padding-left: 200px;
+}
+.vod-list li:not(:last-of-type){
+    margin-left: 20px;
+}
+.vod-list li img{
+    width: 246px;
+    height: 350px;
+
+}
+.vod-list li{
+    /* width: 100%; */
+    position: relative;
+}
+.list-txt{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #707070;
+    cursor: pointer;
+    height: 100%;
+    opacity: 0;
+}
