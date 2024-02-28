@@ -85,7 +85,7 @@ body{
 .subs > span{
     margin-left: 1.6rem;
     align-self: center;
-    
+    cursor: pointer;
 }
 .subs svg{
     width: 42px;
@@ -106,8 +106,8 @@ body{
     padding-left: 200px;
 }
 .vod-list{
-    overflow: hidden;
-    flex-wrap: nowrap;
+    /* overflow: hidden; */
+    /* flex-wrap: nowrap; */
 }
 .vod-list li:not(:first-of-type){
     margin-left: 20px;
@@ -121,6 +121,9 @@ body{
     /* width: 100%; */
     /* position: relative; */
     
+}
+.swiper-container{
+    position: relative;
 }
 .swiper-slide{
     max-width: 246px;
