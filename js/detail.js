@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+
     // list text
     let elements = document.getElementsByClassName('ellipsis');
     for (let i=0; i<elements.length; i++){
@@ -36,6 +37,25 @@ document.addEventListener("DOMContentLoaded", function() {
             element.innerText = trimmedText;
         }
     }
+
+    let summary = document.querySelector('.summary');
+    let moreBtn = document.querySelector('.more-btn');
+    let closeBtn = document.querySelector('.close');
+
+    moreBtn.addEventListener('click', function(){
+        summary.style.maxHeight = 'none';
+        moreBtn.style.display = 'none';
+        closeBtn.style.display = 'inline-block';
+    });
+
+    closeBtn.addEventListener('click', function(){
+        summary.style.maxHeight = '80px';
+        moreBtn.style.display = 'inline-block';
+        closeBtn.style.display = 'none';
+    });
+
+
+    // fav btn
 
 });
 
