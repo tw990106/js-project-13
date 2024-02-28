@@ -3,9 +3,10 @@ document.addEventListener("DOMContentLoaded", function() {
     let mySwiper = new Swiper('.swiper-container', {
         slidesPerView: 4,
         slidesPerGroup: 4,
-        observer: true,
-        observeParents: true,
+        // observer: true,
+        // observeParents: true,
         spaceBetween: 20,
+        loop: false,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
