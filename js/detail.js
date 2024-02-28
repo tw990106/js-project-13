@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-
+    
+    // slide
     let mySwiper = new Swiper('.swiper-container', {
         slidesPerView: 'auto',
         slidesPerGroup: 4,
@@ -22,5 +23,19 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     });
-    
+
+    // list text
+    let elements = document.getElementsByClassName('ellipsis');
+    for (let i=0; i<elements.length; i++){
+        let element = elements[i];
+        let text = element.innerText;
+        let maxLength = 100;
+
+        if(text.length > maxLength){
+            let trimmedText = text.substr(0, maxLength) + '...';
+            element.innerText = trimmedText;
+        }
+    }
+
 });
+
