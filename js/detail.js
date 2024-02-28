@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     let mySwiper = new Swiper('.swiper-container', {
-        slidesPerView: 4,
+        slidesPerView: 'auto',
         slidesPerGroup: 4,
         // observer: true,
         // observeParents: true,
@@ -13,11 +13,11 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         breakpoints: {
             1280: {
-                slidesPerView: 3,
+                slidesPerView: 'auto',
                 slidesPerGroup: 1,
             },
             720: {
-                slidesPerView: 1,
+                slidesPerView: 'auto',
                 slidesPerGroup: 1,
             }
         }

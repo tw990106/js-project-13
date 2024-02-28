@@ -86,6 +86,11 @@ body{
     border-radius: 8px;
     font-weight: 600;
     font-size: 24px;
+    /* transition: opacity 0.3s ease 0s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s; */
+}
+.subs button:hover{
+    scale: 1.02;
+    transition: .3s ease;
 }
 .subs > span{
     margin-left: 1.6rem;
@@ -131,9 +136,18 @@ body{
     position: relative;
     overflow: hidden;
 }
-.swiper-slide{
+.swiper-container li{
     max-width: 246px;
-    width: 100%;
+    margin-right: 0;
+    /* width: 100%; */
+}
+.swiper-button-next,
+.swiper-button-prev{
+    color: #fff;
+    background-color: ;
+}
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
+    display: none;
 }
 .list-txt{
     position: absolute;
