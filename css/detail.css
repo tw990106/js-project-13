@@ -198,6 +198,8 @@ section{
     }
     .detail-vod h3{
         font-weight: 600;
+        font-size: 22px;
+        margin-bottom: 30px;
     }
     .vod-list li:not(:first-of-type){
         margin-left: 20px;
@@ -415,6 +417,8 @@ section{
     }
     .detail-vod h3{
         font-weight: 600;
+        font-size: 22px;
+        margin-bottom: 30px;
     }
     .vod-list li:not(:first-of-type){
         margin-left: 20px;
