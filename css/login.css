@@ -7,7 +7,7 @@ a{
 }
 
 .sun-logosize{
-    width: 10rem;
+    width: 6rem;
 }
 
 .padding1{
@@ -18,10 +18,22 @@ a{
     cursor: pointer;
 }
 
+.icons{
+    width: 1.5em;
+    border-radius: 5px;
+}
+
+
 .button-silver{
     color: silver;
     border: 1px solid silver;
     min-width: 20em;
+}
+
+.button-silver h5{
+    width: 30em;
+    margin: 0;
+    text-align: center;
 }
 
 .button-silver:hover{

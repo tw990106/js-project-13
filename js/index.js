@@ -26,8 +26,18 @@ logo.addEventListener("click",()=>{
 
 const bgAni = document.querySelector('.bg-ani')
 const bgAni2 = document.querySelector('.bg-ani-02')
+const bgAni3 = document.querySelector('.bg-ani-03')
+const bgAni4 = document.querySelector('.bg-ani-04')
+const bgAni5 = document.querySelector('.bg-ani-05')
+const bgAni6 = document.querySelector('.bg-ani-06')
 const textAni2= document.querySelector('.text-ani-02')
 const textAniSub2 = document.querySelector('.text-ani-sub-02')
+const textAni3= document.querySelector('.text-ani-03')
+const textAniSub3 = document.querySelector('.text-ani-sub-03')
+const textAni4= document.querySelector('.text-ani-04')
+const textAniSub4 = document.querySelector('.text-ani-sub-04')
+const textAni5= document.querySelector('.text-ani-05')
+const textAniSub5 = document.querySelector('.text-ani-sub-05')
 
 const scrollAnime = (className,duration,scrollStart,scrollEnd,scroll)=>{
     if(scroll >= scrollStart && scroll <= scrollEnd){
@@ -47,10 +57,19 @@ window.addEventListener('scroll',()=>{
     }
 
     let scroll = window.scrollY
-
     scrollAnime(bgAni,1,0,800,scroll)
     scrollAnime(textAni2,1,0,1000,scroll)
     scrollAnime(textAniSub2,2,0,1000,scroll)
-    scrollAnime(bgAni2,1,400,1000,scroll)
+    scrollAnime(bgAni2,1,100,1200,scroll)
+    scrollAnime(textAni3,1,500,1700,scroll)
+    scrollAnime(textAniSub3,2,500,1700,scroll)
+    scrollAnime(bgAni3,1,700,1800,scroll)
+    scrollAnime(bgAni4,2,700,1900,scroll)
+    scrollAnime(textAni4,1,1500,3500,scroll)
+    scrollAnime(textAniSub4,2,1500,3500,scroll)
+    scrollAnime(bgAni5,2,1500,4000,scroll)
+    scrollAnime(textAni5,1,1600,4500,scroll)
+    scrollAnime(textAniSub5,2,1600,4500,scroll)
+    scrollAnime(bgAni6,2,1700,4500,scroll)
 })
 
