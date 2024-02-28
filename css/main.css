@@ -1,0 +1,131 @@
+:root{
+    --swiper-theme-color: white;
+
+}
+body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+img{
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    height: 100%;
+}
+.container{
+    position: relative;
+    margin: auto;
+    width: 100%;
+}
+.swiper-wrapper{
+    margin-top:100px;
+    max-width: 1778px;
+    max-height: 613.41px;
+}
+.swiper-slide{
+    width: 100%;
+    height:613.41px;
+    background-color: #eee;
+    border-radius: 8px;
+}
+
+.swiper-button-prev ,.swiper-button-next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    opacity: 0.5;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 50% 50%;
+    width: 1.333rem;
+    height: 100%;
+    font-size: 0px;
+    margin: 0px;
+    padding: 0px;
+    z-index: 10;
+    transition: opacity 0.1s ease 0s;
+    cursor: pointer;
+   /* left: -4rem;*/
+  
+}
+.swiper-button-prev:hover ,.swiper-button-next:hover{
+    color: white;
+    opacity: 1;
+}
+.swiper-pagination{
+    float: right;
+}
+.swiper-text{
+    position: absolute;
+    bottom: 0;
+    width: 500px;
+    margin: 40px;
+    height: 260px;
+    z-index: 10;
+}
+.swiper-text h4{
+    color: white;
+    font-weight: 700;
+    margin-top: 10px;
+    font-size: 3em;
+    margin-bottom: 0;
+
+}
+.swiper-text p{
+    color: white;
+    font-weight: 700;
+    margin-top: 10px;
+    font-size: 1.2em;
+    margin-bottom: 0;
+}
+.tving-icon{
+
+    bottom: 200px;
+
+    width: 78px;
+    height: 21px;
+}
+.tving-item-logo{
+    width: 493px;
+    height: 153.17px;
+}
+.menu-group-wrap{
+    margin: -62.4px -60.653px -39px -60.653px;
+    padding: 62.4px 60.653px 39px 60.653px;
+    overflow: visible;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu-group{
+    width: 347.59px;
+    height: 120.05px;
+    margin-right: 10px;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 4px;
+    background-color: #262626;
+}
+
+.menu-group img{
+    width: 140px;
+    height: 70px;
+    margin: 0 auto;
+    position: relative;
+    top: 25px;
+}
+.menu-group:hover{
+    margin-bottom: 2em;
+    transition: 0.5s;
+}
+.title{
+    color: white;
+    margin: 20px;
+    font-size: 1.666rem;
+}
