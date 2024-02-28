@@ -1,0 +1,70 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+.sun-logosize{
+    width: 10rem;
+}
+
+.padding1{
+    padding: 3rem;
+}
+
+#logo{
+    cursor: pointer;
+}
+
+.button-silver{
+    color: silver;
+    border: 1px solid silver;
+    min-width: 20em;
+}
+
+.button-silver:hover{
+    background: none;
+    border: 1px solid white;
+}
+
+.text-silver{
+    color: silver;
+}
+
+.bg-movies{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)), url(https://image.tving.com/public/user/images/pc-img@2x.jpg);
+    background-position: 50% 0%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: zoom 10s linear forwards;
+    height: 400px;
+}
+
+
+@keyframes zoom {
+    0%{
+        background-size: 110% auto;
+    }
+    100%{
+        background-size: 100% auto;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .sun-logosize{
+        width: 5rem;
+    }
+    h5{
+        font-size: .8em;
+    }
+    .afont{
+        font-size: .8em;
+    }
+    .padding1{
+        padding: 1rem;
+      }
+  }
+  

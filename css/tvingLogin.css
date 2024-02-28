@@ -1,0 +1,86 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.sun-logosize{
+    width: 10rem;
+}
+
+.padding1{
+    padding: 3rem;
+}
+
+#logo{
+    cursor: pointer;
+}
+
+.w-35{
+    width: 35%;
+    min-width: 20em;
+}
+
+.input-style{
+    border: 0;
+    background-color: rgb(37, 37, 37);
+    border-radius: 5px;
+    font-size: 1.7em;
+    font-weight: 300;
+    color: white;
+}
+
+.text-color{
+    color: rgb(134, 134, 134);
+}
+
+.auto-login-custom{
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.custom-checkbox{
+    background:  rgb(51, 51, 51);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2em;
+    height: 2em;
+    border-radius: 50px;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+}
+
+.auto-login-custom:checked + label .custom-checkbox {
+    background: #dc3545;
+}
+
+.auto-login-custom:checked + label .custom-checkbox i {
+    color: white;
+}
+
+.auto-login-custom:checked + label h4 {
+    color: white;
+}
+
+@media (max-width: 767px) {
+
+    .sun-logosize{
+        width: 5rem;
+    }
+    h5{
+        font-size: .8em;
+    }
+    .afont{
+        font-size: .8em;
+    }
+    .padding1{
+        padding: 1rem;
+      }
+  }
+  
