@@ -22,6 +22,9 @@ body{
     background-color: black;
     color: #fff;
 }
+section{
+    margin-bottom: 50px;
+}
 .none{
     display: none;
 }
@@ -33,6 +36,9 @@ body{
 }
 .close{
     display: none;
+}
+.mb-2{
+    margin-bottom: 1rem;
 }
 .mb-4{
     margin-bottom: 1.5rem;
@@ -46,13 +52,33 @@ body{
 @media screen and (max-width: 767px){
     
     /* detail top */
-    .container{
-        padding: 0;
-        margin: 0;
-        max-width: 767px;
-    }
     .detail-bg{
-        /* background: url('../images/detail-bg.jpg') no-repeat; */
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100vh;
+        background: url('../images/detail-bg.jpg') no-repeat;
+        /* background-size: cover;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%); */
+        padding-top: 50%;
+    }
+    .detail-bg:before{
+        content: '';
+        background-color: rgba(0, 0, 0, .4);
+        display: block;
+        height: 100%;
+    }
+    .detail-bg:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        display: block;
+        height: 30vh;
+        background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
     }
     .detail-main{
         border-bottom: 1px solid #707070;
@@ -96,7 +122,7 @@ body{
         margin-left: 0.4em;
     }
     .movie-info span:first-child{
-        height: 33px;
+        height: 26px;
     }
     .movie-info img{
         height: 100%;
@@ -113,11 +139,12 @@ body{
         box-sizing: border-box;
     }
     .subs button{
-        padding: 1rem 3rem;
+        padding: 1rem 2rem;
         border: none;
         border-radius: 8px;
         font-weight: 600;
         font-size: 18px;
+        box-sizing: border-box;
     }
     .subs button:hover{
         scale: 1.04;
@@ -166,7 +193,7 @@ body{
         margin-bottom: 50px;
     }
     .detail-vod{
-        padding: 0 20px;
+        padding-left: 20px;
         box-sizing: border-box;
     }
     .detail-vod h3{
@@ -248,7 +275,28 @@ body{
 
     /* detail top */
     .detail-bg{
-        /* background: url('../images/detail-bg.jpg') no-repeat; */
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 85vh;
+        background: url('../images/detail-bg.jpg') no-repeat;
+        background-size: cover;
+    }
+    .detail-bg:before{
+        content: '';
+        background-color: rgba(0, 0, 0, .4);
+        display: block;
+        height: 100%;
+    }
+    .detail-bg:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        display: block;
+        height: 35vh;
+        background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
     }
     .detail-main{
         display: flex;
@@ -446,7 +494,28 @@ body{
     /* detail top */
     
     .detail-bg{
-        /* background: url('../images/detail-bg.jpg') no-repeat; */
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 85vh;
+        background: url('../images/detail-bg.jpg') no-repeat;
+        background-size: cover;
+    }
+    .detail-bg:before{
+        content: '';
+        background-color: rgba(0, 0, 0, .4);
+        display: block;
+        height: 100%;
+    }
+    .detail-bg:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        display: block;
+        height: 35vh;
+        background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
     }
     .detail-main{
         max-width: 1780px;
@@ -455,15 +524,13 @@ body{
         display: flex;
         justify-content: space-between;
         border-bottom: 1px solid #707070;
-        padding: 5rem 3rem;
+        padding: 5rem 2.5rem;
         box-sizing: border-box;
         font-size: 18px;
     }
     .detail-txt{
         align-self: center;
         width: 40%;
-    }
-    .detail-txt:not(img){
         color: #e0e0e0;
     }
     .detail-txt > img{
@@ -496,7 +563,6 @@ body{
     .summary{
         max-height: 80px;
         overflow: hidden;
-        transition: max-height .3s ease;
     }
     .info-box{
         padding: 2px 8px;
@@ -510,6 +576,8 @@ body{
         border-radius: 8px;
         font-weight: 600;
         font-size: 24px;
+        background-color: #fff;
+        cursor: pointer;
     }
     .subs button:hover{
         scale: 1.04;
@@ -557,7 +625,8 @@ body{
         margin-bottom: 50px;
     }
     .detail-vod{
-        padding: 0 60px;
+        padding-left: 60px;
+        box-sizing: border-box;
     }
     .detail-vod h3{
         font-size: 28px;
