@@ -2,6 +2,53 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
+.hide-controls::-webkit-media-controls {
+    display: none !important;
+}
+
+.hide-controls::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+
+.hide-controls::-webkit-media-controls-panel {
+    display: none !important;
+}
+
+.hide-controls::-webkit-media-controls-play-button {
+    display: none !important;
+}
+
+.hide-controls::-webkit-media-controls-start-playback-button {
+    display: none !important;
+}
+
+.hide-controls::-webkit-media-controls-current-time-display {
+    display: none !important;
+}
+
+.hide-controls::-webkit-media-controls-time-remaining-display {
+    display: none !important;
+}
+
+.hide-controls::-webkit-media-controls-seek-back-button {
+    display: none !important;
+}
+
+.hide-controls::-webkit-media-controls-seek-forward-button {
+    display: none !important;
+}
+
+.hide-controls::-webkit-media-controls-fullscreen-button {
+    display: none !important;
+}
+
+.hide-controls::-webkit-media-controls-volume-slider-container {
+    display: none !important;
+}
+
+.movie-size{
+    width: 50%;
+}
 
 .navbar{
     position: fixed;
@@ -18,7 +65,7 @@ body {
     padding: 3rem;
 }
 .sun-logosize{
-    width: 10rem;
+    width: 6rem;
 }
 
 .w-35{
@@ -60,6 +107,10 @@ body {
     height: 85vh;
 }
 
+.vh-85m{
+    height: 85vh;
+}
+
 .move-img {
     overflow: hidden;
 }
@@ -96,7 +147,7 @@ body {
 .video{
     position: relative;
     padding-bottom:56.25%;
-  }
+}
 
 iframe{
     position: absolute;
@@ -106,7 +157,7 @@ iframe{
     bottom: 0;
     width:100%;
     height: 100%;
-  }
+}
 
   .accordion-item {
     background-color: transparent !important;
@@ -149,6 +200,15 @@ iframe{
     width: 300px;
 }
 
+.bg-ani-02{
+    animation: fadeIn 2s ease-in-out;
+}
+
+.marginS{
+    position: relative;
+    top: -200px;
+}
+
 @keyframes fadeIn{
     from{
         opacity: 0;
@@ -179,6 +239,7 @@ iframe{
     }
     .img-origin-4 {
       display: block; 
+      width: 50%;
     }
     .sun-logosize{
         width: 5rem;
@@ -193,7 +254,7 @@ iframe{
         font-size: .8em;
     }
     h4{
-        font-size: .5em;
+        font-size: .7em;
     }
     h5{
         font-size: .4em;
@@ -202,7 +263,18 @@ iframe{
         padding: 1rem;
       }
       .movie-size{
-        width: 50%;
+        width: 80%;
+    }
+    .vh-85m{
+        height: 50vh;
+    }
+    p{
+        font-size: .6em;
+    }
+
+    .marginS{
+        position: relative;
+        top: 0;
     }
   }
   
