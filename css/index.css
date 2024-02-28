@@ -66,10 +66,20 @@ body {
 
 .imgs {
     display: flex;
-    animation: slideRight 10s linear infinite;
+    animation: slideRight 20s linear infinite;
 }
 
 .imgs img {
+    margin-right: 20px;
+    width: 20%;
+}
+
+.imgs2 {
+    display: flex;
+    animation: slideRight 23s linear infinite;
+}
+
+.imgs2 img {
     margin-right: 20px;
     width: 20%;
 }
