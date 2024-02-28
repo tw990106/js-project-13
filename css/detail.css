@@ -34,46 +34,59 @@ body{
 .close{
     display: none;
 }
+.mb-4{
+    margin-bottom: 1.5rem;
+}
+
+
+
+
+
 /* 모바일 */
 @media screen and (max-width: 767px){
-    .container{
-        /* max-width: 1780px; */
-        padding: 0 50px;
-        box-sizing: border-box;
-    }
-    /* detail top */
     
+    /* detail top */
+    .container{
+        padding: 0;
+        margin: 0;
+        max-width: 767px;
+    }
     .detail-bg{
         /* background: url('../images/detail-bg.jpg') no-repeat; */
     }
     .detail-main{
-        display: flex;
-        justify-content: space-between;
         border-bottom: 1px solid #707070;
-        padding: 5rem 3rem;
-        box-sizing: border-box;
-        font-size: 18px;
+        font-size: 14px;
+        padding-bottom: 3rem;
     }
     .detail-txt{
         align-self: center;
-        width: 50%;
+        /* width: 50%; */
+        padding: 0 20px;
+        box-sizing: border-box;
     }
     .detail-txt:not(img){
         color: #e0e0e0;
     }
     .detail-txt > img{
-        width: 468px;
-        height: 87px;
+        width: 300px;
+        height: 60px;
     }
     .detail-img{
-        max-width: 340px;
-        height: 490px;
-        align-self: center;
-        order: 1;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        position: relative;
     }
     .detail-img img{
         width: 100%;
         height: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: block;
+        object-fit: cover;
     }
     .movie-info span{
         display: inline-block;
@@ -135,8 +148,8 @@ body{
     .main-btn:after{
         content: '';
         position: absolute;
-        right: -30px;
-        top: -1px;
+        right: -24px;
+        top: -4px;
         display: block;
         width: 24px;
         height: 24px;
@@ -153,7 +166,8 @@ body{
         margin-bottom: 50px;
     }
     .detail-vod{
-        padding: 0 60px;
+        padding: 0 20px;
+        box-sizing: border-box;
     }
     .detail-vod h3{
         font-weight: 600;
@@ -231,8 +245,8 @@ body{
         padding: 0 50px;
         box-sizing: border-box;
     }
+
     /* detail top */
-    
     .detail-bg{
         /* background: url('../images/detail-bg.jpg') no-repeat; */
     }
@@ -247,6 +261,13 @@ body{
     .detail-txt{
         align-self: center;
         width: 50%;
+    }
+    .detail-txt > div:nth-of-type(3){
+        margin-bottom: 4px;
+    }
+    .detail-txt > div:nth-of-type(3) span{
+        display: inline-block;
+        margin-left: 0.4rem;
     }
     .detail-txt:not(img){
         color: #e0e0e0;
@@ -327,8 +348,8 @@ body{
         right: -26px;
         top: -5px;
         display: block;
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
     }   
     .more-btn:after{
         background: url('../images/icon_arrow_down.svg') no-repeat;
@@ -353,7 +374,6 @@ body{
     .vod-list li img{
         width: 246px;
         height: 350px;
-    
     }
     .swiper-container{
         position: relative;
@@ -393,13 +413,14 @@ body{
         opacity: 0;
     }
     .list-txt h5{
-        font-size: 22px;
-        line-height: 30px;
+        font-size: 20px;
+        line-height: 28px;
         font-weight: 600;
     }
     .list-txt *:not(h5){
         color: #e0e0e0;
         opacity: .8;
+        font-size: 14px;
     }
     .list-txt span{
         display: block;
@@ -418,7 +439,7 @@ body{
 /* 데스크탑 */
 @media screen and (min-width: 1280px){
     .container{
-        max-width: 1780px;
+        /* max-width: 1780px; */
         padding: 0 50px;
         box-sizing: border-box;
     }
@@ -428,6 +449,9 @@ body{
         /* background: url('../images/detail-bg.jpg') no-repeat; */
     }
     .detail-main{
+        max-width: 1780px;
+        margin: 0 auto 3rem;
+        padding: 0 50px;
         display: flex;
         justify-content: space-between;
         border-bottom: 1px solid #707070;
@@ -536,15 +560,13 @@ body{
         padding: 0 60px;
     }
     .detail-vod h3{
+        font-size: 28px;
         font-weight: 600;
-    }
-    .vod-list li:not(:first-of-type){
-        margin-left: 20px;
+        margin-bottom: 30px;
     }
     .vod-list li img{
         width: 246px;
         height: 350px;
-    
     }
     .swiper-container{
         position: relative;
