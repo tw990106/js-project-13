@@ -97,6 +97,7 @@ body {
     position: relative;
     padding-bottom:56.25%;
   }
+
 iframe{
     position: absolute;
     top: 0;
@@ -200,6 +201,9 @@ iframe{
     .padding1{
         padding: 1rem;
       }
+      .movie-size{
+        width: 50%;
+    }
   }
   
   @media (min-width: 768px) {
