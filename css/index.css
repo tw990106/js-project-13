@@ -2,8 +2,32 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
+
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.5s ease;
+}
+.nav-bg{
+    background-color: black;
+}
+
+.padding1{
+    padding: 3rem;
+}
 .sun-logosize{
     width: 10rem;
+}
+
+.w-35{
+    width: 35%;
+    min-width: 20em;
+}
+
+#logo{
+    cursor: pointer;
 }
 
 .sun-login{
@@ -27,10 +51,9 @@ body {
 }
 
 .bg-movies{
-    background-image: url('/img/pc-img-gradatrion-0228.png'),url(https://image.tving.com/ntgs/operation/onboard/2023/12/27/1703657284_1.png/dims/resize/F_webp,2048);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1)), url(https://image.tving.com/ntgs/operation/onboard/2023/12/27/1703657284_1.png/dims/resize/F_webp,2048);
     background-size: cover;
     background-repeat: none;
-    background-position: bottom,bottom;
 }
 
 .vh-85{
@@ -94,3 +117,84 @@ iframe{
     box-shadow: none;
 }
 
+.bg-ani{
+    animation: fadeIn 1s ease-in-out;
+}
+
+.text-ani-01{
+    animation: fadeIn 2s ease-in-out;
+    min-width: 20em;
+}
+
+.text-ani-02{
+    animation: fadeIn 2s ease-in-out;
+}
+
+.text-ani-sub-02{
+    animation: fadeIn 2s ease-in-out;
+}
+
+.img-origin-4{
+    width: 300px;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fadeOut{
+    from{
+        opacity: 1;
+        transform: none
+    }
+    to{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+@media (max-width: 767px) {
+    .sun-img-origin-1,
+    .sun-img-origin-2,
+    .sun-img-origin-3 {
+      display: none;
+    }
+    .img-origin-4 {
+      display: block; 
+    }
+    .sun-logosize{
+        width: 5rem;
+    }
+    h1{
+        font-size: 1.1em;
+    }
+    h2{
+        font-size: 1em;
+    }
+    h3{
+        font-size: .8em;
+    }
+    h4{
+        font-size: .5em;
+    }
+    h5{
+        font-size: .4em;
+    }
+    .padding1{
+        padding: 1rem;
+      }
+  }
+  
+  @media (min-width: 768px) {
+    .img-origin-4 {
+      display: none;
+    }
+  }
+  
