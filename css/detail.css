@@ -112,8 +112,14 @@ body{
 }
 
 /* detail list */
+.similar-movie{
+    margin-bottom: 50px;
+}
 .detail-vod{
     padding-left: 60px;
+}
+.detail-vod h3{
+    font-weight: 600;
 }
 .vod-list{
     /* overflow: hidden; */
@@ -136,6 +142,7 @@ body{
     position: relative;
     overflow: hidden;
 }
+
 .swiper-container li{
     max-width: 246px;
     margin-right: 0;
