@@ -12,6 +12,9 @@ img{
 a{
     text-decoration: none;
 }
+ul,ol{
+    padding-left: 0;
+}
 li{
     list-style: none;
 }
@@ -35,13 +38,35 @@ body{
     justify-content: space-between;
     border-bottom: 1px solid #ebebe6;
     padding: 50px 0;
+    font-size: 18px;
 }
-.detail-txt{
+.detail-txt:not(img){
     align-self: center;
     width: 40%;
+    color: #e0e0e0;
 }
-.detail-img{
-    width: 30%;
+.detail-txt > img{
+    width: 468px;
+    height: 87px;
+}
+.movie-info span{
+    display: inline-block;
+    align-self: center;
+}
+.movie-info span:not(:first-child){
+    margin-left: 0.4em;
+}
+.movie-info span:first-child{
+    height: 33px;
+}
+.movie-info img{
+    height: 100%;
+}
+.info-box{
+    padding: 2px 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    box-sizing: border-box;
 }
 .vod-list{
     overflow: hidden;
