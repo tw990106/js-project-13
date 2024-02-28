@@ -29,14 +29,13 @@ body{
     display: flex;
 }
 
-/* detail pages */
+/* detail top */
 .detail-bg{
     background: url('');
-    
 }
 .detail-main{
     justify-content: space-between;
-    border-bottom: 1px solid #ebebe6;
+    border-bottom: 1px solid #707070;
     padding: 50px 0;
     font-size: 18px;
 }
@@ -48,6 +47,15 @@ body{
 .detail-txt > img{
     width: 468px;
     height: 87px;
+}
+.detail-img{
+    max-width: 340px;
+    height: 490px;
+    align-self: center;
+}
+.detail-img img{
+    width: 100%;
+    height: 100%;
 }
 .movie-info span{
     display: inline-block;
@@ -68,12 +76,40 @@ body{
     border-radius: 6px;
     box-sizing: border-box;
 }
+.subs button{
+    padding: 1.5rem 5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+}
+.subs > span{
+    margin-left: 1.6rem;
+    align-self: center;
+    
+}
+.subs svg{
+    width: 42px;
+    height: 42px;
+    
+}
+.subs span *{
+    display: block;
+    text-align: center;
+}
+.mv-info span{
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+/* detail list */
+.detail-vod{
+    padding-left: 200px;
+}
 .vod-list{
     overflow: hidden;
     flex-wrap: nowrap;
-    padding-left: 200px;
 }
-.vod-list li:not(:last-of-type){
+.vod-list li:not(:first-of-type){
     margin-left: 20px;
 }
 .vod-list li img{
@@ -83,7 +119,12 @@ body{
 }
 .vod-list li{
     /* width: 100%; */
-    position: relative;
+    /* position: relative; */
+    
+}
+.swiper-slide{
+    max-width: 246px;
+    width: 100%;
 }
 .list-txt{
     position: absolute;
