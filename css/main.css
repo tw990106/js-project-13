@@ -72,7 +72,7 @@ img{
     padding-top: 0;
     transition: 0.7s;
 }
-.swiper-button-prev:hover ,.swiper-button-next:hover{
+.swiper-button-prev:hover ,.swiper-button-next:hover, .manual-swiper-button-next:hover, .manual-swiper-button-prev:hover{
     color: white;
     opacity: 1;
 }

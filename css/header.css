@@ -34,31 +34,23 @@ button {
   font-weight: 700;
 }
 
-#container {
-  height: 1300px
+.red {
+  color: #ff153c
 }
 
-#container div {
-  height: 33%;
+#container {
+  height: 500px
 }
 
 .violet {
   background: violet;
+  height: 100%;
 }
 
-.orange {
-  background: orange;
-}
-
-.green {
-  background: green;
-}
  
  #ko-header {
   background: #000;
   width: 100%;
-  /* height: 5.833rem; */
-  /* height: 5.2vw; */
   height: 5.83rem;
   display: flex;
   padding: 0 4rem 0 3rem;
@@ -67,6 +59,7 @@ button {
   align-items: center;
   justify-content: space-between;
   position: fixed;
+  z-index: 10000;
  }
 
 
@@ -132,6 +125,15 @@ button {
 
 .ko-header-right .ko-btn-account {
   transition: all 0.1s linear;
+  position: relative;
+}
+.ko-header-right .ko-btn-account:after {
+  content:'';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  left: -1em;
+  top: -.8em;
 }
 
 .ko-header-right .ko-btn-account img {
@@ -139,9 +141,105 @@ button {
   height: 100%;
 }
 
-/* .ko-header-right .ko-btn-account:hover .ko-account-area {
-  animation: opacity .1s ease both
-} */
+/* 헤더 검색창 */
+
+.ko-dimmed {
+  position: fixed;
+  left:0;
+  top:0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  z-index: -2;
+  display: none;
+}
+
+.ko-search-area {
+  position: fixed;
+  z-index: -1;
+  left:0;
+  top: 0;
+  width: 100%;
+  height: 60rem;
+  max-height: 100%;
+  background: #191919fc;
+  padding: 5.583rem;
+  box-sizing: border-box;
+  display: none;
+}
+
+.ko-search-area .ko-search-box {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  padding: 3.75em 0 1em;
+  border-bottom: 2px solid #fff;
+  margin-bottom: 50px;
+}
+
+.ko-search-area .ko-search-box input {
+  height: 100%;
+  width: calc(100% - 3rem);
+  outline: none;
+  border-width: 0px;
+  background: transparent;
+  font-size: 2em;
+  font-weight: 400;
+  color: #fff
+}
+
+.ko-search-area .ko-search-box button {
+  position: absolute;
+  bottom: 1em;
+  right: 0;
+  margin: 0;
+  width: 2.75em;
+  height: 2.75em;
+  cursor: pointer;
+}
+.ko-search-area .ko-search-box button img {
+  width: 90%;
+}
+
+.ko-search-area .ko-search-bottom {
+  display: flex;
+  color: #dedede;
+  height: 75%;
+}
+
+.ko-search-area .ko-search-bottom ul {
+  height: 100%;
+  width: 100%
+}
+.ko-search-area .ko-search-bottom .ko-search-title {
+  font-size: 1.67rem;
+  font-weight: 700;
+  margin-bottom: 1.67rem;
+}
+.ko-search-area .ko-search-bottom .ko-search-content {
+  margin: .75rem 0;
+  font-size: 1.335rem;
+  color: #dedede;
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+.ko-search-area .ko-search-bottom .ko-search-popular {
+  padding-left: 3.35em;
+  border-left: 1px solid #2e2e2e;
+}
+
+.ko-search-area .ko-search-bottom .ko-search-popular span {
+  margin-right: 2.5rem;
+}
+
+.ko-search-time {
+  display: inline-block;
+  font-size: 1.17rem;
+  margin-top: 1.5rem;
+  color: #646464;
+}
+
 
 
 /* 헥더 프로필 */
