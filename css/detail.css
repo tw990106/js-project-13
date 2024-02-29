@@ -21,6 +21,7 @@ li{
 body{
     background-color: black;
     color: #fff;
+    overflow-x: hidden;
 }
 section{
     margin-bottom: 50px;
@@ -678,7 +679,6 @@ section{
     }
     .swiper-container{
         position: relative;
-        overflow: hidden;
     }
     
     .swiper-container li{
