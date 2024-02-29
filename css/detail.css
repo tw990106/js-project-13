@@ -222,7 +222,7 @@ section{
         height: 24px;
     }   
     .more-btn:after{
-        background: url('../images/icon_arrow_down.svg') no-repeat;
+        background: url('../img/icon_arrow_down.svg') no-repeat;
     }
     .close:after{
         background: url('https://www.tving.com/img/icon_arrow_top.svg') no-repeat;
@@ -322,7 +322,7 @@ section{
         z-index: -1;
         width: 100%;
         height: 85vh;
-        background: url('../images/detail-bg.jpg') no-repeat;
+        background: url('../img/detail-bg.jpg') no-repeat;
         background-size: cover;
     }
     .detail-bg:before{
@@ -447,7 +447,7 @@ section{
         height: 20px;
     }   
     .more-btn:after{
-        background: url('../images/icon_arrow_down.svg') no-repeat;
+        background: url('../img/icon_arrow_down.svg') no-repeat;
     }
     .close:after{
         background: url('https://www.tving.com/img/icon_arrow_top.svg') no-repeat;
@@ -542,7 +542,7 @@ section{
         z-index: -1;
         width: 100%;
         height: 85vh;
-        background: url('../images/detail-bg.jpg') no-repeat;
+        background: url('../img/detail-bg.jpg') no-repeat;
         background-size: cover;
     }
     .detail-bg:before{
@@ -645,7 +645,7 @@ section{
         height: 24px;
     }   
     .more-btn:after{
-        background: url('../images/icon_arrow_down.svg') no-repeat;
+        background: url('../img/icon_arrow_down.svg') no-repeat;
     }
     .close:after{
         background: url('https://www.tving.com/img/icon_arrow_top.svg') no-repeat;
