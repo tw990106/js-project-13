@@ -426,6 +426,10 @@ section{
         display: block;
         text-align: center;
     }
+    .popup{
+        padding: 1rem 2rem;
+        font-size: 18px;
+    }
     span{
         display: block;
     }
