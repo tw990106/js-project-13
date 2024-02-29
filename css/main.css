@@ -157,6 +157,7 @@ img{
   .ing-item{
     width: 245.42px;
     height: 413.19px;
+    padding-top: 10px;
   }
   .item-wrapper{
     width: 1899.5px;
@@ -168,6 +169,7 @@ img{
     width: 245.42px;
     height: 353.41px;
     margin-right: 10px;
+    padding-top: 10px;
   }
   
 :not(svg) {
@@ -175,7 +177,7 @@ img{
 }
 .label-wrapper{
     position: absolute;
-    top:0.25rem;
+    top:0.95rem;
     left: 0.25rem;
     bottom: 1rem;
     width:42.89px;
