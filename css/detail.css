@@ -43,6 +43,38 @@ section{
 .mb-4{
     margin-bottom: 1.5rem;
 }
+.detail-top{
+    margin-bottom: 3rem;
+}
+.subs > span{
+    margin-left: 1.6rem;
+    align-self: center;
+    cursor: pointer;
+}
+.subs svg{
+    width: 42px;
+    height: 42px;
+}
+.subs span *:not(div){
+    display: block;
+    text-align: center;
+}
+.popup {
+    position: fixed;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(25, 25, 25, .96);
+    color: #fff;
+    padding: 2rem 4rem;
+    border-radius: 5px;
+    z-index: 9999;
+    display: none;
+    font-size: 22px;
+}
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
+    display: none;
+}
 
 
 
@@ -58,10 +90,10 @@ section{
         width: 100%;
         height: 100vh;
         background: url('../images/detail-bg.jpg') no-repeat;
-        /* background-size: cover;
+        background-size: cover;
         top: 80%;
         left: 50%;
-        transform: translate(-50%, -50%); */
+        transform: translate(-50%, -50%);
         padding-top: 50%;
     }
     .detail-bg:before{
@@ -413,15 +445,13 @@ section{
         margin-bottom: 50px;
     }
     .detail-vod{
-        padding: 0 60px;
+        padding-left: 2rem;
+        box-sizing: border-box;
     }
     .detail-vod h3{
         font-weight: 600;
         font-size: 22px;
         margin-bottom: 30px;
-    }
-    .vod-list li:not(:first-of-type){
-        margin-left: 20px;
     }
     .vod-list li img{
         width: 246px;
@@ -445,9 +475,6 @@ section{
     }
     .slide-btn:hover{
         opacity: 1;
-    }
-    .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
-        display: none;
     }
     .list-txt{
         position: absolute;
@@ -587,19 +614,6 @@ section{
         scale: 1.04;
         transition: .3s ease;
     }
-    .subs > span{
-        margin-left: 1.6rem;
-        align-self: center;
-        cursor: pointer;
-    }
-    .subs svg{
-        width: 42px;
-        height: 42px;
-    }
-    .subs span *{
-        display: block;
-        text-align: center;
-    }
     .mv-info span{
         display: inline-block;
         margin-left: 1rem;
@@ -659,9 +673,6 @@ section{
     }
     .slide-btn:hover{
         opacity: 1;
-    }
-    .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
-        display: none;
     }
     .list-txt{
         position: absolute;
