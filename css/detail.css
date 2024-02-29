@@ -76,12 +76,20 @@ section{
     display: none;
     font-size: 22px;
 }
+
 .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
     display: none;
 }
 
+.swiper-slide:hover {
+    animation: moveUp 1s ease;
+}
 
-
+@keyframes moveUp {
+    100% {
+        transform: translateY(-5%)
+    }
+}
 
 
 /* 모바일 */
