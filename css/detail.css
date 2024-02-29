@@ -46,6 +46,10 @@ section{
 .detail-top{
     margin-bottom: 3rem;
 }
+.detail-main{
+    border-bottom: 1px solid #707070;
+    padding-bottom: 3rem;
+}
 .subs > span{
     margin-left: 1.6rem;
     align-self: center;
@@ -59,7 +63,7 @@ section{
     display: block;
     text-align: center;
 }
-.popup {
+.popup{
     position: fixed;
     bottom: 3%;
     left: 50%;
@@ -91,7 +95,7 @@ section{
         height: 100vh;
         background: url('../images/detail-bg.jpg') no-repeat;
         background-size: cover;
-        top: 80%;
+        top: 70%;
         left: 50%;
         transform: translate(-50%, -50%);
         padding-top: 50%;
@@ -171,7 +175,7 @@ section{
         box-sizing: border-box;
     }
     .subs button{
-        padding: 1rem 2rem;
+        padding: 1rem 1.5rem;
         border: none;
         border-radius: 8px;
         font-weight: 600;
@@ -194,6 +198,10 @@ section{
     .subs span *{
         display: block;
         text-align: center;
+    }
+    .popup{
+        padding: 1rem 4rem;
+        font-size: 16px;
     }
     .mv-info span{
         display: inline-block;
@@ -300,6 +308,7 @@ section{
         overflow: hidden;
     }
 }
+
 /* 태블릿 */
 @media screen and (min-width: 768px) and (max-width: 1279px){
     .container{
