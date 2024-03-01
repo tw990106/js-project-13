@@ -63,7 +63,51 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+const API_KEY = `6f97625a1c75f3ce06489a0e5b0ebda1`;
+const BASE_URL = `https://darling-pegasus-7e7f49.netlify.app`;
+const API_URL = `${BASE_URL}?api_key=${API_KEY}`;
+const IMG_URL = `http://image.tmdb.org/t/p/w500`;
+const main = document.getElementById("main");
 
+getMovies(API_URL);
+
+function getMovies(url){
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data.results);
+            showMovies(data.results);
+        })
+        .catch(error => {
+            console.error('Error fetching movies:', error);
+        });
+};
+
+function showMovies(data){
+    main.innerHTML = ``;
+
+    data.forEach(movie => {
+        const {title, poster_path, vote_average, overview} = movie;
+        const movieE1 = document.createElement(`div`);
+        movieE1.classList.add('movie');
+        movieE1.innerHTML = `<div class="swiper-slide item">
+                                <img src="${IMG_URL}${poster_path}" alt="${title}">
+                             </div>`; // 이미지 URL 구성 수정
+
+        main.appendChild(movieE1);
+    });
+} 
+
+
+/*
+const options = {method: 'GET', headers: {accept: 'application/json'}};
+
+fetch('https://api.themoviedb.org/3/authentication/guest_session/new', options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
+
+  
 const getMovieTopRated = async () => {
     const url = new URL('https://api.themoviedb.org/3/movie/top_rated?language=ko&page=3');
     const options = {
@@ -85,38 +129,4 @@ const getMovieTopRated = async () => {
 
 getMovieTopRated();
 
-const API_KEY = `6f97625a1c75f3ce06489a0e5b0ebda1`;
-const BASE_URL = `/*여기 넷리파이 주소*/`;
-const API_URL = BASE_URL + `` + API_KEY;
-const IMG_URL = `http://image.tmdb.org/t/p/w500`;
-
-getMovies(API_URL);
-
-function getMovies(url){
-    fetch(url).then(res => res.json()).then(data => {
-        console.log(data.results)
-        showMovies(data.results);
-    })
-}
-
-function showMovies(data){
-    data.forEach(movie => {
-        const movieE1 = document.createElement(`div`);
-        movieE1.classList.add('movie');
-        movieE1.innerHTML = ` <div class="swiper-slide item">
-        <img
-          src=""
-        />
-        
-      </div>`
-    });
-}
-
-/*
-const options = {method: 'GET', headers: {accept: 'application/json'}};
-
-fetch('https://api.themoviedb.org/3/authentication/guest_session/new', options)
-  .then(response => response.json())
-  .then(response => console.log(response))
-  .catch(err => console.error(err));
   */
