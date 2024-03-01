@@ -1,3 +1,4 @@
+// import {sendDetail} from './main.js';
 document.addEventListener("DOMContentLoaded", function() {
     
     // slide
@@ -89,22 +90,30 @@ document.addEventListener("DOMContentLoaded", function() {
             popup.style.display = 'none';
         }, 3000);
     });
+
+
+    
+
+    
+
 });
 
 import {sendDetail} from './main.js';
 
 // 해당 영화의 상세 정보를 가져오는 함수
 
-const urlParams = new URLSearchParams(window.location.search);
-const movieId = urlParams.get('id');
-
 async function fetchData() {
     const data = await sendDetail(movieId);
     console.log(data, "ddd");
 }
-
 fetchData();
 
+// 영화 상세 정보를 화면에 출력하는 함수
 async function renderMovieDetail(movieId) {
     const movieDetail = await fetchData(movieId);
+
+    // 이미지
+    const detailImg = document.querySelector('.detail-img img');
+    detailImg.src = `https://image.tmdb.org/t/p/w500${movieDetail.poster_path}`;
+    
 }
