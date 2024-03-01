@@ -88,12 +88,14 @@ getMovieTopRated();
 const API_KEY = `6f97625a1c75f3ce06489a0e5b0ebda1`;
 const BASE_URL = `/*여기 넷리파이 주소*/`;
 const API_URL = BASE_URL + `` + API_KEY;
+const IMG_URL = `http://image.tmdb.org/t/p/w500`;
 
 getMovies(API_URL);
 
 function getMovies(url){
     fetch(url).then(res => res.json()).then(data => {
-        console.log(data)
+        console.log(data.results)
+        showMovies(data.results);
     })
 }
 
