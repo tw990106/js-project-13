@@ -54,6 +54,14 @@ a{
     height: 400px;
 }
 
+.footer-bottom{
+    margin-top: 30em;
+}
+
+h5{
+    margin: 0;
+}
+
 
 @keyframes zoom {
     0%{
