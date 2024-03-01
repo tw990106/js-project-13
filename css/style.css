@@ -1,7 +1,7 @@
-p.top-list{
+p.top-list {
   width: 100%;
 }
-.today-top{
+.today-top {
   margin-bottom: 10px;
 }
 .rank-num {
@@ -12,7 +12,7 @@ p.top-list{
   align-self: flex-end;
   z-index: 3;
 }
-.list-wrap{
+.list-wrap {
   margin: -62.4px -60.6528px -23.4px;
   padding: 62.4px 60.6528px 39px;
   width: 1899.5px;
@@ -25,21 +25,20 @@ p.top-list{
   padding-left: 2em;
   padding-right: 2em;
   padding-top: 10px;
-  opacity:0.4;
-  transition:opacity 0.3s;
+  transition: opacity 0.3s;
 }
 .swiper-slide-list:hover {
   padding-top: 0;
   transition: 0.5s;
 }
-.card-img-top{
+.card-img-top {
   width: 245.41px;
   height: 90%;
 }
-.margin-right{
-  margin-right:9.36px
+.margin-right {
+  margin-right: 9.36px;
 }
-.absolute-center{
+.absolute-center {
   width: 6.916rem;
   height: 6.916rem;
   z-index: 20;
@@ -47,18 +46,18 @@ p.top-list{
   top: 35%;
   left: 25%;
 }
-.text-area{
+.text-area {
   display: flex;
   position: absolute;
   bottom: 0;
-  height:59.78px;
+  height: 59.78px;
   width: 245.42px;
   --tw-bg-opacity: 1;
-  background-color: rgb(25 25 25/var(--tw-bg-opacity));
+  background-color: rgb(25 25 25 / var(--tw-bg-opacity));
 }
-.text-area p{
+.text-area p {
   padding: 15.6px 0px 15.6px 15.6px;
-  font-size:1.25rem;
+  font-size: 1.25rem;
   margin: 0;
   padding-top: 1rem;
   padding-left: 1rem;
@@ -66,15 +65,16 @@ p.top-list{
   width: 116.05px;
   height: 53.61px;
   --tw-text-opacity: 1;
-  color: rgb(179 179 179/var(--tw-text-opacity));
+  color: rgb(179 179 179 / var(--tw-text-opacity));
 }
-.dot{
+.dot {
   position: absolute;
   right: 5px;
   top: 15px;
   width: 2rem;
   height: 2rem;
 }
-.original-img{
+
+.original-img {
   width: 350px;
 }
