@@ -45,19 +45,15 @@ let movieList = [];
 let url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1`);
 const IMG_URL = `http://image.tmdb.org/t/p/w500`;
 
-const getMovies = async () => {
-    const options = {
-        method: 'GET',
-        headers: {
-            accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDc2OGMxZTdlYWJmYWI5Y2Q5NGFiNzQyMjNhZjg1YyIsInN1YiI6IjY1ZGQ0NjZjMmFjNDk5MDE3ZGNhZGZjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xtPAVAUiJC6-xfEkO9tnDb_UHPDTIo3bJaKtMLNdMkg'
-        }
-    };
-    const response = await fetch(url, options);
-    const data = await response.json();
-    movieList = data.results;
-    render();
+const sendDetail = async (id) => {
+    return id;//이건 지금 안쓰고 있구요
 }
+export { sendDetail };
+
+const sendSearch = async (data) => {
+    return sendSearch;//이건 지금 안쓰고 있구요
+}
+export { sendSearch };
 
 const getMoviesTrending = async () => {
     url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1`);
@@ -72,6 +68,9 @@ const getMoviesTrending = async () => {
     const data = await response.json();
     movieList = data.results;
     render();
+    getMovies(data);
+    return data;//이게 trending
+
 }
 
 const getMoviesPopular = async () => {
@@ -93,7 +92,7 @@ const getMoviesPopular = async () => {
 
 const render = () => {
     console.log("render", movieList);
-    const movieHTML = movieList.map(movie => `<div class="swiper-slide">
+    const movieHTML = movieList.map(movie => `<div class="swiper-slide" id="${movie.id}" onclick="sendDetail("${movie.id}")">
     <img class="swiper-background-img" src="${IMG_URL}${movie.poster_path}"/>
     <div class="swiper-text">
       <h4>${movie.title}</h4>
@@ -105,7 +104,7 @@ const render = () => {
 
 const renderPopular = () => {
     console.log("renderPopular", movieList);
-    const moviePopularHTML = movieList.map(movie => `<div class="swiper-slide item">
+    const moviePopularHTML = movieList.map(movie => `<div class="swiper-slide item id="${movie.id}">
   <img
   src="${IMG_URL}${movie.poster_path}" />
   <div
@@ -113,6 +112,7 @@ const renderPopular = () => {
   </div></div>`).join('');
     document.getElementById('popular-movies').innerHTML = moviePopularHTML;
 }
+
 
 getMoviesTrending();
 getMoviesPopular();
