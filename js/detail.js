@@ -91,9 +91,9 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-import {getMovieTopRated} from './main.js';
+import {getMovies} from './main.js';
 async function fetchData() {
-    const data = await getMovieTopRated();
+    const data = await getMovies();
     console.log(data, results, 'ddd');
 }
 fetchData();
