@@ -1,3 +1,10 @@
+import {getMovies} from './main.js'
+async function fetchData() {
+    let data = await getMovies();
+    console.log(data.results, "ddd");
+}
+fetchData();
+
 const signUpButton = document.getElementById("sign-up-button")
 const loginButton = document.getElementById("login-button")
 const loginButton2 =document.getElementById("login-button2")
@@ -72,4 +79,3 @@ window.addEventListener('scroll',()=>{
     scrollAnime(textAniSub5,2,1600,4500,scroll)
     scrollAnime(bgAni6,2,1700,4500,scroll)
 })
-
