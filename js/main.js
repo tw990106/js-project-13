@@ -38,68 +38,81 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
-    let listSwiper = new Swiper('.list-swiper-container', {
-        // 옵션 설정
-        slidesPerView: 'auto',
-        slidesPerGroup: 4,
-        // observer: true,
-        // observeParents: true,
-        spaceBetween: 20,
-        loop: false,
-        navigation: {
-            nextEl: '.list-swiper-button-next',
-            prevEl: '.list-swiper-button-prev',
-        },
-        breakpoints: {
-            1280: {
-                slidesPerView: 'auto',
-                slidesPerGroup: 1,
-            },
-            720: {
-                slidesPerView: 'auto',
-                slidesPerGroup: 1,
-            }
-        }
-    });
 
 });
-const API_KEY = `api_key=6f97625a1c75f3ce06489a0e5b0ebda1`;
-const BASE_URL = `http://api.themoviedb.org/3/`;
-const API_URL = BASE_URL + `discover/movie?sort_by=popularity.desc&` + API_KEY;
+
+let movieList = [];
+let url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1`);
 const IMG_URL = `http://image.tmdb.org/t/p/w500`;
-const main = document.getElementById("main");
 
-getMovies(API_URL);
+const getMovies = async () => {
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDc2OGMxZTdlYWJmYWI5Y2Q5NGFiNzQyMjNhZjg1YyIsInN1YiI6IjY1ZGQ0NjZjMmFjNDk5MDE3ZGNhZGZjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xtPAVAUiJC6-xfEkO9tnDb_UHPDTIo3bJaKtMLNdMkg'
+        }
+    };
+    const response = await fetch(url, options);
+    const data = await response.json();
+    movieList = data.results;
+    render();
+}
 
- export function getMovies(url){
-    fetch(url)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data.results);
-            showMovies(data.results);
-            return data;
-        })
-        .catch(error => {
-            console.error('Error fetching movies:', error);
-        });
-};
+const getMoviesTrending = async () => {
+    url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1`);
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDc2OGMxZTdlYWJmYWI5Y2Q5NGFiNzQyMjNhZjg1YyIsInN1YiI6IjY1ZGQ0NjZjMmFjNDk5MDE3ZGNhZGZjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xtPAVAUiJC6-xfEkO9tnDb_UHPDTIo3bJaKtMLNdMkg'
+        }
+    };
+    const response = await fetch(url, options);
+    const data = await response.json();
+    movieList = data.results;
+    render();
+}
 
-function showMovies(data){
-    main.innerHTML = ``;
+const getMoviesPopular = async () => {
+    url = new URL(`https://api.themoviedb.org/3/movie/popular?language=ko&page=1`);
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDc2OGMxZTdlYWJmYWI5Y2Q5NGFiNzQyMjNhZjg1YyIsInN1YiI6IjY1ZGQ0NjZjMmFjNDk5MDE3ZGNhZGZjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xtPAVAUiJC6-xfEkO9tnDb_UHPDTIo3bJaKtMLNdMkg'
+        }
+    };
+    const response = await fetch(url, options);
+    const data = await response.json();
+    console.log("d", data);
+    movieList = data.results;
+    console.log(movieList);
+    renderPopular();
+}
 
-    data.forEach(movie => {
-        const {title, poster_path, vote_average, overview} = movie;
-        const movieE1 = document.createElement(`div`);
-        movieE1.innerHTML = `<div class="swiper-wrapper item-wrapper itemlist">
-        <div class="swiper-slide item">
-          <img
-            src="${IMG_URL}${poster_path}" alt="${title}"
-          />
-        </div>
-        </div>`; // 이미지 URL 구성 수정
-                        
-        main.appendChild(movieE1);
-    });
-}  
+const render = () => {
+    console.log("render", movieList);
+    const movieHTML = movieList.map(movie => `<div class="swiper-slide">
+    <img class="swiper-background-img" src="${IMG_URL}${movie.poster_path}"/>
+    <div class="swiper-text">
+      <h4>${movie.title}</h4>
+      <p>${movie.overview}</p>
+    </div>
+  </div>`).join('');
+    document.getElementById('trending-movies').innerHTML += movieHTML;
+}
 
+const renderPopular = () => {
+    console.log("renderPopular", movieList);
+    const moviePopularHTML = movieList.map(movie => `<div class="swiper-slide item">
+  <img
+  src="${IMG_URL}${movie.poster_path}" />
+  <div
+    class="label-wrapper newepisode-label-wrapper absolute sm:w-[2rem] sm:h-[1.333rem] sm:top-[0.166rem] sm:left-[0.166rem] md:top-[0.25rem] md:left-[0.25rem] md:w-[2.75rem] md:h-[1.833rem] z-[30]">
+  </div></div>`).join('');
+    document.getElementById('popular-movies').innerHTML = moviePopularHTML;
+}
 
+getMoviesTrending();
+getMoviesPopular();
