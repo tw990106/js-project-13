@@ -71,12 +71,13 @@ const main = document.getElementById("main");
 
 getMovies(API_URL);
 
-function getMovies(url){
+ export function getMovies(url){
     fetch(url)
         .then(res => res.json())
         .then(data => {
             console.log(data.results);
             showMovies(data.results);
+            return data;
         })
         .catch(error => {
             console.error('Error fetching movies:', error);
@@ -89,11 +90,16 @@ function showMovies(data){
     data.forEach(movie => {
         const {title, poster_path, vote_average, overview} = movie;
         const movieE1 = document.createElement(`div`);
-        movieE1.classList.add('movie');
-        movieE1.innerHTML = `<div class="swiper-slide item">
-                                <img src="${IMG_URL}${poster_path}" alt="${title}">
-                             </div>`; // 이미지 URL 구성 수정
-
+        movieE1.innerHTML = `<div class="swiper-wrapper item-wrapper itemlist">
+        <div class="swiper-slide item">
+          <img
+            src="${IMG_URL}${poster_path}" alt="${title}"
+          />
+        </div>
+        </div>`; // 이미지 URL 구성 수정
+                        
         main.appendChild(movieE1);
     });
-} 
+}  
+
+
