@@ -43,10 +43,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 let movieList = [];
 let url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1`);
-const IMG_URL = `http://image.tmdb.org/t/p/w500`;
+const IMG_URL = `http://image.tmdb.org/t/p/original`;
 
 const sendDetail = async (id) => {
-    window.location.href=`detail.html?id=${id}`;
+    window.location.href = `detail.html?id=${id}`;
 }
 export { sendDetail };
 
@@ -84,33 +84,48 @@ const getMoviesPopular = async () => {
     };
     const response = await fetch(url, options);
     const data = await response.json();
-    console.log("d", data);
+    // console.log("d", data);
     movieList = data.results;
-    console.log(movieList);
+    // console.log(movieList);
     renderPopular();
 }
 
 const render = () => {
-    console.log("render", movieList);
-    const movieHTML = movieList.map(movie => `<div class="swiper-slide" id="${movie.id}" onclick="sendDetail("${movie.id}")">
+    // console.log("render", movieList);
+    let movieHTML = movieList.map(movie => `<div class="swiper-slide" id="${movie.id}" onclick="sendDetail("${movie.id}")">
     <img class="swiper-background-img" src="${IMG_URL}${movie.poster_path}"/>
     <div class="swiper-text">
       <h4>${movie.title}</h4>
       <p>${movie.overview}</p>
     </div>
   </div>`).join('');
+    movieHTML += `<div class="swiper-pagination"></div>
+
+  <div class="swiper-button-prev auto-swiper-button-prev">
+    <i class="fa-solid fa-chevron-right"></i>
+  </div>
+  <div class="swiper-button-next auto-swiper-button-next">
+    <i class="fa-solid fa-chevron-left"></i>
+  </div>`;
+//   console.log(movieHTML);
     document.getElementById('trending-movies').innerHTML += movieHTML;
 }
 
 const renderPopular = () => {
-    console.log("renderPopular", movieList);
-    const moviePopularHTML = movieList.map(movie => `<div class="swiper-slide item id="${movie.id}">
+    // console.log("renderPopular", movieList);
+    let moviePopularHTML = movieList.map(movie => `<div class="swiper-slide item id="${movie.id}">
   <img
   src="${IMG_URL}${movie.poster_path}" />
   <div
     class="label-wrapper newepisode-label-wrapper absolute sm:w-[2rem] sm:h-[1.333rem] sm:top-[0.166rem] sm:left-[0.166rem] md:top-[0.25rem] md:left-[0.25rem] md:w-[2.75rem] md:h-[1.833rem] z-[30]">
   </div></div>`).join('');
-    document.getElementById('popular-movies').innerHTML = moviePopularHTML;
+  moviePopularHTML += `      <div class="swiper-button-prev manual-swiper-button-prev">
+  <i class="fa-solid fa-chevron-right"></i>
+</div>
+<div class="swiper-button-next manual-swiper-button-next">
+  <i class="fa-solid fa-chevron-left"></i>
+</div>`;
+    document.getElementById('popular-movies').innerHTML += moviePopularHTML;
 }
 
 
