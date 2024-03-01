@@ -93,11 +93,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 import {sendDetail} from './main.js';
 
+// 해당 영화의 상세 정보를 가져오는 함수
 
 const urlParams = new URLSearchParams(window.location.search);
 const movieId = urlParams.get('id');
-
-
 
 async function fetchData() {
     const data = await sendDetail(movieId);
@@ -106,10 +105,6 @@ async function fetchData() {
 
 fetchData();
 
-
-/*async function fetchData() {
-    const data = getMovies();
-    console.log(data, results, 'ddd');
+async function renderMovieDetail(movieId) {
+    const movieDetail = await fetchData(movieId);
 }
-fetchData(); */
-
