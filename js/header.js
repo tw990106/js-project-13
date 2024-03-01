@@ -41,15 +41,29 @@ const getMoviesTrending = async () => {
   const response = await fetch(url, options);
   const data = await response.json();
   movieList = data.results;
-  // render();
-  // getMovies(data);
-  // console.log(data.results)
-  movieList = data.results
   renderTrendingList()
   return data;
 }
 
 getMoviesTrending()
+
+const getKeyword = async () => {
+  url = new URL(`https://api.themoviedb.org/3/search/movie?language=ko&page=1`);
+  const options = {
+      method: 'GET',
+      headers: {
+          accept: 'application/json',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDc2OGMxZTdlYWJmYWI5Y2Q5NGFiNzQyMjNhZjg1YyIsInN1YiI6IjY1ZGQ0NjZjMmFjNDk5MDE3ZGNhZGZjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xtPAVAUiJC6-xfEkO9tnDb_UHPDTIo3bJaKtMLNdMkg'
+      }
+  };
+  const response = await fetch(url, options);
+  const data = await response.json();
+  console.log('keyword', data)
+  // movieList = data.results;
+  return data;
+}
+
+getKeyword()
 
 
 console.log(today.toLocaleString())
