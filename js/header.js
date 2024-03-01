@@ -1,14 +1,17 @@
-let header = document.getElementById('ko-header')
-let btnProfile = document.querySelector('.ko-btn-account')
-let btnSearch = document.querySelector('.ko-btn-search')
-let btnSearchImg = document.querySelector('.ko-btn-search img')
-let dimmed = document.querySelector('.ko-dimmed')
-let profileBox = document.querySelector('.ko-account-area')
-let searchArea = document.querySelector('.ko-search-area')
-let body = document.querySelector('body')
+const header = document.getElementById('ko-header')
+const btnProfile = document.querySelector('.ko-btn-account')
+const btnSearch = document.querySelector('.ko-btn-search')
+const btnSearchImg = document.querySelector('.ko-btn-search img')
+const dimmed = document.querySelector('.ko-dimmed')
+const profileBox = document.querySelector('.ko-account-area')
+const searchArea = document.querySelector('.ko-search-area')
+const body = document.querySelector('body')
+const searchInput = document.getElementById('search_area')
+const recentBox = document.querySelector('.ko-search-data')
 let toggle = true;
 
 
+console.log(btnSearchImg)
 btnProfile.addEventListener('mouseover', function(){
   profileBox.style.display = 'block'
 })
@@ -47,3 +50,17 @@ btnSearch.addEventListener('click', function() {
   }
 
 })
+
+
+// 최근 검색어
+
+searchInput.addEventListener('keydown', () => {
+  if (window.event.keyCode == 13) {
+    let searchHistory = searchInput.value;
+    recentBox.innerHTML += `<li class="ko-search-content">${searchHistory}</li>`
+    searchInput.value =''
+  }
+})
+
+
+//검색어 입력
