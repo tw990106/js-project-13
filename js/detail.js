@@ -91,10 +91,20 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-import {getMovieTopRated} from './main.js';
+import {getMovies } from './main.js';
+
+// API_URL = `${BASE_URL}discover/movie?sort_by=popularity.desc&${API_KEY}`;
+
 async function fetchData() {
-    const data = await getMovieTopRated();
+    const data = getMovies();
+    console.log(data.results, "ddd");
+}
+
+fetchData();
+
+/*async function fetchData() {
+    const data = getMovies();
     console.log(data, results, 'ddd');
 }
-fetchData();
+fetchData(); */
 
