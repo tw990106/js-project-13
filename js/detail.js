@@ -115,5 +115,20 @@ async function renderMovieDetail(movieId) {
     // 이미지
     const detailImg = document.querySelector('.detail-img img');
     detailImg.src = `https://image.tmdb.org/t/p/w500${movieDetail.poster_path}`;
-    
+
+    // 영화 정보
+    const infoBoxes = document.querySelectorAll('.info-box');
+    infoBoxes[0].textContent = movieDetail.release_data.split('-')[0]; // 개봉년도
+    infoBoxes[1].textContent = movieDetail.genres.map(genre => genre.name).join(', '); // 장르
+    infoBoxes[2].textContent = `{movieDetail.runtime}분` // 시간
+
+    // 크리에이터, 출연자 정보
+    const directorSpan = document.querySelector('.mv-info span:first-child');
+    directorSpan.textContent = '';
+    const castSpan = document.querySelector('.mv-info span:last-child');
+    castSpan.textContent = '';
+
+    // 줄거리
+    const summary = document.querySelector('.summary');
+    summary.textContent = movieDetail.overview; // 영화 줄거리
 }
