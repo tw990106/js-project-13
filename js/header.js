@@ -1,6 +1,7 @@
 const header = document.getElementById('ko-header')
 const btnProfile = document.querySelector('.ko-btn-account')
 const btnSearch = document.querySelector('.ko-btn-search')
+const btnInput = document.querySelector('.ko-btn-input')
 const btnSearchImg = document.querySelector('.ko-btn-search img')
 const dimmed = document.querySelector('.ko-dimmed')
 const profileBox = document.querySelector('.ko-account-area')
@@ -22,7 +23,7 @@ profileBox.addEventListener('mouseover', function(){
 
 btnProfile.addEventListener('mouseout', function(){
   profileBox.style.display = 'none'
-})
+}) 
 
 profileBox.addEventListener('mouseout', function(){
   profileBox.style.display = 'none'
@@ -54,13 +55,19 @@ btnSearch.addEventListener('click', function() {
 
 // 최근 검색어
 
-searchInput.addEventListener('keydown', () => {
+function search () {
+  let searchHistory = searchInput.value;
+  recentBox.innerHTML += `<li class="ko-search-content">${searchHistory}</li>`
+  searchInput.value =''
+}
+
+searchInput.addEventListener('keydown', ()=> {
   if (window.event.keyCode == 13) {
-    let searchHistory = searchInput.value;
-    recentBox.innerHTML += `<li class="ko-search-content">${searchHistory}</li>`
-    searchInput.value =''
+    search()
   }
 })
+
+btnInput.addEventListener('click', search)
 
 
 //검색어 입력
