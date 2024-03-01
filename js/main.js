@@ -63,9 +63,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
-const API_KEY = `6f97625a1c75f3ce06489a0e5b0ebda1`;
-const BASE_URL = `https://darling-pegasus-7e7f49.netlify.app`;
-const API_URL = `${BASE_URL}?api_key=${API_KEY}`;
+const API_KEY = `api_key=6f97625a1c75f3ce06489a0e5b0ebda1`;
+const BASE_URL = `http://api.themoviedb.org/3/`;
+const API_URL = BASE_URL + `discover/movie?sort_by=popularity.desc&` + API_KEY;
 const IMG_URL = `http://image.tmdb.org/t/p/w500`;
 const main = document.getElementById("main");
 
@@ -97,36 +97,3 @@ function showMovies(data){
         main.appendChild(movieE1);
     });
 } 
-
-
-/*
-const options = {method: 'GET', headers: {accept: 'application/json'}};
-
-fetch('https://api.themoviedb.org/3/authentication/guest_session/new', options)
-  .then(response => response.json())
-  .then(response => console.log(response))
-  .catch(err => console.error(err));
-
-  
-const getMovieTopRated = async () => {
-    const url = new URL('https://api.themoviedb.org/3/movie/top_rated?language=ko&page=3');
-    const options = {
-        method: 'GET',
-        headers: {
-            accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDc2OGMxZTdlYWJmYWI5Y2Q5NGFiNzQyMjNhZjg1YyIsInN1YiI6IjY1ZGQ0NjZjMmFjNDk5MDE3ZGNhZGZjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xtPAVAUiJC6-xfEkO9tnDb_UHPDTIo3bJaKtMLNdMkg'
-        }
-    };
-
-    const response = await fetch(url,options);
-    const data = await response.json();
-    console.log("data", data);
-    // fetch(url, options)
-    //     .then(response => response.json())
-    //     .then(response => console.log(response))
-    //         .catch(err => console.error(err));
-}
-
-getMovieTopRated();
-
-  */

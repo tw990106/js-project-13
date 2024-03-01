@@ -9,7 +9,6 @@ let body = document.querySelector('body')
 let toggle = true;
 
 
-console.log(btnSearchImg)
 btnProfile.addEventListener('mouseover', function(){
   profileBox.style.display = 'block'
 })
