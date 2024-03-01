@@ -28,6 +28,7 @@ p {
 button {
   background: none;
   border: none;
+  cursor:pointer;
 }
 
 .bold {
@@ -165,7 +166,7 @@ button {
   background: #191919fc;
   padding: 5.583rem;
   box-sizing: border-box;
-  display: none;
+  /* display: none; */
 }
 
 .ko-search-area .ko-search-box {
@@ -222,6 +223,20 @@ button {
   color: #dedede;
   opacity: 0.7;
   line-height: 1.5;
+}
+
+.ko-search-data .ko-search-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem
+}
+
+.ko-search-area .ko-search-bottom .ko-search-content button {
+  height: 2rem;
+}
+
+.ko-search-area .ko-search-bottom .ko-search-content button img {
+  height: 100%;
 }
 
 .ko-search-area .ko-search-bottom .ko-search-popular {

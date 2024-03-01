@@ -48,7 +48,7 @@ const getMoviesTrending = async () => {
 getMoviesTrending()
 
 const getKeyword = async () => {
-  url = new URL(`https://api.themoviedb.org/3/search/movie?language=ko&page=1`);
+  url = new URL(`https://api.themoviedb.org/3/discover/movie?language=ko&page=1`);
   const options = {
       method: 'GET',
       headers: {
@@ -58,12 +58,21 @@ const getKeyword = async () => {
   };
   const response = await fetch(url, options);
   const data = await response.json();
-  console.log('keyword', data)
-  // movieList = data.results;
+  // console.log('keyword', data)
+  movieList = data.results;
+  console.log(movieList)
   return data;
 }
 
 getKeyword()
+
+const searchMovies = () => {
+  const searchTerm = searchInput.value;
+  const filteredMovies = movieList.filter(search => search.title.includes(searchTerm));
+  // renderMovies(filteredMovies);
+  console.log(searchTerm, filteredMovies)
+};
+
 
 
 console.log(today.toLocaleString())
@@ -128,8 +137,15 @@ btnSearch.addEventListener('click', function() {
 // 최근 검색어
 
 function search () {
+  // searchMovies()
   let searchHistory = searchInput.value;
-  recentBox.innerHTML += `<li class="ko-search-content">${searchHistory}</li>`
+  recentBox.innerHTML += `
+  <li class="ko-search-content">
+    <p>${searchHistory}</p>
+    <button type="button" class="ko-delete" onclick="this.parentElement.style.display='none'">
+      <img src="../img/header_close.svg" alt="delete">
+    </button>
+  </li>`
   searchInput.value =''
 }
 
@@ -140,6 +156,7 @@ searchInput.addEventListener('keydown', ()=> {
 })
 
 btnInput.addEventListener('click', search)
+
 
 
 //검색어 입력
