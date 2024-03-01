@@ -91,16 +91,21 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-import {getMovies} from './main.js';
+import {sendDetail} from './main.js';
 
-// API_URL = `${BASE_URL}discover/movie?sort_by=popularity.desc&${API_KEY}`;
+
+const urlParams = new URLSearchParams(window.location.search);
+const movieId = urlParams.get('id');
+
+
 
 async function fetchData() {
-    const data = getMovies();
-    console.log(data.results, "ddd");
+    const data = await sendDetail(movieId);
+    console.log(data, "ddd");
 }
 
 fetchData();
+
 
 /*async function fetchData() {
     const data = getMovies();
