@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-import {getMovies } from './main.js';
+import {getMovies} from './main.js';
 
 // API_URL = `${BASE_URL}discover/movie?sort_by=popularity.desc&${API_KEY}`;
 
