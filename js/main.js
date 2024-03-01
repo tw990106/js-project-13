@@ -46,12 +46,12 @@ let url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page
 const IMG_URL = `http://image.tmdb.org/t/p/w500`;
 
 const sendDetail = async (id) => {
-    return id;//이건 지금 안쓰고 있구요
+    window.location.href=`detail.html?id=${id}`;
 }
 export { sendDetail };
 
 const sendSearch = async (data) => {
-    return sendSearch;//이건 지금 안쓰고 있구요
+    return sendSearch;
 }
 export { sendSearch };
 
@@ -69,7 +69,7 @@ const getMoviesTrending = async () => {
     movieList = data.results;
     render();
     getMovies(data);
-    return data;//이게 trending
+    return data;
 
 }
 
