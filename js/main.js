@@ -63,58 +63,43 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
-
-const getMovieTopRated = async () => {
-    const url = new URL('https://api.themoviedb.org/3/movie/top_rated?language=ko&page=3');
-    const options = {
-        method: 'GET',
-        headers: {
-            accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDc2OGMxZTdlYWJmYWI5Y2Q5NGFiNzQyMjNhZjg1YyIsInN1YiI6IjY1ZGQ0NjZjMmFjNDk5MDE3ZGNhZGZjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xtPAVAUiJC6-xfEkO9tnDb_UHPDTIo3bJaKtMLNdMkg'
-        }
-    };
-
-    const response = await fetch(url,options);
-    const data = await response.json();
-    console.log("data", data);
-    // fetch(url, options)
-    //     .then(response => response.json())
-    //     .then(response => console.log(response))
-    //         .catch(err => console.error(err));
-}
-
-getMovieTopRated();
-
-const API_KEY = `6f97625a1c75f3ce06489a0e5b0ebda1`;
-const BASE_URL = `/*여기 넷리파이 주소*/`;
-const API_URL = BASE_URL + `` + API_KEY;
+const API_KEY = `api_key=6f97625a1c75f3ce06489a0e5b0ebda1`;
+const BASE_URL = `http://api.themoviedb.org/3/`;
+const API_URL = BASE_URL + `discover/movie?sort_by=popularity.desc&` + API_KEY;
+const IMG_URL = `http://image.tmdb.org/t/p/w500`;
+const main = document.getElementById("main");
 
 getMovies(API_URL);
 
-function getMovies(url){
-    fetch(url).then(res => res.json()).then(data => {
-        console.log(data)
-    })
-}
+ export function getMovies(url){
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data.results);
+            showMovies(data.results);
+            return data;
+        })
+        .catch(error => {
+            console.error('Error fetching movies:', error);
+        });
+};
 
 function showMovies(data){
+    main.innerHTML = ``;
+
     data.forEach(movie => {
+        const {title, poster_path, vote_average, overview} = movie;
         const movieE1 = document.createElement(`div`);
-        movieE1.classList.add('movie');
-        movieE1.innerHTML = ` <div class="swiper-slide item">
-        <img
-          src=""
-        />
-        
-      </div>`
+        movieE1.innerHTML = `<div class="swiper-wrapper item-wrapper itemlist">
+        <div class="swiper-slide item">
+          <img
+            src="${IMG_URL}${poster_path}" alt="${title}"
+          />
+        </div>
+        </div>`; // 이미지 URL 구성 수정
+                        
+        main.appendChild(movieE1);
     });
-}
+}  
 
-/*
-const options = {method: 'GET', headers: {accept: 'application/json'}};
 
-fetch('https://api.themoviedb.org/3/authentication/guest_session/new', options)
-  .then(response => response.json())
-  .then(response => console.log(response))
-  .catch(err => console.error(err));
-  */

@@ -89,10 +89,12 @@ document.addEventListener("DOMContentLoaded", function() {
             popup.style.display = 'none';
         }, 3000);
     });
-
-    const apiKey = '6f97625a1c75f3ce06489a0e5b0ebda1';
-    const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`;
-
-    fetch(apiUrl)
 });
+
+import {getMovieTopRated} from './main.js';
+async function fetchData() {
+    const data = await getMovieTopRated();
+    console.log(data, results, 'ddd');
+}
+fetchData();
 

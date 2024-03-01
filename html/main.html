@@ -10,10 +10,13 @@
     />
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   </head>
 
   <body>
-    <div class="container">
+    
+    <div class="container" id="main">
+      <div id="mainHeader"></div>
       <!-- Slider main container -->
       <div class="swiper auto-swiper-container">
         <!-- Additional required wrapper -->
@@ -514,7 +517,7 @@
         <div class="swiper item-container list-swiper-container">
           <h2 class="title">지금 방영중인 인기 드라마</h2>
           <!-- Additional required wrapper -->
-          <div class="swiper-wrapper item-wrapper itemlist">
+          <div class="swiper-wrapper item-wrapper itemlist"  id="popularity">
             <!-- Slides -->
             <div class="swiper-slide item">
               <img
@@ -1491,9 +1494,20 @@
         <div class="swiper-button-prev list-swiper-button-prev"></div>
         <div class="swiper-button-next list-swiper-button-next"></div>
       </div>
-    </section>      
+    </section>  
+    <div id="footer"></div>    
     </div>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="../js/main.js"></script>
+    <script type="module" src="../js/main.js"></script>
+    <script>
+
+      $(function(){
+        $("#mainHeader").load("header.html");
+        $("#footer").load("footer.html");
+      });
+    </script>
+   
   </body>
 </html>
