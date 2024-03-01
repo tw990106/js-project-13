@@ -1,9 +1,9 @@
-import {getMovies} from './main.js'
-async function fetchData() {
-    let data = await getMovies();
-    console.log(data.results, "ddd");
-}
-fetchData();
+// import {getMovies} from './main.js'
+// async function fetchData() {
+//     let data = await getMovies();
+//     console.log(data.results, "ddd");
+// }
+// fetchData();
 
 const signUpButton = document.getElementById("sign-up-button")
 const loginButton = document.getElementById("login-button")
