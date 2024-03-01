@@ -45,6 +45,7 @@ section{
     margin-bottom: 1.5rem;
 }
 .detail-top{
+    padding-top: 90px;
     margin-bottom: 3rem;
 }
 .detail-main{
@@ -91,6 +92,10 @@ section{
     100% {
         transform: translateY(-5%)
     }
+}
+
+.recommended-movie{
+    margin-bottom: 100px;
 }
 
 
