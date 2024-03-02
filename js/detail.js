@@ -153,6 +153,7 @@ const render = (movieDetail) => {
 
 
 const getSimilarMovies = async () => {
+    url = new URL(`https://api.themoviedb.org/3/movie/{movie_id}/similar?language=ko&page=1`);
 
     const options = {
         method: 'GET',
@@ -162,7 +163,7 @@ const getSimilarMovies = async () => {
         }
       };
       
-      fetch('https://api.themoviedb.org/3/movie/movie_id/similar?language=en-US&page=1', options)
+      fetch(url, options)
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
