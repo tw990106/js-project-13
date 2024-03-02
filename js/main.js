@@ -68,7 +68,7 @@ const getMoviesTrending = async () => {
     const data = await response.json();
     movieList = data.results;
     render();
-    getMovies(data);
+    getMoviesTrending(data);
     return data;
 
 }
@@ -88,6 +88,7 @@ const getMoviesPopular = async () => {
     movieList = data.results;
     // console.log(movieList);
     renderPopular();
+    renderTop();
 }
 
 const render = () => {
@@ -127,6 +128,28 @@ const renderPopular = () => {
 </div>`;
     document.getElementById('popular-movies').innerHTML += moviePopularHTML;
 }
+
+const renderTop = () => {
+    console.log("EUN JI", movieList);
+    let movieTopHTML = ``;
+    movieTopHTML = movieList.map(movie => `<div id="${movie.id}" class="swiper-slide">
+    <a class="rank-num">
+      <svg class="margin-right" width="54" height="83" viewBox="0 0 54 83" fill="none"
+        xmlns="http://www.w3.org/2000/svg" class="css-17vwk9j">
+        <path
+          d="M20.107.766C17.711 7 14.286 12.782 2.157 13.866l-1.3 8.673h10.595L1.86 86.505h15.072L29.79.765h-9.683z"
+          fill="#fff"></path>
+      </svg>
+    </a>
+    <img
+    src="${IMG_URL}${movie.poster_path}"
+      class="card-img-top" alt="..." />
+  </div></div>`).join('');
+
+    document.getElementById('top-movies').innerHTML += movieTopHTML;
+}
+
+
 
 
 getMoviesTrending();

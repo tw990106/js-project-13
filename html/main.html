@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TVING</title>
+  <link rel="icon" href="../img/favicon.ico" type="image">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="../css/main.css" />
   <link rel="stylesheet" href="../css/style.css" />
@@ -104,7 +105,7 @@
     </div> -->
 
     <section>
-      <div class="menu-group-wrap">
+      <div  class="menu-group-wrap">
         <div class="menu-group">
           <img
             src="https://image.tving.com/ntgs/operation/specialHall/2023/10/19/1697689380_1.png/dims/resize/F_webp,400" />
@@ -129,9 +130,10 @@
     </section>
     <section class="top-list swiper">
       <h2 class="title">오늘의 티빙 TOP 20</h2>
-      <div class="swiper-container list-wrap manual-swiper-container swiper item-container">
-        <div class="swiper-wrapper item-wrapper list-wrap">
-          <div class="swiper-slide">
+      <div   class="swiper-container list-wrap manual-swiper-container swiper item-container">
+        <div class="swiper-wrapper item-wrapper list-wrap" id="top-movies" >
+          <!--
+          <div class="swiper-slide" >
             <a class="rank-num">
               <svg class="margin-right" width="54" height="83" viewBox="0 0 54 83" fill="none"
                 xmlns="http://www.w3.org/2000/svg" class="css-17vwk9j">
@@ -390,16 +392,20 @@
             <img
               src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP0900/ko/20240118/0750/P001752273.jpg/dims/resize/F_webp,400"
               class="card-img-top" alt="..." />
+          </div> -->
+          <div class="swiper-button-prev manual-swiper-button-prev">
+            <i class="fa-solid fa-chevron-right"></i>
           </div>
-
-        </div>
-        <div class="swiper-button-prev manual-swiper-button-prev">
-          <i class="fa-solid fa-chevron-right"></i>
-        </div>
-        <div class="swiper-button-next manual-swiper-button-next">
-          <i class="fa-solid fa-chevron-left"></i>
-        </div>
+          <div class="swiper-button-next manual-swiper-button-next">
+            <i class="fa-solid fa-chevron-left"></i>
+          </div> 
+        </div>   
+   
       </div>
+
+        
+     
+
       <!-- If we need pagination -->
       <div class="swiper-pagination"></div>
     </section>
