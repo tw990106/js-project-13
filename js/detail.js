@@ -86,6 +86,8 @@ document.addEventListener('DOMContentLoaded', function() {
 const urlParams = new URLSearchParams(window.location.search);
 const movieId = urlParams.get('id');
 const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDc2OGMxZTdlYWJmYWI5Y2Q5NGFiNzQyMjNhZjg1YyIsInN1YiI6IjY1ZGQ0NjZjMmFjNDk5MDE3ZGNhZGZjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xtPAVAUiJC6-xfEkO9tnDb_UHPDTIo3bJaKtMLNdMkg';
+let movieList = [];
+let movieDetail = [];
 const options = {
     method: 'GET', 
     headers: {accept: 'application/json',
@@ -95,7 +97,7 @@ const options = {
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
 const getMovies = () => {
-    fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=ko`, options)
+    fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?language=ko`, options)
     .then(response => response.json())
     .then(response => {
         movieDetail = response.results;
@@ -151,8 +153,7 @@ const render = () => {
 
 getMovies();
 getSimilarMovie();
-let movieList = [];
-let movieDetail = [];
+
 
 
 
