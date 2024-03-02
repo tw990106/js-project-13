@@ -101,7 +101,7 @@ const render = () => {
 }
 
 const similarRender = (movieList) => {
-    const overviewHTML = movieDetail.overview ? `<p class="summary mb-2">${movieDetail.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>';
+    const overviewHTML = movieDetail.overview ? `<p class="summary mb-2">${movieList.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>';
     
     const similarHTML = movieList.map(movie => `
     <li class="swiper-slide">
