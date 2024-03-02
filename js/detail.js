@@ -175,17 +175,8 @@ const render = (movieDetail) => {
 
 
 const getSimilarMovies = async () => {
-    url = new URL(`https://api.themoviedb.org/3/movie/similar?language=ko`);
-
-    const options = {
-        method: 'GET',
-        headers: {
-          accept: 'application/json',
-          Authorization: 'Bearer ${API_KEY}'
-        }
-      };
       
-      fetch(url, options)
+      fetch(`https://api.themoviedb.org/3/movie/${movieId}/similar?language=ko`, options)
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
