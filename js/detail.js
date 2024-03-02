@@ -95,7 +95,7 @@ const options = {
     }
 };
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
-getMovies();
+
 const getMovies = () => {
     fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=ko`, options)
     .then(response => response.json())
@@ -106,7 +106,9 @@ const getMovies = () => {
     })
     .catch(err => console.error(err));
 }
-getSimilarMovie();
+getMovies();
+
+
 const getSimilarMovie = () => {
     fetch(`https://api.themoviedb.org/3/movie/${movieId}/similar?language=ko&page=1`, options)
     .then(response => response.json())
@@ -116,6 +118,8 @@ const getSimilarMovie = () => {
     })
     .catch(err => console.error(err));
 }
+getSimilarMovie();
+
 
 const render = () => {
     // const director = movieDetail.credits ? movieDetail.credits.crew.find(person => person.job === 'Director') : null;
@@ -151,7 +155,7 @@ const render = () => {
 }
 
 const similarRender = () => {
-    
+
 }
 
 
