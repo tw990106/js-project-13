@@ -150,7 +150,7 @@ const render = (movieDetail) => {
 
 const getSimilarMovies = async () => {
     try {
-        url = new URL(`https://api.themoviedb.org/3/movie/${movieId}/similar?language=ko&api_key=${API_KEY}`);
+        url = new URL(`https://api.themoviedb.org/3/movie/similar?language=ko&api_key=${API_KEY}`);
         const options = {
             method: 'GET',
             headers: { accept: 'application/json' }
