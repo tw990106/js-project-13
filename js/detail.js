@@ -180,7 +180,7 @@ const getSimilarMovies = async () => {
         method: 'GET',
         headers: {
           accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2Zjk3NjI1YTFjNzVmM2NlMDY0ODlhMGU1YjBlYmRhMSIsInN1YiI6IjY1ZTA5MzE0Zjg1OTU4MDE4NjRmNDg4MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.j3zToaPSL9wOrs_fZcHQjdArplxi_VU8_z0vaTW0WNs'
+          Authorization: 'Bearer ${API_KEY}'
         }
       };
       
