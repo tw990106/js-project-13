@@ -70,7 +70,7 @@ getSimilarMovie();
 const render = () => {
     // const director = movieDetail.credits ? movieDetail.credits.crew.find(person => person.job === 'Director') : null;
     // const cast = movieDetail.credits ? movieDetail.credits.cast.map(actor => actor.name).join(', ') : '정보 없음';
-    const overviewHTML = movieDetail.overview ? `<p class="summary mb-2">${movieDetail.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>';
+    let overviewHTML = movieDetail.overview ? `<p class="summary mb-2">${movieDetail.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>';
 
     const detailHTML = `
     <div class="detail-img"><img src="${IMG_URL}${movieDetail.poster_path}" alt="포스터"></div>
@@ -100,8 +100,20 @@ const render = () => {
     document.getElementById('detail-main').innerHTML = detailHTML;
 }
 
-const similarRender = () => {
-
+const similarRender = (movieList) => {
+    overviewHTML = movieDetail.overview ? `<p class="summary mb-2">${movieDetail.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>';
+    
+    const similarHTML = movieList.map(movie => `
+    <li class="swiper-slide">
+        <img src="${IMG_URL}${movie.poster_path}" alt="${movie.title}">
+        <div class="list-txt">
+            <h5>${movie.title}</h5>
+            <span>${movie.genres.map(genre => genre.name).join(', ')}</span>
+            ${overviewHTML}
+        </div>
+    </li>
+    `).join('');
+    document.getElementById('similar-list').innerHTML = similarHTML;
 }
 
 
