@@ -438,6 +438,7 @@ button {
 
 #ko-footer .footer_copyright p {
   line-height: 170%;
+  margin-bottom: 0 !important;
 }
 
 #ko-footer .footer_copyright span {
