@@ -131,10 +131,10 @@ const renderMovieDetail = async () => {
 }
 renderMovieDetail();
 
-const overviewHTML = movieDetail.overview ? `<p class="summary mb-2">${movieDetail.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>';
 const render = (movieDetail) => {
     const director = movieDetail.credits ? movieDetail.credits.crew.find(person => person.job === 'Director') : null;
     const cast = movieDetail.credits ? movieDetail.credits.cast.map(actor => actor.name).join(', ') : '정보 없음';
+    const overviewHTML = movieDetail.overview ? `<p class="summary mb-2">${movieDetail.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>';
 
     const detailHTML = `
     <div class="detail-img"><img src="${IMG_URL}${movieDetail.poster_path}" alt="포스터"></div>
@@ -166,6 +166,7 @@ const render = (movieDetail) => {
     document.getElementById('detail-main').innerHTML = detailHTML;
 }
 
+
 const similarRender = () => {
     url = new URL(`https://api.themoviedb.org/3/movie/${movieId}/similar?language=ko&api_key=${API_KEY}`);
 
@@ -184,6 +185,7 @@ const similarRender = () => {
 
 }
 
+similarRender();
 
 
 /*
