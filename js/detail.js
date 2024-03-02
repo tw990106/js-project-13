@@ -132,7 +132,8 @@ renderMovieDetail();
 const render = (movieDetail) => {
     const director = movieDetail.credits ? movieDetail.credits.crew.find(person => person.job === 'Director') : null;
     const cast = movieDetail.credits ? movieDetail.credits.cast.map(actor => actor.name).join(', ') : '정보 없음';
-    
+    const overviewHTML = movieDetail.overview ? `<p class="summary mb-2">${movieDetail.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>';
+
     const detailHTML = `
     <div class="detail-img"><img src="${IMG_URL}${movieDetail.poster_path}" alt="포스터"></div>
     <div class="detail-txt">
@@ -155,7 +156,7 @@ const render = (movieDetail) => {
         </div>
         <div class="mv-info">감독<span>${director ? director.name : '정보 없음'}</span></div>
         <div class="mv-info mb-4">출연<span>${cast}</span></div>
-        <p class="summary mb-2">${movieDetail.overview}</p>
+        ${overviewHTML}
         <div class="more-btn main-btn">더보기</div>
         <div class="close main-btn">닫기</div>
     </div>
@@ -163,7 +164,9 @@ const render = (movieDetail) => {
     document.getElementById('detail-main').innerHTML = detailHTML;
 }
 
-// const similar
+const similarRender = () => {
+    url = new URL(``);
+}
 
 
 
