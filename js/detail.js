@@ -59,8 +59,15 @@ const getSimilarMovie = () => {
     fetch(`https://api.themoviedb.org/3/movie/${movieId}/similar?language=ko&page=1`, options)
     .then(response => response.json())
     .then(response => {
-        movieList = response.results;
-        similarRender(movieList);
+        // movieList = response.results;
+        // similarRender(movieList);
+        if (Array.isArray(response.results)) {
+            movieList = response.results;
+            console.log(movieList);
+            similarRender(movieList);
+        } else {
+            console.error("Response results is not an array:", response.results);
+        }
     })
     .catch(err => console.error(err));
 }
