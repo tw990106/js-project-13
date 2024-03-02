@@ -154,13 +154,18 @@ const render = (movieDetail) => {
 
 const getSimilarMovies = async () => {
 
-    url = new URL(`https://api.themoviedb.org/3/movie/{movie_id}`);
-    const options = {method: 'GET', headers: {accept: 'application/json'}};
-
-    fetch('https://api.themoviedb.org/3/movie/movie_id?language=en-US', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
+    const options = {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2Zjk3NjI1YTFjNzVmM2NlMDY0ODlhMGU1YjBlYmRhMSIsInN1YiI6IjY1ZTA5MzE0Zjg1OTU4MDE4NjRmNDg4MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.j3zToaPSL9wOrs_fZcHQjdArplxi_VU8_z0vaTW0WNs'
+        }
+      };
+      
+      fetch('https://api.themoviedb.org/3/movie/movie_id/similar?language=en-US&page=1', options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
         /*c
         onst options = {
             method: 'GET',
