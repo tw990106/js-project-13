@@ -97,7 +97,7 @@ const options = {
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
 const getMovies = () => {
-    fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?language=ko`, options)
+    fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=ko`, options)
     .then(response => response.json())
     .then(response => {
         movieDetail = response.results;
