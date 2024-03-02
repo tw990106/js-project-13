@@ -180,6 +180,7 @@ const getSimilarMovies = async () => {
         const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/similar?language=ko`, options);
         const data = await response.json();
         return data.results;
+        similarRender();
       } catch (error) {
         console.error('Error fetching similar movies', error);
         throw error;
@@ -205,7 +206,7 @@ const similarRender = async () => {
         console.error('Error rendering similar movies', error);
     }
 }
-similarRender();
+
 
 
 
