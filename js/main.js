@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 let movieList = [];
 let url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1`);
-const IMG_URL = `http://image.tmdb.org/t/p/w1280`;
+const IMG_URL = `http://image.tmdb.org/t/p/w780`;
 
 const getMoviesTrending = async () => {
   url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1`);
@@ -80,7 +80,7 @@ const getMoviesPopular = async () => {
 }
 
 const render = () => {
-  let movieHTML = movieList.map(movie => `<div class="swiper-slide moveup" id="${movie.id}" onclick="window.location.href='detail.html?id=${movie.id}'">
+  let movieHTML = movieList.map(movie => `<div class="swiper-slide" id="${movie.id}" onclick="window.location.href='detail.html?id=${movie.id}'">
   <img
     class="swiper-background-img"
     src="${IMG_URL}${movie.backdrop_path}"/>
