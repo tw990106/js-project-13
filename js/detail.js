@@ -176,26 +176,24 @@ const render = (movieDetail) => {
 
 
 const getSimilarMovies = async () => {
-      
-    const options = {
-        method: 'GET', 
-        headers: {accept: 'application/json',
-        Authorization: `Bearer ${API_KEY}`
-        }
-    };
-      fetch(`https://api.themoviedb.org/3/movie/${movieId}/similar?language=ko`, options)
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
-        /*c
-        onst options = {
-            method: 'GET',
-            headers: { accept: 'application/json' }
-        };
-
-        const response = await fetch(url, options);
+      try {
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/similar?language=ko`, options);
         const data = await response.json();
-        return data.results; */
+        return data.results;
+      } catch (error) {
+        console.error('Error fetching similar movies', error);
+        throw error;
+      }
+
+      
+      /*c
+      onst options = {
+          method: 'GET',
+          headers: { accept: 'application/json' }
+      };
+      const response = await fetch(url, options);
+      const data = await response.json();
+      return data.results; */
  
     
 }
