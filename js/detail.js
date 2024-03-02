@@ -83,16 +83,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // import { sendDetail } from './main.js';
-
+const urlParams = new URLSearchParams(window.location.search);
+const movieId = urlParams.get('id');
 const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDc2OGMxZTdlYWJmYWI5Y2Q5NGFiNzQyMjNhZjg1YyIsInN1YiI6IjY1ZGQ0NjZjMmFjNDk5MDE3ZGNhZGZjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xtPAVAUiJC6-xfEkO9tnDb_UHPDTIo3bJaKtMLNdMkg';
 const options = {
     method: 'GET', 
     headers: {accept: 'application/json'
     }
 };
-const urlParams = new URLSearchParams(window.location.search);
-const movieId = urlParams.get('id');
-let url = `https://api.themoviedb.org/3/movie/${movieId}?language=ko&api_key=${API_KEY}`;
+
+// let url = `https://api.themoviedb.org/3/movie/${movieId}?language=ko&api_key=${API_KEY}`;
 // let movieList = [];
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
@@ -105,6 +105,7 @@ const fetchMovieDetail = async () => {
     } catch (error) {
         console.error('Error fetching movie detail', error);
     }
+}
     /*
     fetch('https://api.themoviedb.org/3/movie/${movieId}?language=ko', options)
     .then(response => response.json())
@@ -121,7 +122,7 @@ const fetchMovieDetail = async () => {
         console.error('Error fetching movie detail', error);
     }
     */
-}
+
 
 // 페이지 로드 후 실행되는 함수
 const renderMovieDetail = async () => {
