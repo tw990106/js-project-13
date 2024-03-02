@@ -118,8 +118,6 @@ const getSimilarMovie = () => {
 }
 
 const render = () => {
-    const director = movieDetail.credits ? movieDetail.credits.crew.find(person => person.job === 'Director') : null;
-    const cast = movieDetail.credits ? movieDetail.credits.cast.map(actor => actor.name).join(', ') : '정보 없음';
     const overviewHTML = movieDetail.overview ? `<p class="summary mb-2">${movieDetail.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>';
 
     const detailHTML = `
@@ -142,8 +140,6 @@ const render = () => {
                 <span>공유</span>
             </span>
         </div>
-        <div class="mv-info">감독<span>${director ? director.name : '정보 없음'}</span></div>
-        <div class="mv-info mb-4">출연<span>${cast}</span></div>
         ${overviewHTML}
         <div class="more-btn main-btn">더보기</div>
         <div class="close main-btn">닫기</div>
