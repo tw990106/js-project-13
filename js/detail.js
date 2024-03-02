@@ -101,8 +101,8 @@ const getMovies = () => {
     .then(response => response.json())
     .then(response => {
         movieDetail = response.results;
-        console.log(movieDetail);
-        // render(movieDetail);
+        // console.log(movieDetail);
+        render(movieDetail);
     })
     .catch(err => console.error(err));
 }
