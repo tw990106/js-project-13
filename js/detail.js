@@ -84,8 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // import { sendDetail } from './main.js';
 const urlParams = new URLSearchParams(window.location.search);
-let movieList = [];
-let movieDetail = [];
 const movieId = urlParams.get('id');
 const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDc2OGMxZTdlYWJmYWI5Y2Q5NGFiNzQyMjNhZjg1YyIsInN1YiI6IjY1ZGQ0NjZjMmFjNDk5MDE3ZGNhZGZjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xtPAVAUiJC6-xfEkO9tnDb_UHPDTIo3bJaKtMLNdMkg';
 const options = {
@@ -153,7 +151,8 @@ const render = () => {
 
 getMovies();
 getSimilarMovie();
-
+let movieList = [];
+let movieDetail = [];
 
 
 
