@@ -270,7 +270,9 @@ button {
 .ko-search-area .ko-search-bottom .ko-search-popular span {
   margin-right: 2.5rem;
 }
-
+.ko-search-area .ko-search-bottom .ko-search-popular .ko-trending-box {
+  overflow: hidden;
+}
 
 .ko-search-time {
   display: inline-block;
@@ -438,6 +440,7 @@ button {
 
 #ko-footer .footer_copyright p {
   line-height: 170%;
+  margin-bottom: 0 !important;
 }
 
 #ko-footer .footer_copyright span {

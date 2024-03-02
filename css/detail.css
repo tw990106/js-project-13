@@ -464,9 +464,9 @@ button{
         padding: 1rem 2rem;
         font-size: 18px;
     }
-    span{
+    /* span{
         display: block;
-    }
+    } */
     .main-btn{
         position: relative;
         cursor: pointer;
