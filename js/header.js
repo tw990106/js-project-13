@@ -48,7 +48,7 @@ const trendingMovies = async () => {
   return data;
 }
 
-trendingMovies()
+
 
 // const getKeyword = async () => {
 //   url = new URL(`https://api.themoviedb.org/3/discover/movie?language=ko&page=1`);
@@ -81,10 +81,13 @@ const renderTrendingList = () => {
     <li class="ko-search-content">
       <a href="#"><span class="red">${i+1}</span>${movieTitle}</a>
       </li>`
-  }
+    }
+   
   document.querySelector('.ko-search-time').textContent = `${today.toLocaleString()} 기준`
+  return
 } 
 
+trendingMovies()
 
 btnProfile.addEventListener('mouseover', function(){
   profileBox.style.display = 'block'
@@ -123,7 +126,7 @@ btnSearch.addEventListener('click', function() {
     dimmed.style.display = 'none'
     toggle = true;
   }
-
+  
 })
 
 
