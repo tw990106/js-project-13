@@ -184,23 +184,17 @@ const getSimilarMovies = async () => {
         console.error('Error fetching similar movies', error);
         throw error;
       }
-
-      
-      /*c
-      onst options = {
-          method: 'GET',
-          headers: { accept: 'application/json' }
-      };
-      const response = await fetch(url, options);
-      const data = await response.json();
-      return data.results; */
- 
-    
 }
+
+const similarDetails = async () => {
+    movieList = await getSimilarMovies();
+    similarRender();
+}
+similarDetails();
 
 const similarRender = async () => {
     try {
-        movieList = await getSimilarMovies();
+        
         const similarHTML = movieList.map(movie => `
             <li class="swiper-slide">
                 <img src="${IMG_URL}${movie.poster_path}" alt="${movie.title}">
@@ -217,6 +211,6 @@ const similarRender = async () => {
     }
 }
 
-similarRender();
+
 
 });
