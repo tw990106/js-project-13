@@ -17,6 +17,7 @@ a {
   font-family: "Noto Sans KR", sans-serif;
   font-size: 1.33rem;
 }
+
 a:hover {
   color: #fff
 }
@@ -39,16 +40,6 @@ button {
   color: #ff153c
 }
 
-#container {
-  height: 500px
-}
-
-.violet {
-  background: violet;
-  height: 100%;
-}
-
- 
  #ko-header {
   width: 100%;
   height: 5.83rem;
