@@ -27,15 +27,16 @@ body{
 }
 /*메인 큰 슬라이드*/
 .auto-swiper-container{
-  margin-top: 100px;
-  max-width: 1778px;
-  max-height: 613.41px;
+  margin-top: 50px;
+  /* max-width: 1778px; */
+  max-height: 70%;
+  width: 90%;
   border-radius: 8px;
 }
 .swiper-text {
   position: absolute;
   bottom: 0;
-  width: 500px;
+  width: 100%;
   margin: 40px;
   height: 260px;
   z-index: 10;
@@ -179,6 +180,11 @@ button{
 
 .recommended-movie{
     margin-bottom: 100px;
+}
+
+.swiper-background-img{
+    width: 100%;
+    max-height: 70%;
 }
 
 
@@ -636,6 +642,7 @@ button{
         /* max-width: 1780px; */
         padding: 0 50px;
         box-sizing: border-box;
+        padding-top: 50px;
     }
     /* detail top */
     

@@ -42,17 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 let movieList = [];
 let url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1`);
-const IMG_URL = `http://image.tmdb.org/t/p/w1280`;
-
-const sendDetail = async (id) => {
-  window.location.href = `detail.html?id=${id}`;
-}
-export { sendDetail };
-
-const sendSearch = async (data) => {
-  return sendSearch;
-}
-export { sendSearch };
+const IMG_URL = `http://image.tmdb.org/t/p/w780`;
 
 const getMoviesTrending = async () => {
   url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1`);
@@ -63,6 +53,7 @@ const getMoviesTrending = async () => {
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDc2OGMxZTdlYWJmYWI5Y2Q5NGFiNzQyMjNhZjg1YyIsInN1YiI6IjY1ZGQ0NjZjMmFjNDk5MDE3ZGNhZGZjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xtPAVAUiJC6-xfEkO9tnDb_UHPDTIo3bJaKtMLNdMkg'
     }
   };
+
   const response = await fetch(url, options);
   const data = await response.json();
   movieList = data.results;
@@ -89,7 +80,7 @@ const getMoviesPopular = async () => {
 }
 
 const render = () => {
-  let movieHTML = movieList.map(movie => `<div class="swiper-slide moveup" id="${movie.id}" onclick="sendDetail("${movie.id}")">
+  let movieHTML = movieList.map(movie => `<div class="swiper-slide" id="${movie.id}" onclick="window.location.href='detail.html?id=${movie.id}'">
   <img
     class="swiper-background-img"
     src="${IMG_URL}${movie.backdrop_path}"/>
@@ -101,7 +92,7 @@ const render = () => {
 }
 
 const renderPopular = () => {
-  let moviePopularHTML = movieList.map(movie => `<li class="swiper-slide moveup">
+  let moviePopularHTML = movieList.map(movie => `<li class="swiper-slide moveup" id="${movie.id}" onclick="window.location.href='detail.html?id=${movie.id}'">
   <img
     src="${IMG_URL}${movie.poster_path}"
     alt="${movie.title}"
@@ -113,13 +104,13 @@ const renderPopular = () => {
 const renderTop = () => {
   let movieTopHTML = ``;
   for (let i = 0; i < movieList.length; i++) {
-    movieTopHTML += `<li class="swiper-slide moveup top-movies-item" id="${movieList[i].id}">
+    movieTopHTML += `<li class="swiper-slide moveup top-movies-item" id="${movieList[i].id}" onclick="window.location.href='detail.html?id=${movieList[i].id}'">
     <a class="rank-num">
       <object data="../img/main_top20/${i+1}.svg" type="image/svg+xml">
         <img src="../img/main_top20/${i+1}.svg" />
       </object>
     </a>
-    <img src="https://image.tving.com/upload/cms/caim/CAIM2100/M000364433.jpg/dims/resize/400" alt="랑종" />
+    <img src="https://image.tving.com/upload/cms/caim/CAIM2100/M000364433.jpg/dims/resize/400" alt="${movieList[i].title}" />
   </li>`;
   }
   document.getElementById('top-movies').innerHTML += movieTopHTML;
