@@ -99,6 +99,18 @@ const options = {
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
 // 상세 정보를 가져오는 함수
+const fetchMovieDetail = () => {
+    fetch('https://api.themoviedb.org/3/movie/${movieId}?language=ko', options)
+    .then(response => response.json())
+    .then(response => {
+            const movieDetail = response.results;
+            render(movieDetail);
+    } 
+            )
+    .catch(err => console.error(err));
+}
+
+/*
 const fetchMovieDetail = async () => {
     try {
         const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=ko`, options);
@@ -108,6 +120,7 @@ const fetchMovieDetail = async () => {
         console.error('Error fetching movie detail', error);
     }
 }
+*/
     /*
     fetch('https://api.themoviedb.org/3/movie/${movieId}?language=ko', options)
     .then(response => response.json())
@@ -127,6 +140,7 @@ const fetchMovieDetail = async () => {
 
 
 // 페이지 로드 후 실행되는 함수
+/*
 const renderMovieDetail = async () => {
     try {
         const movieDetail = await fetchMovieDetail();
@@ -138,7 +152,7 @@ const renderMovieDetail = async () => {
     }
 }
 renderMovieDetail();
-
+*/
 const render = (movieDetail) => {
     const director = movieDetail.credits ? movieDetail.credits.crew.find(person => person.job === 'Director') : null;
     const cast = movieDetail.credits ? movieDetail.credits.cast.map(actor => actor.name).join(', ') : '정보 없음';
@@ -175,7 +189,9 @@ const render = (movieDetail) => {
 }
 
 
-const getSimilarMovies = async () => {
+
+/*
+const getSimilarMovies = () => {
       try {
         const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/similar?language=ko`, options);
         const data = await response.json();
@@ -187,10 +203,20 @@ const getSimilarMovies = async () => {
       }
 
 }
+*/
+const getSimilarMovies = () => {
+    fetch('https://api.themoviedb.org/3/movie/${movieId}/similar?language=ko', options)
+    .then(response => response.json())
+    .then(response => {
+        const movieList = response.result;
+        similarRender(movieList);
+    })
+    .catch(err => console.error(err));
+}
 
-const similarRender = async () => {
+const similarRender = (movieList) => {
     try {
-        movieList = await getSimilarMovies();
+        // movieList = await getSimilarMovies();
         const similarHTML = movieList.map(movie => `
             <li class="swiper-slide">
                 <img src="${IMG_URL}${movie.poster_path}" alt="${movie.title}">
@@ -206,8 +232,9 @@ const similarRender = async () => {
         console.error('Error rendering similar movies', error);
     }
 }
-similarRender();
-
+// similarRender();
+fetchMovieDetail();
+getSimilarMovies();
 
 
 
