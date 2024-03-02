@@ -175,7 +175,7 @@ const render = (movieDetail) => {
 
 
 const getSimilarMovies = async () => {
-    url = new URL(`https://api.themoviedb.org/3/movie/${movieId}/similar?language=ko`);
+    url = new URL(`https://api.themoviedb.org/3/movie/similar?language=ko`);
 
     const options = {
         method: 'GET',
