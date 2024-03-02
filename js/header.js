@@ -26,7 +26,7 @@ const ifNoResults = document.querySelectorAll('.ko-no-results')
 let toggle = true;
 let today = new Date();   
 
-let movieList = [];
+let getMovieList = [];
 let url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1`);
 const IMG_URL = `http://image.tmdb.org/t/p/w500`;
 
@@ -43,7 +43,7 @@ const getMoviesTrending = async () => {
   };
   const response = await fetch(url, options);
   const data = await response.json();
-  movieList = data.results;
+  getMovieList = data.results;
   renderTrendingList()
   return data;
 }
@@ -62,8 +62,8 @@ const getKeyword = async () => {
   const response = await fetch(url, options);
   const data = await response.json();
   // console.log('keyword', data)
-  movieList = data.results;
-  console.log(movieList)
+  getMovieList = data.results;
+  // console.log(getMovieList)
   return data;
 }
 
@@ -73,14 +73,14 @@ const searchMovies = () => {
   const searchTerm = searchInput.value;
   const filteredMovies = movieList.filter(search => search.title.includes(searchTerm));
   // renderMovies(filteredMovies);
-  console.log(searchTerm, filteredMovies)
+  // console.log(searchTerm, filteredMovies)
 };
 
 
 const renderTrendingList = () => {
-  console.log('render', movieList)
+  // console.log('render', movieList)
   for(let i=0; i<10; i++) {
-    let movieTitle = movieList[i].title
+    let movieTitle = getMovieList[i].title
     trendingBox.innerHTML += `
     <li class="ko-search-content">
       <a href="#"><span class="red">${i+1}</span>${movieTitle}</a>
@@ -119,6 +119,7 @@ btnSearch.addEventListener('click', function() {
   } else {
     header.style.background = 'black';
     body.style.overflow = 'visible';
+    body.style.overflowX = 'hidden';
     searchArea.style.display = 'none'
     btnSearchImg.src = '../img/icon_search.svg'
     btnSearchImg.style.height = '100%'
@@ -161,7 +162,10 @@ btnInput.addEventListener('click', search)
 
 deleteAll.addEventListener('click', () => {
   while(searchAllContent.firstChild) {
-    searchAllContent.removeChild(searchAllContent.firstChild)
+    searchAllContent.removeChild(searchAllContent.firstChild);
+    if (recentBox.children.length === 0) {
+      deleteAll.style.display = 'none';
+  }
   }
   searchAllContent.append(ifNoResults[0]);
   deleteAll.style.display = 'none';
