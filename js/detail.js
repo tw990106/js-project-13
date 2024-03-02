@@ -95,18 +95,18 @@ const options = {
     }
 };
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
-
+getMovies();
 const getMovies = () => {
     fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=ko`, options)
     .then(response => response.json())
     .then(response => {
         movieDetail = response;
-        console.log(movieDetail);
+        // console.log(movieDetail);
         render(movieDetail);
     })
     .catch(err => console.error(err));
 }
-
+getSimilarMovie();
 const getSimilarMovie = () => {
     fetch(`https://api.themoviedb.org/3/movie/${movieId}/similar?language=ko&page=1`, options)
     .then(response => response.json())
@@ -150,10 +150,12 @@ const render = () => {
     document.getElementById('detail-main').innerHTML = detailHTML;
 }
 
-const 
+const similarRender = () => {
+    
+}
 
-getMovies();
-getSimilarMovie();
+
+
 
 
 
