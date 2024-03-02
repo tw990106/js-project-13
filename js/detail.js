@@ -166,7 +166,7 @@ const render = (movieDetail) => {
     document.getElementById('detail-main').innerHTML = detailHTML;
 }
 
-/*
+
 const similarRender = () => {
     url = new URL(`https://api.themoviedb.org/3/movie/${movieId}/similar?language=ko&api_key=${API_KEY}`);
 
@@ -184,7 +184,8 @@ const similarRender = () => {
     document.getElementById('similar-list').innerHTML = similarHTML;
 
 }
-*/
+
+similarRender();
 
 
 /*
