@@ -25,6 +25,26 @@ body{
     color: #fff;
     overflow-x: hidden;
 }
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: white;
+  opacity: 1;
+}
+.flex{
+    display: flex;
+}
+
+.mb-4{
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+}
+.rank-num{
+    margin-right: 7.5px;
+}
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
+    display: none;
+}
+
 /*메인 큰 슬라이드*/
 .auto-swiper-container{
   margin-top: 50px;
@@ -55,17 +75,7 @@ body{
   font-size: 1.2em;
   margin-bottom: 0;
 }
-.tving-icon {
-  bottom: 200px;
-
-  width: 78px;
-  height: 21px;
-}
-.tving-item-logo {
-  width: 493px;
-  height: 153.17px;
-}
-
+/*menu button*/
 .menu-group-wrap {
   margin: -62.4px -60.653px -39px -60.653px;
   padding: 62.4px 60.653px 39px 60.653px;
@@ -82,90 +92,15 @@ body{
   overflow: hidden;
   width: 100%;
   border-radius: 4px;
+  border: none;
   background-color: #262626;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 500;
 }
 
-.menu-group img {
-  width: 140px;
-  height: 70px;
-  margin: 0 auto;
-  position: relative;
-  top: 25px;
-}
-.menu-group:hover {
-  margin-bottom: 2em;
-  transition: 0.5s;
-}
-section{
-    margin-bottom: 50px;
-}
-button{
-    box-sizing: border-box;
-}
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-  color: white;
-  opacity: 1;
-}
-.flex{
-    display: flex;
-}
-.subs button{
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    background-color: #fff;
-    font-size: 1.2rem;
-}
-.more-btn{
-    display: inline-block;
-}
-.close{
-    display: none;
-}
-.mb-2{
-    margin-bottom: 1rem;
-}
-.mb-4{
-    margin-bottom: 1.5rem;
-}
-.detail-top{
-    padding-top: 90px;
-    margin-bottom: 3rem;
-}
-.detail-main{
-    border-bottom: 1px solid #707070;
-    padding-bottom: 3rem;
-}
-.subs > span{
-    margin-left: 1.6rem;
-    align-self: center;
-    cursor: pointer;
-}
-.subs svg{
-    width: 42px;
-    height: 42px;
-}
-.subs span *:not(div){
-    display: block;
-    text-align: center;
-}
-.popup{
-    position: fixed;
-    bottom: 3%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(25, 25, 25, .96);
-    color: #fff;
-    padding: 2rem 4rem;
-    border-radius: 5px;
-    z-index: 9999;
-    display: none;
-    font-size: 22px;
-}
-
-.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
-    display: none;
+.menu-group:hover{
+  animation: moveUp 1s ease;
 }
 
 .moveup:hover {
@@ -178,7 +113,7 @@ button{
   }
 }
 
-.recommended-movie{
+.top-movie{
     margin-bottom: 100px;
 }
 
@@ -186,188 +121,45 @@ button{
     width: 100%;
     max-height: 70%;
 }
-
+.similar-movie{
+    padding-left: 60px;
+    box-sizing: border-box;
+}
 
 /* 모바일 */
 @media screen and (max-width: 767px){
-    
-    /* detail top */
-    .detail-top{
-        padding-top: 0;
-    }
-    .detail-bg{
-        position: absolute;
-        z-index: -1;
-        width: 100%;
-        height: 100vh;
-        background: url('../img/detail-bg.jpg') no-repeat;
-        background-size: cover;
-        top: 70%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding-top: 50%;
-    }
-    .detail-bg:before{
-        content: '';
-        background-color: rgba(0, 0, 0, .4);
-        display: block;
-        height: 100%;
-    }
-    .detail-bg:after{
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        display: block;
-        height: 30vh;
-        background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
-    }
-    .detail-main{
-        border-bottom: 1px solid #707070;
-        font-size: 14px;
-        padding-top: 50px;
-        padding-bottom: 3rem;
-    }
-    .detail-txt{
-        align-self: center;
-        /* width: 50%; */
-        padding: 0 20px;
+    .container{
+        padding: 100px 50px 0 0;
         box-sizing: border-box;
     }
-    .detail-txt:not(img){
-        color: #e0e0e0;
-    }
-    .detail-txt > img{
-        width: 300px;
-        height: 60px;
-    }
-    .detail-img{
-        width: 100%;
-        height: 400px;
-        overflow: hidden;
-        margin-bottom: 20px;
-        position: relative;
-    }
-    .detail-img img{
-        width: 100%;
-        height: auto;
-        position: absolute;
-        left: 0;
-        top: 0;
-        display: block;
-        object-fit: cover;
-    }
-    .movie-info span{
-        display: inline-block;
-        align-self: center;
-    }
-    .movie-info span:not(:first-child){
-        margin-left: 0.4em;
-    }
-    .movie-info span:first-child{
-        height: 26px;
-    }
-    .movie-info img{
-        height: 100%;
-    }
-    .summary{
-        max-height: 80px;
-        overflow: hidden;
-        transition: max-height .3s ease;
-    }
-    .info-box{
-        padding: 2px 8px;
-        border: 1px solid #e0e0e0;
-        border-radius: 6px;
-        box-sizing: border-box;
-    }
-    .subs button{
-        padding: 1rem 1.5rem;
-        border: none;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 18px;
-        box-sizing: border-box;
-    }
-    .subs button:hover{
-        scale: 1.04;
-        transition: .3s ease;
-    }
-    .subs > span{
-        margin-left: 1.6rem;
-        align-self: center;
-        cursor: pointer;
-    }
-    .subs svg{
-        width: 42px;
-        height: 42px;
-    }
-    .subs span *{
-        display: block;
-        text-align: center;
-    }
-    .popup{
-        padding: 1rem 4rem;
-        font-size: 16px;
-    }
-    .mv-info span{
-        display: inline-block;
-        margin-left: 1rem;
-    }
-    .main-btn{
-        position: relative;
-        display: inline-block;
-        cursor: pointer;
-    }
-    .main-btn:after{
-        content: '';
-        position: absolute;
-        right: -24px;
-        top: -4px;
-        display: block;
-        width: 24px;
-        height: 24px;
-    }   
-    .more-btn:after{
-        background: url('../img/icon_arrow_down.svg') no-repeat;
-    }
-    .close:after{
-        background: url('https://www.tving.com/img/icon_arrow_top.svg') no-repeat;
-    }
-    
-    /* detail list */
-    .similar-movie{
-        margin-bottom: 50px;
-    }
-    .detail-vod{
-        padding-left: 20px;
-        box-sizing: border-box;
-    }
-    .detail-vod h3{
-        font-weight: 600;
-        font-size: 22px;
-        margin-bottom: 30px;
-    }
-    .vod-list li:not(:first-of-type){
-        margin-left: 20px;
-    }
-    .vod-list li img{
-        width: 246px;
-        height: 350px;
-    
-    }
+
     .swiper-container{
+        padding: 0 15px 15px 15px  ;
         position: relative;
         overflow: hidden;
     }
-    
-    .swiper-container li{
+    .menu-group-wrap{
+        margin: 0 auto;
+    }
+    .menu-group-wrap button{
+        font-size: 1.25rem;
+    }
+    .swiper-container >ul>li{
         max-width: 246px;
         margin-right: 0;
+        width: 200px;
+        height: 304px;
     }
     .swiper-slide img{
         border-radius: 5px;
+
+    }
+    .similar-movie{
+        padding: 0;
+    }
+    .similar-movie img{
+        width: 200px;
+        height: 304px;
     }
     .swiper-button-next, .swiper-button-prev{
         color: #fff;
@@ -376,219 +168,43 @@ button{
     .slide-btn:hover{
         opacity: 1;
     }
-    .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
-        display: none;
-    }
-    .list-txt{
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        background-color: rgba(25,25,25);
-        padding: 20px;
-        box-sizing: border-box;
-        cursor: pointer;
-        height: 100%;
-        transition: .3s ease;
-        border-radius: 5px;
-        z-index: 2;
-        opacity: 0;
-    }
-    .list-txt h5{
-        font-size: 22px;
-        line-height: 30px;
-        font-weight: 600;
-    }
-    .list-txt *:not(h5){
-        color: #e0e0e0;
-        opacity: .8;
-    }
-    .list-txt span{
-        display: block;
-        margin-bottom: 10px;
-    }
-    .swiper-slide:hover .list-txt{
-        opacity: 1;
-    }
-    .list-txt p{
-        word-wrap: break-word;
-        text-overflow: ellipsis;
-        overflow: hidden;
+    .mb-4{
+        font-size: 1.25rem;
     }
 }
 
 /* 태블릿 */
 @media screen and (min-width: 768px) and (max-width: 1279px){
     .container{
-        padding: 0 50px;
+
+        padding: 100px 50px 0 0;
         box-sizing: border-box;
     }
 
-    /* detail top */
-    .detail-bg{
-        position: absolute;
-        z-index: -1;
-        width: 100%;
-        height: 85vh;
-        background: url('../img/detail-bg.jpg') no-repeat;
-        background-size: cover;
-    }
-    .detail-bg:before{
-        content: '';
-        background-color: rgba(0, 0, 0, .4);
-        display: block;
-        height: 100%;
-    }
-    .detail-bg:after{
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        display: block;
-        height: 35vh;
-        background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
-    }
-    .detail-main{
-        display: flex;
-        justify-content: space-between;
-        border-bottom: 1px solid #707070;
-        padding: 3rem 2rem;
-        box-sizing: border-box;
-        font-size: 14px;
-    }
-    .detail-txt{
-        align-self: center;
-        width: 50%;
-    }
-    .detail-txt > div:nth-of-type(3){
-        margin-bottom: 4px;
-    }
-    .detail-txt > div:nth-of-type(3) span{
-        display: inline-block;
-        margin-left: 0.4rem;
-    }
-    .detail-txt:not(img){
-        color: #e0e0e0;
-    }
-    .detail-txt > img{
-        width: 295px;
-        height: 55px;
-    }
-    .detail-img{
-        max-width: 350px;
-        height: 400px;
-        align-self: center;
-        order: 1;
-        margin-left: 2rem;
-    }
-    .detail-img img{
-        width: 100%;
-        height: 100%;
-    }
-    .movie-info span{
-        display: inline-block;
-        align-self: center;
-    }
-    .movie-info span:not(:first-child){
-        margin-left: 0.4em;
-    }
-    .movie-info span:first-child{
-        height: 33px;
-    }
-    .movie-info img{
-        height: 100%;
-    }
-    .summary{
-        max-height: 80px;
-        overflow: hidden;
-        transition: max-height .3s ease;
-    }
-    .info-box{
-        padding: 2px 8px;
-        border: 1px solid #e0e0e0;
-        border-radius: 6px;
-        box-sizing: border-box;
-    }
-    .subs button{
-        padding: 0.2rem 1.2rem;
-        border: none;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 16px;
-    }
-    .subs button:hover{
-        scale: 1.02;
-        transition: .3s ease;
-    }
-    .subs > span{
-        margin-left: 1.6rem;
-        align-self: center;
-        cursor: pointer;
-    }
-    .subs svg{
-        width: 26px;
-        height: 26px;
-    }
-    .subs span *{
-        display: block;
-        text-align: center;
-    }
-    .popup{
-        padding: 1rem 2rem;
-        font-size: 18px;
-    }
-    span{
-        display: block;
-    }
-    .main-btn{
+    .swiper-container{
+        
         position: relative;
-        cursor: pointer;
+        overflow: hidden;
     }
-    .main-btn:after{
-        content: '';
-        position: absolute;
-        right: -26px;
-        top: -5px;
-        display: block;
-        width: 20px;
-        height: 20px;
-    }   
-    .more-btn:after{
-        background: url('../img/icon_arrow_down.svg') no-repeat;
+    .menu-group-wrap{
+        margin: 0 auto;
     }
-    .close:after{
-        background: url('https://www.tving.com/img/icon_arrow_top.svg') no-repeat;
-    }
-    
-    /* detail list */
-    .similar-movie{
-        margin-bottom: 50px;
-    }
-    .detail-vod{
-        padding-left: 2rem;
-        box-sizing: border-box;
-    }
-    .detail-vod h3{
-        font-weight: 600;
-        font-size: 22px;
-        margin-bottom: 30px;
-    }
-    .vod-list li img{
+    .swiper-container >ul>li{
+        max-width: 246px;
+        margin-right: 0;
         width: 246px;
         height: 350px;
     }
-    .swiper-container{
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .swiper-container li{
-        max-width: 246px;
-        margin-right: 0;
-    }
     .swiper-slide img{
         border-radius: 5px;
+
+    }
+    .similar-movie{
+        padding: 0;
+    }
+    .similar-movie img{
+        width: 246px;
+        height: 350px;
     }
     .swiper-button-next, .swiper-button-prev{
         color: #fff;
@@ -597,43 +213,7 @@ button{
     .slide-btn:hover{
         opacity: 1;
     }
-    .list-txt{
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        background-color: rgba(25,25,25);
-        padding: 20px;
-        box-sizing: border-box;
-        cursor: pointer;
-        height: 100%;
-        transition: .3s ease;
-        border-radius: 5px;
-        z-index: 2;
-        opacity: 0;
-    }
-    .list-txt h5{
-        font-size: 20px;
-        line-height: 28px;
-        font-weight: 600;
-    }
-    .list-txt *:not(h5){
-        color: #e0e0e0;
-        opacity: .8;
-        font-size: 14px;
-    }
-    .list-txt span{
-        display: block;
-        margin-bottom: 10px;
-    }
-    .swiper-slide:hover .list-txt{
-        opacity: 1;
-    }
-    .list-txt p{
-        word-wrap: break-word;
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
+ 
 }
 
 /* 데스크탑 */
@@ -644,136 +224,6 @@ button{
         box-sizing: border-box;
         padding-top: 50px;
     }
-    /* detail top */
-    
-    .detail-bg{
-        position: absolute;
-        z-index: -1;
-        width: 100%;
-        height: 85vh;
-        background: url('../img/detail-bg.jpg') no-repeat;
-        background-size: cover;
-    }
-    .detail-bg:before{
-        content: '';
-        background-color: rgba(0, 0, 0, .4);
-        display: block;
-        height: 100%;
-    }
-    .detail-bg:after{
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        display: block;
-        height: 35vh;
-        background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
-    }
-    .detail-main{
-        max-width: 1780px;
-        margin: 0 auto 3rem;
-        padding: 0 50px;
-        display: flex;
-        justify-content: space-between;
-        border-bottom: 1px solid #707070;
-        padding: 5rem 2.5rem;
-        box-sizing: border-box;
-        font-size: 18px;
-        padding-top: 100px;
-    }
-    .detail-txt{
-        align-self: center;
-        width: 45%;
-        color: #e0e0e0;
-    }
-    .detail-txt > img{
-        width: 468px;
-        height: 87px;
-    }
-    .detail-img{
-        max-width: 340px;
-        height: 490px;
-        align-self: center;
-        order: 1;
-    }
-    .detail-img img{
-        width: 100%;
-        height: 100%;
-    }
-    .movie-info span{
-        display: inline-block;
-        align-self: center;
-    }
-    .movie-info span:not(:first-child){
-        margin-left: 0.4em;
-    }
-    .movie-info span:first-child{
-        height: 33px;
-    }
-    .movie-info img{
-        height: 100%;
-    }
-    .summary{
-        max-height: 80px;
-        overflow: hidden;
-    }
-    .info-box{
-        padding: 2px 8px;
-        border: 1px solid #e0e0e0;
-        border-radius: 6px;
-        box-sizing: border-box;
-    }
-    .subs button{
-        padding: 1.5rem 5rem;
-        border: none;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 24px;
-        background-color: #fff;
-        cursor: pointer;
-    }
-    .subs button:hover{
-        scale: 1.04;
-        transition: .3s ease;
-    }
-    .mv-info span{
-        display: inline-block;
-        margin-left: 1rem;
-    }
-    .main-btn{
-        position: relative;
-        cursor: pointer;
-    }
-    .main-btn:after{
-        content: '';
-        position: absolute;
-        right: -30px;
-        top: -1px;
-        display: block;
-        width: 24px;
-        height: 24px;
-    }   
-    .more-btn:after{
-        background: url('../img/icon_arrow_down.svg') no-repeat;
-    }
-    .close:after{
-        background: url('https://www.tving.com/img/icon_arrow_top.svg') no-repeat;
-    }
-    
-    /* detail list */
-    .similar-movie{
-        margin-bottom: 50px;
-    }
-    .detail-vod{
-        padding-left: 60px;
-        box-sizing: border-box;
-    }
-    .detail-vod h3{
-        font-size: 28px;
-        font-weight: 600;
-        margin-bottom: 30px;
-    }
     .vod-list li img{
         width: 246px;
         height: 350px;
@@ -796,42 +246,7 @@ button{
     .slide-btn:hover{
         opacity: 1;
     }
-    .list-txt{
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        background-color: rgba(25,25,25);
-        padding: 20px;
-        box-sizing: border-box;
-        cursor: pointer;
-        height: 100%;
-        transition: .3s ease;
-        border-radius: 5px;
-        z-index: 2;
-        opacity: 0;
-    }
-    .list-txt h5{
-        font-size: 22px;
-        line-height: 30px;
-        font-weight: 600;
-    }
-    .list-txt *:not(h5){
-        color: #e0e0e0;
-        opacity: .8;
-    }
-    .list-txt span{
-        display: block;
-        margin-bottom: 10px;
-    }
-    .swiper-slide:hover .list-txt{
-        opacity: 1;
-    }
-    .list-txt p{
-        word-wrap: break-word;
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
+    
 }
 
 .top-movies-item{
