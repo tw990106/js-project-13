@@ -184,17 +184,12 @@ const getSimilarMovies = async () => {
         console.error('Error fetching similar movies', error);
         throw error;
       }
+
 }
 
-const similarDetails = async () => {
-    movieList = await getSimilarMovies();
-    similarRender(movieList);
-}
-similarDetails();
-
-const similarRender = async (movieList) => {
+const similarRender = async () => {
     try {
-        
+        movieList = await getSimilarMovies();
         const similarHTML = movieList.map(movie => `
             <li class="swiper-slide">
                 <img src="${IMG_URL}${movie.poster_path}" alt="${movie.title}">
@@ -210,6 +205,7 @@ const similarRender = async (movieList) => {
         console.error('Error rendering similar movies', error);
     }
 }
+similarRender();
 
 
 
