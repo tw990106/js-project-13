@@ -142,7 +142,7 @@ function search () {
   recentBox.innerHTML += `
   <li class="ko-search-content">
     <p>${searchHistory}</p>
-    <button type="button" class="ko-delete" onclick="this.parentElement.style.display='none'">
+    <button type="button" class="ko-delete" onclick="this.parentElement.remove()">
       <img src="../img/header_close.svg" alt="delete">
     </button>
   </li>`

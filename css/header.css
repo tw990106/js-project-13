@@ -166,7 +166,7 @@ button {
   background: #191919fc;
   padding: 5.583rem;
   box-sizing: border-box;
-  /* display: none; */
+  display: none;
 }
 
 .ko-search-area .ko-search-box {
