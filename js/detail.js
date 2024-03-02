@@ -105,6 +105,7 @@ const API_KEY = '6f97625a1c75f3ce06489a0e5b0ebda1';
 const urlParams = new URLSearchParams(window.location.search);
 const movieId = urlParams.get('id');
 let url = `https://api.themoviedb.org/3/movie/${movieId}?language=ko&api_key=${API_KEY}`;
+let movieList = [];
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
 // 상세 정보를 가져오는 함수
@@ -112,6 +113,7 @@ const fetchMovieDetail = async () => {
     try {
         const response = await fetch(url);
         const data = await response.json();
+        movieList = data.results;
         return data;
     } catch (error) {
         console.error('Error fetching movie detail', error);
@@ -129,10 +131,10 @@ const renderMovieDetail = async () => {
 }
 renderMovieDetail();
 
+const overviewHTML = movieDetail.overview ? `<p class="summary mb-2">${movieDetail.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>';
 const render = (movieDetail) => {
     const director = movieDetail.credits ? movieDetail.credits.crew.find(person => person.job === 'Director') : null;
     const cast = movieDetail.credits ? movieDetail.credits.cast.map(actor => actor.name).join(', ') : '정보 없음';
-    const overviewHTML = movieDetail.overview ? `<p class="summary mb-2">${movieDetail.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>';
 
     const detailHTML = `
     <div class="detail-img"><img src="${IMG_URL}${movieDetail.poster_path}" alt="포스터"></div>
@@ -165,7 +167,21 @@ const render = (movieDetail) => {
 }
 
 const similarRender = () => {
-    url = new URL(``);
+    url = new URL(`https://api.themoviedb.org/3/movie/${movieId}/similar?language=ko&api_key=${API_KEY}`);
+
+
+    const similarHTML = movieList.map(movieDetail => `
+    <li class="swiper-slide">
+    <img src="https://image.tving.com/upload/cms/caim/CAIM2100/M000248133.jpg/dims/resize/400" alt="사자">
+    <div class="list-txt">
+        <h5>${movieDetail.title}</h5>
+        <span>${movieDetail.genres.map(genre => genre.name).join(', ')}</span>
+        ${overviewHTML}
+    </div>
+</li>
+    `);
+    document.getElementById('similar-list').innerHTML = similarHTML;
+
 }
 
 
