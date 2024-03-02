@@ -1,5 +1,5 @@
 // import {sendDetail} from './main.js';
-    
+document.addEventListener('DOMContentLoaded', function() {  
  // slide
  let mySwiper = new Swiper('.swiper-container', {
      slidesPerView: 'auto',
@@ -186,7 +186,7 @@ const similarRender = async () => {
 
 similarRender();
 
-
+});
 
 
 /*
