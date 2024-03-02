@@ -1,9 +1,4 @@
-// import {getMovies} from './main.js'
-// async function fetchData() {
-//     let data = await getMovies();
-//     console.log(data.results, "ddd");
-// }
-// fetchData();
+
 
 const signUpButton = document.getElementById("sign-up-button")
 const loginButton = document.getElementById("login-button")
@@ -67,7 +62,6 @@ window.addEventListener('scroll',()=>{
 
     let scroll = window.scrollY
 
-    console.log(scroll)
     if(isMobile){
         scrollAnime(bgAni,1,0,800,scroll)
         scrollAnime(textAni2,1,0,1000,scroll)
