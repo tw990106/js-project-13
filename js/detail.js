@@ -85,10 +85,11 @@ document.addEventListener('DOMContentLoaded', function() {
 // import { sendDetail } from './main.js';
 const urlParams = new URLSearchParams(window.location.search);
 const movieId = urlParams.get('id');
-const API_KEY = '6f97625a1c75f3ce06489a0e5b0ebda1';
+const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDc2OGMxZTdlYWJmYWI5Y2Q5NGFiNzQyMjNhZjg1YyIsInN1YiI6IjY1ZGQ0NjZjMmFjNDk5MDE3ZGNhZGZjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xtPAVAUiJC6-xfEkO9tnDb_UHPDTIo3bJaKtMLNdMkg';
 const options = {
     method: 'GET', 
-    headers: {accept: 'application/json'
+    headers: {accept: 'application/json',
+    Authorization: `Bearer ${API_KEY}`
     }
 };
 
@@ -99,7 +100,7 @@ const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 // 상세 정보를 가져오는 함수
 const fetchMovieDetail = async () => {
     try {
-        const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=ko&api_key=${API_KEY}`, options);
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=ko`, options);
         const data = await response.json();
         return data;
     } catch (error) {
