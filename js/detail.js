@@ -147,6 +147,49 @@ const render = (movieDetail) => {
     document.getElementById('detail-main').innerHTML = detailHTML;
 }
 
+
+const getSimilarMovies = async () => {
+    try {
+        url = new URL(`https://api.themoviedb.org/3/movie/${movieId}/similar?language=ko&api_key=${API_KEY}`);
+        const options = {
+            method: 'GET',
+            headers: { accept: 'application/json' }
+        };
+
+        const response = await fetch(url, options);
+        const data = await response.json();
+        return data.results;
+    } catch (error) {
+        console.error('Error fetching similar movies', error);
+        return [];
+    }
+}
+
+const similarRender = async () => {
+    try {
+        const movieList = await getSimilarMovies();
+        const similarHTML = movieList.map(movie => `
+            <li class="swiper-slide">
+                <img src="${IMG_URL}${movie.poster_path}" alt="${movie.title}">
+                <div class="list-txt">
+                    <h5>${movie.title}</h5>
+                    <span>${movie.genres.map(genre => genre.name).join(', ')}</span>
+                    ${movie.overview ? `<p class="summary mb-2">${movie.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>'}
+                </div>
+            </li>
+        `);
+        document.getElementById('similar-list').innerHTML = similarHTML.join('');
+    } catch (error) {
+        console.error('Error rendering similar movies', error);
+    }
+}
+
+similarRender();
+
+
+
+
+/*
 // 비슷한 영화 목록
 const getSimilarMovies = async () => {
     url = new URL(`https://api.themoviedb.org/3/movie/${movieId}/similar?language=ko&api_key=${API_KEY}`);
@@ -190,7 +233,7 @@ const similarRender = async () => {
     
 // similarRender();
 getSimilarMovies();
-
+*/
 /*
 import {sendDetail} from './main.js';
 
