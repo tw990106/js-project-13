@@ -162,7 +162,7 @@ const fetchSimilarMovies = async () => {
 const similarRender = async () => {
     try{
         const similarMovies = await fetchSimilarMovies();
-        if (similarMovies.length > 0){
+        if (similarMovies && similarMovies.length > 0){
             const similarHTML = similarMovies.map(movieDetail => `
                 <li class="swiper-slide">
                     <img src="${IMG_URL}${movieDetail.poster_path}" alt="${movieDetail.title}">
