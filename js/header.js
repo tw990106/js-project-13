@@ -118,7 +118,8 @@ btnSearch.addEventListener('click', function() {
     toggle = false
   } else {
     header.style.background = 'black';
-    // body.style.overflow = 'visible';
+    body.style.overflow = 'visible';
+    body.style.overflowX = 'hidden';
     searchArea.style.display = 'none'
     btnSearchImg.src = '../img/icon_search.svg'
     btnSearchImg.style.height = '100%'
