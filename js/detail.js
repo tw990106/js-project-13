@@ -147,23 +147,35 @@ const render = (movieDetail) => {
     document.getElementById('detail-main').innerHTML = detailHTML;
 }
 
+// 비슷한 영화 목록
+const fetchSimilarMovies = async () => {
+    try {
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/similar?language=ko&api_key=${API_KEY}`);
+        const data = await response.json();
+        return data.result;
+    }catch(error) {
+        console.error('Error fetching similar movies', error);
+        return [];
+    }
+}
 
-const similarRender = () => {
-    url = new URL(`https://api.themoviedb.org/3/movie/${movieId}/similar?language=ko&api_key=${API_KEY}`);
-
-
-    const similarHTML = movieList.map(movieDetail => `
-    <li class="swiper-slide">
-    <img src="https://image.tving.com/upload/cms/caim/CAIM2100/M000248133.jpg/dims/resize/400" alt="사자">
-    <div class="list-txt">
-        <h5>${movieDetail.title}</h5>
-        <span>${movieDetail.genres.map(genre => genre.name).join(', ')}</span>
-        ${overviewHTML}
-    </div>
-</li>
-    `);
-    document.getElementById('similar-list').innerHTML = similarHTML;
-
+const similarRender = async () => {
+    try{
+        const similarMovies = await fetchSimilarMovies();
+        const similarHTML = similarMovies.map(movie => `
+        <li class="swiper-slide">
+                <img src="${IMG_URL}${movie.poster_path}" alt="${movie.title}">
+                <div class="list-txt">
+                    <h5>${movie.title}</h5>
+                    <span>${movie.genres.map(genre => genre.name).join(', ')}</span>
+                    ${movie.overview ? `<p class="summary mb-2">${movie.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>'}
+                </div>
+            </li>
+        `).join('');
+        document.getElementById('similar-list').innerHTML = similarHTML;    
+    } catch(error){
+        console.error('Error rendering similar movies', error);
+    }
 }
 
 similarRender();
