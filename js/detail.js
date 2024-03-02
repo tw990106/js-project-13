@@ -162,17 +162,32 @@ const fetchSimilarMovies = async () => {
 const similarRender = async () => {
     try{
         const similarMovies = await fetchSimilarMovies();
-        const similarHTML = similarMovies.map(movie => `
-        <li class="swiper-slide">
-                <img src="${IMG_URL}${movie.poster_path}" alt="${movie.title}">
-                <div class="list-txt">
-                    <h5>${movie.title}</h5>
-                    <span>${movie.genres.map(genre => genre.name).join(', ')}</span>
-                    ${movie.overview ? `<p class="summary mb-2">${movie.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>'}
-                </div>
-            </li>
-        `).join('');
-        document.getElementById('similar-list').innerHTML = similarHTML;    
+        if (similarMovies.length > 0){
+            const similarHTML = similarMovies.map(movieDetail => `
+                <li class="swiper-slide">
+                    <img src="${IMG_URL}${movieDetail.poster_path}" alt="${movieDetail.title}">
+                    <div class="list-txt">
+                        <h5>${movieDetail.title}</h5>
+                        <span>${movieDetail.genres.map(genre => genre.name).join(', ')}</span>
+                        ${movieDetail.overview ? `<p class="summary mb-2">${movieDetail.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>'}
+                    </div>
+                </li>
+            `);
+            document.getElementById('similar-list').innerHTML = similarHTML.join('');
+        }else {
+            console.log('No similar movies found.');
+        }
+        // const similarHTML = similarMovies.map(movie => `
+        // <li class="swiper-slide">
+        //         <img src="${IMG_URL}${movie.poster_path}" alt="${movie.title}">
+        //         <div class="list-txt">
+        //             <h5>${movie.title}</h5>
+        //             <span>${movie.genres.map(genre => genre.name).join(', ')}</span>
+        //             ${movie.overview ? `<p class="summary mb-2">${movie.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>'}
+        //         </div>
+        //     </li>
+        // `).join('');
+        // document.getElementById('similar-list').innerHTML = similarHTML;    
     } catch(error){
         console.error('Error rendering similar movies', error);
     }
