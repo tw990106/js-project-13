@@ -158,8 +158,7 @@ const getSimilarMovies = async () => {
 
         const response = await fetch(url, options);
         const data = await response.json();
-        // return data.results;
-        console.log(data.result);
+        return data.results;
     } catch (error) {
         console.error('Error fetching similar movies', error);
         return [];
