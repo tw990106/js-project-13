@@ -99,10 +99,11 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-import { sendDetail } from './main.js';
+// import { sendDetail } from './main.js';
 
 const API_KEY = '6f97625a1c75f3ce06489a0e5b0ebda1';
-const movieId = 550; // 임의의 ID
+const urlParams = new URLSearchParams(window.location.search);
+const movieId = urlParams.get('id');
 let url = `https://api.themoviedb.org/3/movie/${movieId}?language=ko&api_key=${API_KEY}`;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
@@ -172,8 +173,7 @@ import {sendDetail} from './main.js';
 const API_KEY = `6f97625a1c75f3ce06489a0e5b0ebda1`;
 let movieList = [];
 // let movieId = 550;
-const urlParams = new URLSearchParams(window.location.search);
-const movieId = urlParams.get('id');
+
 let url = new URL(`https://api.themoviedb.org/3/movie/${movieId}?language=ko&api_key=${API_KEY}`);
 let IMG_URL = `https://image.tmdb.org/t/p/w500`;
 
