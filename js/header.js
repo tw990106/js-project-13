@@ -32,7 +32,7 @@ const IMG_URL = `http://image.tmdb.org/t/p/w500`;
 
 
 
-const getMoviesTrending = async () => {
+const trendingMovies = async () => {
   url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1`);
   const options = {
       method: 'GET',
@@ -48,33 +48,29 @@ const getMoviesTrending = async () => {
   return data;
 }
 
-getMoviesTrending()
+trendingMovies()
 
-const getKeyword = async () => {
-  url = new URL(`https://api.themoviedb.org/3/discover/movie?language=ko&page=1`);
-  const options = {
-      method: 'GET',
-      headers: {
-          accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDc2OGMxZTdlYWJmYWI5Y2Q5NGFiNzQyMjNhZjg1YyIsInN1YiI6IjY1ZGQ0NjZjMmFjNDk5MDE3ZGNhZGZjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xtPAVAUiJC6-xfEkO9tnDb_UHPDTIo3bJaKtMLNdMkg'
-      }
-  };
-  const response = await fetch(url, options);
-  const data = await response.json();
-  // console.log('keyword', data)
-  getMovieList = data.results;
-  // console.log(getMovieList)
-  return data;
-}
+// const getKeyword = async () => {
+//   url = new URL(`https://api.themoviedb.org/3/discover/movie?language=ko&page=1`);
+//   const options = {
+//       method: 'GET',
+//       headers: {
+//           accept: 'application/json',
+//           Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDc2OGMxZTdlYWJmYWI5Y2Q5NGFiNzQyMjNhZjg1YyIsInN1YiI6IjY1ZGQ0NjZjMmFjNDk5MDE3ZGNhZGZjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xtPAVAUiJC6-xfEkO9tnDb_UHPDTIo3bJaKtMLNdMkg'
+//       }
+//   };
+//   const response = await fetch(url, options);
+//   const data = await response.json();
+//   getMovieList = data.results;
+//   return data;
+// }
 
-getKeyword()
+// getKeyword()
 
-const searchMovies = () => {
-  const searchTerm = searchInput.value;
-  const filteredMovies = movieList.filter(search => search.title.includes(searchTerm));
-  // renderMovies(filteredMovies);
-  // console.log(searchTerm, filteredMovies)
-};
+// const searchMovies = () => {
+//   const searchTerm = searchInput.value;
+//   const filteredMovies = movieList.filter(search => search.title.includes(searchTerm));
+// };
 
 
 const renderTrendingList = () => {
@@ -163,9 +159,9 @@ btnInput.addEventListener('click', search)
 deleteAll.addEventListener('click', () => {
   while(searchAllContent.firstChild) {
     searchAllContent.removeChild(searchAllContent.firstChild);
-    if (recentBox.children.length === 0) {
-      deleteAll.style.display = 'none';
-  }
+    // if (recentBox.children.length === 0) {
+    //   deleteAll.style.display = 'none';
+    // }
   }
   searchAllContent.append(ifNoResults[0]);
   deleteAll.style.display = 'none';
