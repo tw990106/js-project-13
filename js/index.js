@@ -77,7 +77,7 @@ window.addEventListener('scroll',()=>{
     scrollAnime(bgAni5,2,1500,4000,scroll)
     scrollAnime(textAni5,1,1600,4500,scroll)
     scrollAnime(textAniSub5,2,1600,4500,scroll)
-    scrollAnime(bgAni6,2,1700,4500,scroll)
+    scrollAnime(bgAni6,2,1700,5500,scroll)
 })
 
 const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDc2OGMxZTdlYWJmYWI5Y2Q5NGFiNzQyMjNhZjg1YyIsInN1YiI6IjY1ZGQ0NjZjMmFjNDk5MDE3ZGNhZGZjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xtPAVAUiJC6-xfEkO9tnDb_UHPDTIo3bJaKtMLNdMkg';
@@ -107,7 +107,6 @@ const getPopularMovie=()=>{
     .then(response => {
         const PopularMovies = response.results;
         renderPopularMovie(PopularMovies)
-        console.log(PopularMovies,"aaa")
     })
     .catch(err => console.error(err));
 }
