@@ -100,7 +100,7 @@ const getMovies = () => {
     fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=ko`, options)
     .then(response => response.json())
     .then(response => {
-        movieDetail = response.results;
+        movieDetail = response;
         // console.log(movieDetail);
         render(movieDetail);
     })
@@ -118,6 +118,8 @@ const getSimilarMovie = () => {
 }
 
 const render = () => {
+    // const director = movieDetail.credits ? movieDetail.credits.crew.find(person => person.job === 'Director') : null;
+    // const cast = movieDetail.credits ? movieDetail.credits.cast.map(actor => actor.name).join(', ') : '정보 없음';
     const overviewHTML = movieDetail.overview ? `<p class="summary mb-2">${movieDetail.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>';
 
     const detailHTML = `
