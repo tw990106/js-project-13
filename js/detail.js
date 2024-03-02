@@ -98,10 +98,19 @@ const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
 // 상세 정보를 가져오는 함수
 const fetchMovieDetail = async () => {
+    try {
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=ko&api_key=${API_KEY}`, options);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching movie detail', error);
+    }
+    /*
     fetch('https://api.themoviedb.org/3/movie/${movieId}?language=ko', options)
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(err => console.error(err));
+    */
     /*
     try {
         const response = await fetch(url);
