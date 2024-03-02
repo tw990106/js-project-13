@@ -188,11 +188,11 @@ const getSimilarMovies = async () => {
 
 const similarDetails = async () => {
     movieList = await getSimilarMovies();
-    similarRender();
+    similarRender(movieList);
 }
 similarDetails();
 
-const similarRender = async () => {
+const similarRender = async (movieList) => {
     try {
         
         const similarHTML = movieList.map(movie => `
