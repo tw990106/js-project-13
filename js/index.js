@@ -77,5 +77,83 @@ window.addEventListener('scroll',()=>{
     scrollAnime(bgAni5,2,1500,4000,scroll)
     scrollAnime(textAni5,1,1600,4500,scroll)
     scrollAnime(textAniSub5,2,1600,4500,scroll)
-    scrollAnime(bgAni6,2,1700,4500,scroll)
+    scrollAnime(bgAni6,2,1700,5500,scroll)
 })
+
+const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDc2OGMxZTdlYWJmYWI5Y2Q5NGFiNzQyMjNhZjg1YyIsInN1YiI6IjY1ZGQ0NjZjMmFjNDk5MDE3ZGNhZGZjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xtPAVAUiJC6-xfEkO9tnDb_UHPDTIo3bJaKtMLNdMkg';
+
+const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${API_KEY}`
+    }
+  };
+  
+const getTopMovies=()=>{
+    fetch('https://api.themoviedb.org/3/movie/top_rated?language=ko-US&page=1', options)
+    .then(response => response.json())
+    .then(response => {
+        const TopMovies = response.results;
+        renderTopMovie(TopMovies)
+        renderMovie2(TopMovies)
+    })
+    .catch(err => console.error(err));
+}
+
+const getPopularMovie=()=>{
+    fetch('https://api.themoviedb.org/3/movie/popular?language=ko-US&page=1', options)
+    .then(response => response.json())
+    .then(response => {
+        const PopularMovies = response.results;
+        renderPopularMovie(PopularMovies)
+    })
+    .catch(err => console.error(err));
+}
+
+
+const renderTopMovie=(list)=>{
+    const SunImg1 = document.querySelector(".imgURL1")
+    const SunImg2 = document.querySelector(".imgURL2")
+    const SunImg3 = document.querySelector(".imgURL3")
+    const SunImg4 = document.querySelector(".imgURL4")
+    
+    const topMovie3 = list.slice(0,3)
+
+    topMovie3.forEach((item, index) => {
+        const imgURL = item.poster_path
+        if(index ===0){
+            SunImg1.src = `https://image.tmdb.org/t/p/w533_and_h300_bestv2${imgURL}`
+            SunImg4.src = `https://media.themoviedb.org/t/p/w220_and_h330_face${imgURL}`
+        } else if(index ===1 ){
+            SunImg2.src = `https://image.tmdb.org/t/p/w533_and_h300_bestv2${imgURL}`
+        } else if(index ===2){
+            SunImg3.src = `https://image.tmdb.org/t/p/w533_and_h300_bestv2${imgURL}`
+        }
+    });
+}
+
+const renderPopularMovie=(list)=>{
+    const imgContainer = document.querySelector('.imgs');
+    imgContainer.innerHTML = list.map(item => `                
+        <img 
+        class="img-fluid rounded"
+        src="https://image.tmdb.org/t/p/w533_and_h300_bestv2${item.poster_path}"
+        >`).join('')
+}
+
+const renderMovie2=(list)=>{
+    const imgContainer = document.querySelector('.imgs2');
+    imgContainer.innerHTML = list.map(item => `                
+        <img 
+        class="img-fluid rounded"
+        src="https://image.tmdb.org/t/p/w533_and_h300_bestv2${item.poster_path}"
+        >`).join('')
+}
+
+
+getTopMovies()
+getPopularMovie()
+
+let movieTop = []
+let PopularMovie =[]
