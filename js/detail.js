@@ -59,7 +59,7 @@ const getSimilarMovie = () => {
     fetch(`https://api.themoviedb.org/3/movie/${movieId}/similar?language=ko&page=1`, options)
     .then(response => response.json())
     .then(response => {
-        movieList = response.results;
+        movieList = response;
         similarRender(movieList);
     })
     .catch(err => console.error(err));
