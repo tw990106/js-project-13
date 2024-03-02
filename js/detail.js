@@ -149,7 +149,7 @@ const render = (movieDetail) => {
 
 // 비슷한 영화 목록
 const getSimilarMovies = async () => {
-    url = new URL(`https://api.themoviedb.org/3/movie/${movieId}/similar?language=ko&page=1`);
+    url = new URL(`https://api.themoviedb.org/3/movie/${movieId}/similar?language=ko&api_key=${API_KEY}`);
     const options = {
         method: 'GET',
         headers: {accept: 'application/json'
