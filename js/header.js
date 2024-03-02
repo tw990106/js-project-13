@@ -20,6 +20,9 @@ const body = document.querySelector('body')
 const searchInput = document.getElementById('search_area')
 const recentBox = document.querySelector('.ko-search-data')
 const trendingBox = document.querySelector('.ko-trending-box')
+const deleteAll = document.querySelector('.ko-delete-all')
+const searchAllContent = document.querySelector('.ko-search-data')
+const ifNoResults = document.querySelectorAll('.ko-no-results')
 let toggle = true;
 let today = new Date();   
 
@@ -74,10 +77,6 @@ const searchMovies = () => {
 };
 
 
-
-console.log(today.toLocaleString())
- 
-
 const renderTrendingList = () => {
   console.log('render', movieList)
   for(let i=0; i<10; i++) {
@@ -91,9 +90,6 @@ const renderTrendingList = () => {
 } 
 
 
-
-
-console.log(btnSearchImg)
 btnProfile.addEventListener('mouseover', function(){
   profileBox.style.display = 'block'
 })
@@ -137,15 +133,19 @@ btnSearch.addEventListener('click', function() {
 // 최근 검색어
 
 function search () {
-  // searchMovies()
   let searchHistory = searchInput.value;
-  recentBox.innerHTML += `
-  <li class="ko-search-content">
-    <p>${searchHistory}</p>
-    <button type="button" class="ko-delete" onclick="this.parentElement.remove()">
-      <img src="../img/header_close.svg" alt="delete">
-    </button>
-  </li>`
+  if(searchInput.value == '') {
+    alert('검색어를 입력해주세요.');
+    searchInput.focus()
+  } else {
+    recentBox.innerHTML += `
+    <li class="ko-search-content">
+      <p>${searchHistory}</p>
+      <button type="button" class="ko-delete" onclick="this.parentElement.remove()">
+        <img src="../img/header_close.svg" alt="delete">
+      </button>
+    </li>`
+  }
   searchInput.value =''
 }
 
@@ -153,10 +153,33 @@ searchInput.addEventListener('keydown', ()=> {
   if (window.event.keyCode == 13) {
     search()
   }
+  deleteAll.style.display = 'block';
+  ifNoResults[0].remove();
 })
 
 btnInput.addEventListener('click', search)
 
+deleteAll.addEventListener('click', () => {
+  while(searchAllContent.firstChild) {
+    searchAllContent.removeChild(searchAllContent.firstChild)
+  }
+  searchAllContent.append(ifNoResults[0]);
+  deleteAll.style.display = 'none';
+})
+
+// 스크롤 이벤트
 
 
-//검색어 입력
+window.addEventListener('scroll', function () {
+  let st = this.scrollY
+
+  console.log(st)
+
+  if (st > 1) {
+    header.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0))';
+    header.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+  } else {
+    header.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0))';
+    header.style.backgroundColor = 'rgba(0, 0, 0, 1)';
+  }
+});
