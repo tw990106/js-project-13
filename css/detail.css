@@ -19,7 +19,7 @@ li{
     list-style: none;
 }
 body{
-    background-color: black;
+    background-color: black !important;
     color: #fff;
     overflow-x: hidden;
 }
@@ -119,6 +119,12 @@ button{
     overflow: hidden;
     text-overflow: ellipsis;
     /* white-space: nowrap; */
+}
+.detail-vod > h3{
+    color: #fff !important;
+}
+.list-txt > h5{
+    color: #fff !important;
 }
 
 /* 모바일 */
