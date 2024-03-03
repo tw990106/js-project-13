@@ -142,9 +142,10 @@ body {
 
 /* 모바일 */
 @media screen and (max-width: 767px) {
-    .container {
-        padding-top: 100px;
+    .container-fluid {
+        padding-top: 10px;
         box-sizing: border-box;
+        margin: 0 3%;
     }
 
 
@@ -154,12 +155,38 @@ body {
         overflow: hidden;
     }
 
+    .swiper-text {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        margin: 40px;
+        height: 200px;
+        z-index: 10;
+    }
+
+    .swiper-text h4 {
+        color: white;
+        font-weight: 700;
+        margin-top: initial;
+        font-size: 2em;
+        margin-bottom: 0;
+    }
+
+    .swiper-text p {
+        color: white;
+        font-weight: 700;
+        margin-top: initial;
+        font-size: 1.3em;
+        margin-bottom: 0;
+    }
+
     .mb-4 {
-        padding: 20px;
+        padding: 0 20px;
     }
 
     .menu-group-wrap {
-        margin: 0 auto;
+        padding: 0;
+        margin: 0 3%;
     }
 
     .menu-group-wrap button {
@@ -199,6 +226,10 @@ body {
 
     .mb-4 {
         font-size: 1.25rem;
+    }
+
+    .ul:not(:first-of-type){
+        padding-left: 0 !important
     }
 }
 
@@ -275,11 +306,13 @@ body {
     .swiper-container {
         position: relative;
     }
- 
-    #popular-movies li ,#upcoming-movies li{
+
+    #popular-movies li,
+    #upcoming-movies li {
         max-width: 246px;
     }
-    #upcoming{
+
+    #upcoming {
         padding-bottom: 60px;
     }
 
