@@ -1,4 +1,4 @@
-body {
+.font {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -50,13 +50,15 @@ body {
     width: 50%;
 }
 
-.navbar{
+.sun-navbar{
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     transition: background-color 0.5s ease;
+    padding: 0.5rem 1rem;
 }
+
 .nav-bg{
     background-color: black;
 }
@@ -78,8 +80,8 @@ body {
 }
 
 .sun-login{
-    border: 1px solid white;
-    background: black;
+    border: 1px solid white !important;
+    background: black !important;
 }
 
 .sun-img-origin-1{
@@ -159,24 +161,24 @@ iframe{
     height: 100%;
 }
 
-  .accordion-item {
+.accordion-item-custom {
     background-color: transparent !important;
-    border: none;
+    border: none !important;
 }
 
-.accordion-button {
+.accordion-button-custom {
     background-color: transparent !important;
     color: white !important;
 }
 
-.accordion-button:not(.collapsed) {
-    background-color: transparent;
-    box-shadow: none;
+.accordion-button-custom:not(.collapsed) {
+    background-color: transparent !important;
+    box-shadow: none !important;
 }
 
-.accordion-button.collapsed {
-    background-color: transparent;
-    box-shadow: none;
+.accordion-button-custom.collapsed {
+    background-color: transparent !important;
+    box-shadow: none !important;
 }
 
 .bg-ani{
@@ -244,19 +246,19 @@ iframe{
     .sun-logosize{
         width: 5rem;
     }
-    h1{
+    .h1m{
         font-size: 1.1em;
     }
-    h2{
+    .h2m{
         font-size: 1em;
     }
-    h3{
+    .h3m{
         font-size: .8em;
     }
-    h4{
+    .h4m{
         font-size: .7em;
     }
-    h5{
+    .h5m{
         font-size: .4em;
     }
     .padding1{
@@ -268,7 +270,7 @@ iframe{
     .vh-85m{
         height: 50vh;
     }
-    p{
+    .pm{
         font-size: .6em;
     }
 

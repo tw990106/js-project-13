@@ -53,7 +53,7 @@ const scrollAnime = (className,duration,scrollStart,scrollEnd,scroll)=>{
 
 window.addEventListener('scroll',()=>{
 
-    let nav = document.querySelector('.navbar')
+    let nav = document.querySelector('.sun-navbar')
     if(window.scrollY > 0){
         nav.classList.add('nav-bg')
     }else{
