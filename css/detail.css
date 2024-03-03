@@ -250,7 +250,7 @@ button{
     }
     .main-btn{
         position: relative;
-        display: none;
+        display: inline-block;
         cursor: pointer;
     }
     .main-btn:after{
