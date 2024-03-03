@@ -277,6 +277,11 @@ body {
     }
 
 
+
+    .swiper-background-img {
+        margin-left: 3em;
+    }
+
     .vod-list li img {
         width: 246px;
         height: 350px;
