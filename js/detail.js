@@ -118,7 +118,7 @@ const similarRender = (movieList) => {
         <img src="${IMG_URL}${movie.poster_path}" alt="${movie.title}">
         <div class="list-txt">
             <h5>${movie.title}</h5>
-            ${movie.overview ? `<p class="summary mb-2">${movie.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>'}
+            ${movie.overview ? `<p class="ellipsis mb-2">${movie.overview}</p>` : '<p class="ellipsis mb-2">줄거리가 없습니다.</p>'}
         </div>
     </li>`
     }
