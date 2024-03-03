@@ -94,6 +94,9 @@ button{
     display: none;
     font-size: 22px;
 }
+.list-txt h5{
+    margin-bottom: 20px;
+}
 
 .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
     display: none;
