@@ -124,7 +124,13 @@ const similarRender = (movieList) => {
     }
     document.getElementById('similar-list').innerHTML += similarHTML;
 
-    let elements = document.querySelector('ellipsis');
+    
+}
+
+
+
+
+let elements = document.querySelector('ellipsis');
     for (let i=0; i<elements.length; i++){
     let element = elements[i];
     let text = element.innerText;
@@ -134,12 +140,6 @@ const similarRender = (movieList) => {
         element.innerText = trimmedText;
     }
 }
-}
-
-
-
-
-
 
 
 
