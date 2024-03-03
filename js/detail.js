@@ -141,9 +141,9 @@ for (let i=0; i<elements.length; i++){
 }
 
 
-let summary = document.querySelector('.summary');
-let moreBtn = document.querySelector('.more-btn');
-let closeBtn = document.querySelector('.close');
+let summary = document.getElementsByClassName('.summary');
+let moreBtn = document.getElementsByClassName('.more-btn');
+let closeBtn = document.getElementsByClassName('.close');
 moreBtn.addEventListener('click', function(){
     summary.style.maxHeight = 'none';
     moreBtn.style.display = 'none';
