@@ -15,7 +15,7 @@ a {
   text-decoration: none;
   color: #d9d9d9;
   font-family: "Noto Sans KR", sans-serif;
-  font-size: 1.33rem;
+  font-size: 1.3rem;
 }
 
 a:hover {
@@ -42,9 +42,12 @@ button {
 
  #ko-header {
   width: 100%;
-  height: 5.83rem;
+  /* height: 5.83rem; */
+  height: 5.65vw;
+  max-height: 82px;
   display: flex;
-  padding: 0 4rem 0 3rem;
+  /* padding: 0 4rem 0 3rem; */
+  padding: 0 3vw 0 2vw;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -87,7 +90,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: 2vw;
-  font-size: 1.7rem;
+  font-size: 2rem;
  }
 
 
@@ -102,8 +105,10 @@ button {
 }
 
 .ko-header-right li {
-  height: 2.33rem;
-  width: 2.33rem;
+  height: 2.2vw;
+  max-height: 41px;
+  width: 2.2vw;
+  max-width: 41px;
 }
 
 .ko-header-right .ko-btn-search button {
@@ -154,12 +159,13 @@ button {
   left:0;
   top: 0;
   width: 100%;
-  height: 60rem;
-  max-height: 100%;
+  height: 58vw;
+  /* height: 60rem; */
+  max-height: 900px;
   background: #191919fc;
-  padding: 5.583rem;
+  padding: 5.583em;
   box-sizing: border-box;
-  display: none;
+  /* display: none; */
 }
 
 .ko-search-area .ko-search-box {
@@ -173,7 +179,8 @@ button {
 
 .ko-search-area .ko-search-box input {
   height: 100%;
-  width: calc(100% - 3rem);
+  /* width: calc(100% - 3rem); */
+  width: calc(100% - 4vw);
   outline: none;
   border-width: 0px;
   background: transparent;
@@ -211,17 +218,17 @@ button {
   display: flex;
   align-items: center;
   gap: 1.17em;
-  margin-bottom: 1.67rem;
+  margin-bottom: 1.62vw;
 }
 
 .ko-search-area .ko-search-bottom .ko-recent-title {
-  font-size: 1.67rem;
+  font-size: 1.8rem;
   font-weight: 700;
   display: block;
 }
 
 .ko-search-area .ko-search-bottom .ko-delete-all {
-  font-size: 1.18rem;
+  font-size: 1.3rem;
   color: gray;
   height: 100%;
   margin-top: .5em;
@@ -241,8 +248,8 @@ button {
 
 
 .ko-search-area .ko-search-bottom .ko-search-content {
-  margin: .75rem 0;
-  font-size: 1.335rem;
+  margin: .6em 0;
+  font-size: 1.3rem;
   color: #dedede;
   opacity: 0.7;
   line-height: 1.5;
@@ -251,11 +258,12 @@ button {
 .ko-search-data .ko-search-content {
   display: flex;
   align-items: center;
-  gap: 1rem
+  gap: .5em;
 }
 
 .ko-search-area .ko-search-bottom .ko-search-content button {
-  height: 2rem;
+  height: 1.5em;
+  margin-top: .2em
 }
 
 .ko-search-area .ko-search-bottom .ko-search-content button img {
@@ -265,10 +273,18 @@ button {
 .ko-search-area .ko-search-bottom .ko-search-popular {
   padding-left: 3.35em;
   border-left: 1px solid #2e2e2e;
+
+}
+
+.ko-search-area .ko-search-bottom .ko-search-popular .ko-search-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 1.62vw;
 }
 
 .ko-search-area .ko-search-bottom .ko-search-popular span {
-  margin-right: 2.5rem;
+  margin-right: 1.5em;
 }
 .ko-search-area .ko-search-bottom .ko-search-popular .ko-trending-box {
   overflow: hidden;
@@ -276,8 +292,8 @@ button {
 
 .ko-search-time {
   display: inline-block;
-  font-size: 1.17rem;
-  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  margin-top: 1vw;
   color: #646464;
 }
 
@@ -287,13 +303,14 @@ button {
 
 .ko-account-area {
   position: absolute;
-  right: 3.89rem;
-  top: 5.83rem;
+  right: 3.4em;
+  top: 100%;
+  /* top: 5.65em; */
   background: #212121;
   border: 1px solid #4d4d4d;
-  min-width: 20rem;
+
   box-shadow: 0px 5px 10px 0 rgba(0,0,0,0.5);
-  padding: 1.5rem 0 1.167rem; 
+  padding: 1.5em 0 1.17em; 
   z-index: 1000;
   display: none;
 }
@@ -302,13 +319,13 @@ button {
   display: flex;
   align-items: center;
   height: 30%;
-  padding: 0 1.667rem;
+  padding: 0 1.67em;
   box-sizing: border-box;
 }
 
 .ko-account-area .ko-account-top .ko-account-img {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3.5em;
+  height: 3.5em;
   text-align: center;
   border-radius: 4px;
 }
@@ -322,18 +339,17 @@ button {
   height: 100%;
   width: 75%;
   margin-left: 1em;
-  font-size: 1.2rem;  
 }
 
 .ko-account-area .ko-account-top .ko-account-profile .name {
-  font-size:1.25rem; 
+  font-size: 1.25rem; 
   color: #fff;
   cursor:default;
 }
 
 
 .ko-account-area .ko-account-top .ko-account-profile button {
-  padding-top: 0.33rem;
+  padding-top: 0.33em;
   font-size: 1rem;
   color: #a3a3a3;
   cursor: pointer;
@@ -346,25 +362,23 @@ button {
 
 .ko-account-area .ko-account-bottom {
   border-top: 1px solid #2e2e2e;
-  margin-top: 1.17rem;
-  padding-top: 1.17rem;
+  margin-top: 1.17em;
+  padding-top: 1.17em;
 }
 
 .ko-account-area .ko-account-bottom li {
   box-sizing: border-box;
   padding: .8em 2em;
-
 }
 
 .ko-account-area .ko-account-bottom li:hover {
   background: #2e2e2e;
-
 }
 
 .ko-account-area .ko-account-bottom li a {
   display: block;
   color: #a3a3a3;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
 }
 
 .ko-account-area .ko-account-bottom li:hover a {
@@ -505,10 +519,25 @@ button {
 
 
 @media (max-width: 1280px) {
+  
+  #ko-header {
+    height:8vw;
+   }
 
   #ko-header .ko-header-left .ko-header-btn {
     font-size: 1.3rem;
   }
+
+  .ko-header-right li {
+    height: 3vw;
+    width: 3vw;
+  }
+
+/* 헤더 검색창 */
+
+.ko-search-area {
+  height: 65vw;
+}
 
   #ko-footer .footer_sns ul li {
     width: 3rem;
@@ -518,16 +547,27 @@ button {
   
 }
 
+@media (max-width: 1000px) {
+
+  .ko-search-area {
+    height: 70vw;
+  }
+  .ko-search-area .ko-search-bottom .ko-search-content {
+    line-height: 1.3;
+  }
+
+}
+
 
 
 @media (max-width: 768px) {
-  /* html {
-    font-size: 1vw;
-  } */
 
-  #ko-header  {
-    padding: 0 1.33rem;
-  }
+ #ko-header {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 2vw;
+ }
+
 
   #ko-header .ko-header-left .ko-header-btn {
     font-size: 1rem;
@@ -536,12 +576,32 @@ button {
   /* 헥더 프로필 */
 
   .ko-account-area {
-    position: absolute;
-    right: 1.33rem;
-    top: 5rem;
-    background: #212121;
+    right: 3.4em;
+    padding: 3em 0; 
+    min-width: 220px;
   }
 
+  .ko-search-area {
+    height: 90vw;
+  }
+
+  .ko-search-area .ko-search-bottom .ko-search-content {
+    line-height: 1.2;
+  }
+
+
+  .ko-account-area .ko-account-top {
+    padding: 0 2.5em;
+  }
+
+  .ko-account-area .ko-account-top .ko-account-profile {
+    margin-left: 2em;
+  }
+  
+  .ko-account-area .ko-account-bottom li {
+    box-sizing: border-box;
+    padding: 1em 2.5em;
+  }
 
   /* 푸터 */
   #ko-footer {
