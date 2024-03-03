@@ -108,6 +108,7 @@ const render = () => {
 }
 
 const similarRender = () => {
+    console.log(movieList);
     const overviewHTML = movieList.overview ? `<p class="summary mb-2">${movieList.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>';
     
     const similarHTML = movieList.map((movie) => `
