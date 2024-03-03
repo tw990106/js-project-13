@@ -75,6 +75,7 @@ getSimilarMovie();
 
 
 const render = () => {
+    
     // const director = movieDetail.credits ? movieDetail.credits.crew.find(person => person.job === 'Director') : null;
     // const cast = movieDetail.credits ? movieDetail.credits.cast.map(actor => actor.name).join(', ') : '정보 없음';
     const overviewHTML = movieDetail.overview ? `<p class="summary mb-2">${movieDetail.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>';
@@ -105,6 +106,28 @@ const render = () => {
     </div>
     `;
     document.getElementById('detail-main').innerHTML = detailHTML;
+
+    const maxSummaryLength = 100;
+
+    let summary = document.querySelector('.summary');
+    let moreBtn = document.querySelector('.more-btn');
+    let closeBtn = document.querySelector('.close');
+
+    if (movieDetail.overview && movieDetail.overview.length > maxSummaryLength) {
+        moreBtn.addEventListener('click', function() {
+            summary.innerHTML = movieDetail.overview;
+            moreBtn.style.display = 'none';
+            closeBtn.style.display = 'inline-block';
+        });
+        closeBtn.addEventListener('click', function() {
+            summary.innerHTML = truncateSummary(movieDetail.overview);
+            moreBtn.style.display = 'inline-block';
+            closeBtn.style.display = 'none';
+        });
+    }
+}
+function truncateSummary(text) {
+    return text.length > maxSummaryLength ? text.slice(0, maxSummaryLength) + '...' : text;
 }
 
 const similarRender = (movieList) => {
