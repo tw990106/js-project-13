@@ -32,18 +32,21 @@
 
     </section>
     <div class="menu-group-wrap">
-      <button class="menu-group" onclick="goToScroll('topMovie')">
-        TOP
+      <button class="menu-group" onclick="goToScroll('top')">
+        TOP 20
       </button>
-      <button class="menu-group" onclick="goToScroll('similar-movie')">
-        SIMILAR
-      </button>
-      <button class="menu-group" onclick="goToScroll('popular-movies')">
+      <button class="menu-group" onclick="goToScroll('popluar')">
         POPULAR
+      </button>
+      <button class="menu-group" onclick="goToScroll('nowPlaying')">
+        NOW PLAYING
+      </button>
+      <button class="menu-group" onclick="goToScroll('upcoming')">
+        UPCOMING
       </button>
     </div>
 
-    <div class="detail-vod similar-movie top-movie" id="topMovie">
+    <div class="detail-vod similar-movie top-movie" id="top">
       <h3 class="mb-4">TOP 20</h3>
       <div class="swiper-container">
         <ul class="vod-list swiper-wrapper flex" id="top-movies">
@@ -61,7 +64,7 @@
         <div class="swiper-button-prev slide-btn"></div>
       </div>
     </div>
-    <div class="similar-movie">
+    <div class="similar-movie" id="popular">
       <h3 class="mb-4">Popular</h3>
       <div class="swiper-container">
         <ul class="vod-list swiper-wrapper flex" id="popular-movies">
@@ -73,7 +76,7 @@
         <div class="swiper-button-prev slide-btn"></div>
       </div>
     </div>
-    <div class="similar-movie">
+    <div class="similar-movie" id="nowPlaying">
       <h3 class="mb-4"></h3>
       <div class="swiper-container">
         <ul class="vod-list swiper-wrapper flex" id="playing-movies">
@@ -85,7 +88,7 @@
         <div class="swiper-button-prev slide-btn"></div>
       </div>
     </div>
-    <div class="similar-movie">
+    <div class="similar-movie" id="upcoming">
       <h3 class="mb-4">Upcoming</h3>
       <div class="swiper-container">
         <ul class="vod-list swiper-wrapper flex" id="upcoming-movies">
