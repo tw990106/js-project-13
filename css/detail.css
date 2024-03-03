@@ -115,6 +115,7 @@ button{
 .ellipsis{
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 /* 모바일 */
