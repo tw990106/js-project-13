@@ -114,7 +114,7 @@ const similarRender = (movieList) => {
     let similarHTML = ``;
     for (let i=0; i < movieList.length; i++) {
         const movie = movieList[i];
-        const overviewText = movie.overview && movie.overview.length > 50 ? movie.overview.substring(0, 100) + '...' : movie.overview;
+        const overviewText = movie.overview || movie.overview.length > 50 ? movie.overview.substring(0, 100) + '...' : movie.overview;
 
         similarHTML += `<li class="swiper-slide">
         <img src="${IMG_URL}${movie.poster_path}" alt="${movie.title}">
