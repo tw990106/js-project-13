@@ -165,7 +165,7 @@ button {
   background: #191919fc;
   padding: 5.583em;
   box-sizing: border-box;
-  /* display: none; */
+  display: none;
 }
 
 .ko-search-area .ko-search-box {
@@ -402,7 +402,7 @@ button {
 
 #ko-footer .footer_top ul {
   display: flex;
-  gap: 1.67rem;
+  gap: 1.67em;
   flex-wrap: wrap;
 }
 
@@ -426,7 +426,6 @@ button {
 }
 
 #ko-footer .footer_short li:first-child {
-  /* border-left: 1px solid #fff; */
   position: relative;
 }
 
@@ -448,7 +447,7 @@ button {
 }
 
 #ko-footer .footer_copyright p, #ko-footer .footer_copyright a {
-  font-size: 1.08rem;
+  font-size: 1rem;
   color: #6e6e6e
 }
 
@@ -489,12 +488,14 @@ button {
 
 #ko-footer .footer_sns ul {
  display: flex;
- gap: 1rem;
+ gap: 1.5vw;
 }
 
 #ko-footer .footer_sns ul li {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.5vw;
+  height: 2.5vw;
+  max-width: 45px;
+  max-height: 45px;
 }
 
 #ko-footer .footer_sns ul li svg {
@@ -510,7 +511,7 @@ button {
 
 #ko-footer .footer_right p {
   color: #6e6e6e;
-  font-size: 1.08rem;
+  font-size: 1rem;
 }
 
 
@@ -540,8 +541,8 @@ button {
 }
 
   #ko-footer .footer_sns ul li {
-    width: 3rem;
-    height: 3rem;
+    width: 3vw;
+    height: 3vw;
   }
 
   
@@ -605,7 +606,7 @@ button {
 
   /* 푸터 */
   #ko-footer {
-    padding: 2.5rem 1.33rem;
+    padding: 2.5em 1.33em;
   }
   
   
