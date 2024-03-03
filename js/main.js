@@ -70,7 +70,6 @@ const getMoviesTop = async () => {
   const data = await response.json();
   movieList = data.results;
 
-  render();
   renderTop();
 }
 
@@ -92,6 +91,8 @@ const getMoviesPlaying = async () => {
   movieList = data.results;
 
   renderPlaying();
+  render();
+
 }
 
 const getMoviesUpcoming = async () => {
