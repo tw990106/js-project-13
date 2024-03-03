@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <title>TVING</title>
   <link rel="icon" href="../img/favicon.ico" type="image" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -62,6 +63,18 @@
     </div>
     <div class="similar-movie" id="similar-movie">
       <h3  class="mb-4">비슷한 영화</h3>
+      <div class="swiper-container">
+        <ul class="vod-list swiper-wrapper flex" id="popular-movies">
+          <!-- <li class="swiper-slide moveup">
+            <img src="https://image.tving.com/upload/cms/caim/CAIM2100/M000364433.jpg/dims/resize/400" alt="랑종" />
+          </li> -->
+        </ul>
+        <div class="swiper-button-next slide-btn"></div>
+        <div class="swiper-button-prev slide-btn"></div>
+      </div>
+    </div>
+    <div class="similar-movie" id="similar-movie">
+      <h3  class="mb-4"></h3>
       <div class="swiper-container">
         <ul class="vod-list swiper-wrapper flex" id="popular-movies">
           <!-- <li class="swiper-slide moveup">

@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 let movieList = [];
 let url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1`);
-const IMG_URL = `http://image.tmdb.org/t/p/w780`;
+const IMG_URL = `https://image.tmdb.org/t/p/w780`;
 
 const getMoviesTrending = async () => {
   url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1`);
@@ -59,7 +59,9 @@ const getMoviesTrending = async () => {
   movieList = data.results;
   render();
   getMoviesTrending(data);
+
   return data;
+ 
 
 }
 
@@ -71,10 +73,12 @@ const getMoviesPopular = async () => {
       accept: 'application/json',
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDc2OGMxZTdlYWJmYWI5Y2Q5NGFiNzQyMjNhZjg1YyIsInN1YiI6IjY1ZGQ0NjZjMmFjNDk5MDE3ZGNhZGZjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xtPAVAUiJC6-xfEkO9tnDb_UHPDTIo3bJaKtMLNdMkg'
     }
+ 
   };
   const response = await fetch(url, options);
   const data = await response.json();
   movieList = data.results;
+
   renderPopular();
   renderTop();
 }
@@ -85,7 +89,8 @@ const render = () => {
     class="swiper-background-img"
     src="${IMG_URL}${movie.backdrop_path}"/>
   <div class="swiper-text">
-    <h4>${movie.title}</h4>
+    <h4 class="movie-title">${movie.title}</h4>
+    <p class="movie-release-date"></p>
   </div>
 </div>`).join('');
   document.getElementById('trending-movies').innerHTML += movieHTML;
@@ -104,7 +109,7 @@ const renderPopular = () => {
 const renderTop = () => {
   let movieTopHTML = ``;
   for (let i = 0; i < movieList.length; i++) {
-    movieTopHTML += `<li class="swiper-slide moveup top-movies-item" id="${movieList[i].id}" onclick="window.location.href='detail.html?id=${movieList[i].id}'">
+    movieTopHTML += `<li class="swiper-slide moveup topMovie-item" id="${movieList[i].id}" onclick="window.location.href='detail.html?id=${movieList[i].id}'">
     <a class="rank-num">
       <object data="../img/main_top20/${i+1}.svg" type="image/svg+xml">
         <img src="../img/main_top20/${i+1}.svg" />
