@@ -112,7 +112,10 @@ button{
 .recommended-movie{
     margin-bottom: 100px;
 }
-
+.ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 /* 모바일 */
 @media screen and (max-width: 767px){
