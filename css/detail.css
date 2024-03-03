@@ -426,9 +426,6 @@ button{
     .movie-info span:not(:first-child){
         margin-left: 0.4em;
     }
-    .movie-info span:first-child{
-        height: 33px;
-    }
     .movie-info img{
         height: 100%;
     }
