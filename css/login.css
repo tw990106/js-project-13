@@ -25,9 +25,9 @@ a{
 
 
 .button-silver{
-    color: silver;
-    border: 1px solid silver;
-    min-width: 20em;
+    color: silver !important;
+    border: 1px solid silver !important;
+    min-width: 20em !important;
 }
 
 .button-silver h5{
