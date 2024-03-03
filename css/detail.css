@@ -292,7 +292,6 @@ button{
     }
     .swiper-container{
         position: relative;
-        overflow: hidden;
     }
     
     .swiper-container li{
@@ -510,7 +509,6 @@ button{
     }
     .swiper-container{
         position: relative;
-        overflow: hidden;
     }
     
     .swiper-container li{
