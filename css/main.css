@@ -1,7 +1,12 @@
 :root {
     --swiper-theme-color: white;
 }
-
+@font-face {
+    font-family: 'GimpoTitle00';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/GimpoTitle00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 /* common elements */
 * {
     padding: 0;
@@ -66,6 +71,7 @@ body {
 }
 
 .menu-group {
+    font-family: 'GimpoTitle00';
     width: 347.59px;
     height: 120.05px;
     margin-right: 10px;
@@ -138,6 +144,7 @@ body {
     }
 
     .swiper-text h4 {
+        font-family: 'GimpoTitle00';
         color: white;
         font-weight: 700;
         margin-top: initial;
@@ -146,6 +153,7 @@ body {
     }
 
     .swiper-text p {
+        font-family: 'GimpoTitle00';
         color: white;
         font-weight: 700;
         margin-top: initial;
@@ -163,6 +171,7 @@ body {
     }
 
     .menu-group-wrap button {
+        font-family: 'GimpoTitle00';
         font-size: .7rem;
     }
 
@@ -343,7 +352,7 @@ body {
     }
 
     .swiper-text h4 {
-
+        font-family: 'GimpoTitle00';
         color: white;
         font-weight: 400;
         margin-top: 10px;
@@ -353,6 +362,7 @@ body {
     }
 
     .swiper-text p {
+        font-family: 'GimpoTitle00';
         color: white;
         font-weight: 300;
         margin-top: 20px;
