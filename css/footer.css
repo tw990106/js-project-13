@@ -1,0 +1,54 @@
+
+
+  .footer-border-color{
+    border-color: rgb(75, 75, 75) !important;
+  }
+
+  .footer-a li{
+    margin-right: 1em;
+    list-style: none;
+  }
+
+  .footer-a li a{
+    color: lightgray;
+    text-wrap: nowrap;
+    text-decoration: none;
+  }
+
+  .footer_copyright p{
+    color: gray;
+  }
+
+  .footer_copyright a{
+    color: gray;
+  }
+
+  .footer-brand li a{
+    color: gray;
+    text-wrap: nowrap;
+    text-decoration: none;
+  }
+
+  .footer-brand li{
+    list-style: none;
+  }
+
+
+  .footer_sns li{
+    margin-right: 1em;
+    list-style: none;
+  }
+
+  .footer_right{
+    color: gray;
+  }
+
+
+  @media (max-width: 767px) {
+    .footer-a li a{
+        font-size: .8em;
+      }
+    .footer_copyright p{
+        font-size: .9em;
+      }
+  }
