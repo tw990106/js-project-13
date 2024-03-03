@@ -180,7 +180,7 @@ const popularRender = (popularList) => {
         </div>
         `
     }
-    document.getElementById('popular-list').innerHTML += similarHTML;
+    document.getElementById('popular-list').innerHTML += popularHTML;
 }
 
 
