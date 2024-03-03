@@ -73,6 +73,9 @@ const getSimilarMovie = () => {
 }
 getSimilarMovie();
 
+const getPopular = () => {
+
+}
 
 const render = () => {
     
@@ -112,18 +115,22 @@ const render = () => {
     let moreBtn = document.querySelector('.more-btn');
     let closeBtn = document.querySelector('.close');
 
-    if (movieDetail.overview && movieDetail.overview.length > 100) {
-        summary.style.maxHeight = '80px';
-        moreBtn.addEventListener('click', function() {
-            summary.style.maxHeight = 'none';
-            moreBtn.style.display = 'none';
-            closeBtn.style.display = 'inline-block';
-        });
-        closeBtn.addEventListener('click', function() {
+     if (movieDetail.overview) {
+        if (movieDetail.overview.length > 100) {
             summary.style.maxHeight = '80px';
-            moreBtn.style.display = 'inline-block';
-            closeBtn.style.display = 'none';
-        });
+            moreBtn.addEventListener('click', function() {
+                summary.style.maxHeight = 'none';
+                moreBtn.style.display = 'none';
+                closeBtn.style.display = 'inline-block';
+            });
+            closeBtn.addEventListener('click', function() {
+                summary.style.maxHeight = '80px';
+                moreBtn.style.display = 'inline-block';
+                closeBtn.style.display = 'none';
+            });
+        } else {
+            moreBtn.style.display = 'none';
+        }
     }
 };
 
