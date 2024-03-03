@@ -107,7 +107,7 @@ const render = () => {
     document.getElementById('detail-main').innerHTML = detailHTML;
 }
 
-const similarRender = () => {
+const similarRender = (movie) => {
     console.log(movieList);
     // const overviewHTML = movieList.overview ? `<p class="summary mb-2">${movieList.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>';
     
@@ -117,7 +117,7 @@ const similarRender = () => {
         <img src="${IMG_URL}${movieList.poster_path}" alt="${movieList.title}">
         <div class="list-txt">
             <h5>${movieList.title}</h5>
-            <span>${movieList.genres.map(genre => genre.name).join(', ')}</span>
+            <span>${movie.genres.map(genre => genre.name).join(', ')}</span>
             ${movieList.overview ? `<p class="summary mb-2">${movieList.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>'}
         </div>
     </li>`
