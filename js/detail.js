@@ -114,6 +114,8 @@ const similarRender = (movieList) => {
     let similarHTML = ``;
     for (let i=0; i < movieList.length; i++) {
         const movie = movieList[i];
+        const overviewText = movie.overview && movie.overview.length > 100 ? movie.overview.substring(0, 100) + '...' : movie.overview;
+
         similarHTML += `<li class="swiper-slide">
         <img src="${IMG_URL}${movie.poster_path}" alt="${movie.title}">
         <div class="list-txt">
@@ -129,7 +131,7 @@ const similarRender = (movieList) => {
 
 
 
-
+/*
 let elements = document.querySelector('ellipsis');
     for (let i=0; i<elements.length; i++){
     let element = elements[i];
@@ -140,7 +142,7 @@ let elements = document.querySelector('ellipsis');
         element.innerText = trimmedText;
     }
 }
-
+*/
 
 
 
