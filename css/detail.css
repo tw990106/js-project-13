@@ -120,6 +120,12 @@ button{
     text-overflow: ellipsis;
     /* white-space: nowrap; */
 }
+.detail-vod > h3{
+    color: #fff !important;
+}
+.list-txt > h5{
+    color: #fff !important;
+}
 
 /* 모바일 */
 @media screen and (max-width: 767px){
