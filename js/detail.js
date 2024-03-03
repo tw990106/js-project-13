@@ -114,13 +114,13 @@ const similarRender = (movieList) => {
     let similarHTML = ``;
     for (let i=0; i < movieList.length; i++) {
         const movie = movieList[i];
-        const overviewText = movie.overview || movie.overview.length > 50 ? movie.overview.substring(0, 100) + '...' : movie.overview;
+        const overviewText = movie.overview && movie.overview.length > 50 ? movie.overview.substring(0, 100) + '...' : movie.overview;
 
         similarHTML += `<li class="swiper-slide">
         <img src="${IMG_URL}${movie.poster_path}" alt="${movie.title}">
         <div class="list-txt">
             <h5>${movie.title}</h5>
-            ${movie.overview ? `<p class="ellipsis mb-2">${movie.overview}</p>` : '<p class="ellipsis mb-2">줄거리가 없습니다.</p>'}
+            ${movie.overview ? `<p class="ellipsis mb-2">${overviewText}</p>` : '<p class="ellipsis mb-2">줄거리가 없습니다.</p>'}
         </div>
     </li>`
     }
@@ -146,9 +146,9 @@ let elements = document.querySelector('ellipsis');
 
 
 
-let summary = document.getElementsByClassName('.summary');
-let moreBtn = document.getElementsByClassName('.more-btn');
-let closeBtn = document.getElementsByClassName('.close');
+let summary = document.querySelector('.summary');
+let moreBtn = document.querySelector('.more-btn');
+let closeBtn = document.querySelector('.close');
 moreBtn.addEventListener('click', function(){
     summary.style.maxHeight = 'none';
     moreBtn.style.display = 'none';
