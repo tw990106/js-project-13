@@ -94,6 +94,9 @@ button{
     display: none;
     font-size: 22px;
 }
+.list-txt h5{
+    margin-bottom: 20px;
+}
 
 .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{
     display: none;
@@ -238,7 +241,7 @@ button{
         text-align: center;
     }
     .popup{
-        padding: 1rem 4rem;
+        padding: 1rem 3rem;
         font-size: 16px;
     }
     .mv-info span{
@@ -247,7 +250,7 @@ button{
     }
     .main-btn{
         position: relative;
-        display: none;
+        /* display: inline-block; */
         cursor: pointer;
     }
     .main-btn:after{
@@ -289,7 +292,6 @@ button{
     }
     .swiper-container{
         position: relative;
-        overflow: hidden;
     }
     
     .swiper-container li{
@@ -423,9 +425,6 @@ button{
     .movie-info span:not(:first-child){
         margin-left: 0.4em;
     }
-    .movie-info span:first-child{
-        height: 33px;
-    }
     .movie-info img{
         height: 100%;
     }
@@ -510,7 +509,6 @@ button{
     }
     .swiper-container{
         position: relative;
-        overflow: hidden;
     }
     
     .swiper-container li{
