@@ -61,8 +61,6 @@ const getMoviesTrending = async () => {
   getMoviesTrending(data);
 
   return data;
- 
-
 }
 
 const getMoviesPopular = async () => {
@@ -73,7 +71,7 @@ const getMoviesPopular = async () => {
       accept: 'application/json',
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDc2OGMxZTdlYWJmYWI5Y2Q5NGFiNzQyMjNhZjg1YyIsInN1YiI6IjY1ZGQ0NjZjMmFjNDk5MDE3ZGNhZGZjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xtPAVAUiJC6-xfEkO9tnDb_UHPDTIo3bJaKtMLNdMkg'
     }
- 
+
   };
   const response = await fetch(url, options);
   const data = await response.json();
@@ -109,17 +107,18 @@ const renderPopular = () => {
 const renderTop = () => {
   let movieTopHTML = ``;
   for (let i = 0; i < movieList.length; i++) {
-    movieTopHTML += 
-    `<li class="swiper-slide moveup topMovie-item" id="${movieList[i].id}" onclick="window.location.href='detail.html?id=${movieList[i].id}'">
+    movieTopHTML +=
+      `<li class="swiper-slide moveup topMovie-item" id="${movieList[i].id}" onclick="window.location.href='detail.html?id=${movieList[i].id}'">
     <a class="rank-num">
-      <object data="../img/main_top20/${i+1}.svg" type="image/svg+xml">
-        <img src="../img/main_top20/${i+1}.svg" />
+      <object data="../img/main_top20/${i + 1}.svg" type="image/svg+xml">
+        <img src="../img/main_top20/${i + 1}.svg" />
       </object>
     </a>
-    <img src="${IMG_URL}${movie.poster_path}"
+    <img src="${IMG_URL}${movieList[i].poster_path}"
      alt="${movieList[i].title}" />
   </li>`
   }
+  console.log("mm", movieTopHTML);
   document.getElementById('top-movies').innerHTML += movieTopHTML;
 }
 
