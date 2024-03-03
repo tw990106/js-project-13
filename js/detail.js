@@ -107,10 +107,10 @@ const render = () => {
     document.getElementById('detail-main').innerHTML = detailHTML;
 }
 
-const similarRender = (movie) => {
-    const overviewHTML = movie.overview ? `<p class="summary mb-2">${movie.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>';
+const similarRender = () => {
+    const overviewHTML = movieList.overview ? `<p class="summary mb-2">${movieList.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>';
     
-    const similarHTML = movieList.map(movie => `
+    const similarHTML = movieList.map((movie) => `
     <li class="swiper-slide">
         <img src="${IMG_URL}${movie.poster_path}" alt="${movie.title}">
         <div class="list-txt">
