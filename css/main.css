@@ -353,6 +353,10 @@ body {
         margin-bottom: 0;
         opacity: .9;
     }
+
+    .mb-4 {
+        margin: 0 75px;
+    }
 }
 
 .top-movies-item {
