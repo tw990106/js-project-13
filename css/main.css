@@ -130,17 +130,13 @@ body {
     }
 }
 
-.top-movie {
-    margin-bottom: 100px;
-}
-
 .swiper-background-img {
     width: 100%;
     max-height: 70%;
 }
 
 .similar-movie {
-    padding-left: 60px;
+    padding-top: 60px;
     box-sizing: border-box;
 }
 
@@ -278,9 +274,12 @@ body {
     .swiper-container {
         position: relative;
     }
-
-    #popular-movies li {
+ 
+    #popular-movies li ,#upcoming-movies li{
         max-width: 246px;
+    }
+    #upcoming{
+        padding-bottom: 60px;
     }
 
     .swiper-container li {
