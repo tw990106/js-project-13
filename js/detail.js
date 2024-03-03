@@ -107,28 +107,25 @@ const render = () => {
     `;
     document.getElementById('detail-main').innerHTML = detailHTML;
 
-    const maxSummaryLength = 100;
-
+    
     let summary = document.querySelector('.summary');
     let moreBtn = document.querySelector('.more-btn');
     let closeBtn = document.querySelector('.close');
 
-    if (movieDetail.overview && movieDetail.overview.length > maxSummaryLength) {
+    if (movieDetail.overview && movieDetail.overview.length > 100) {
+        summary.style.maxHeight = '80px';
         moreBtn.addEventListener('click', function() {
-            summary.innerHTML = movieDetail.overview;
+            summary.style.maxHeight = 'none';
             moreBtn.style.display = 'none';
             closeBtn.style.display = 'inline-block';
         });
         closeBtn.addEventListener('click', function() {
-            summary.innerHTML = truncateSummary(movieDetail.overview);
+            summary.style.maxHeight = '80px';
             moreBtn.style.display = 'inline-block';
             closeBtn.style.display = 'none';
         });
     }
-}
-function truncateSummary(text) {
-    return text.length > maxSummaryLength ? text.slice(0, maxSummaryLength) + '...' : text;
-}
+};
 
 const similarRender = (movieList) => {
     console.log(movieList);
