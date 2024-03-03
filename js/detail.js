@@ -199,7 +199,7 @@ let elements = document.querySelector('ellipsis');
 */
 
 
-
+/*
 let summary = document.querySelector('.summary');
 let moreBtn = document.querySelector('.more-btn');
 let closeBtn = document.querySelector('.close');
@@ -213,6 +213,7 @@ closeBtn.addEventListener('click', function(){
     moreBtn.style.display = 'inline-block';
     closeBtn.style.display = 'none';
 });
+*/
 // fav btn
 const favBtn = document.querySelector('.fav-btn');
 const favIcon = favBtn.querySelector('.fav-icon');
