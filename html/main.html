@@ -31,19 +31,19 @@
       </div>
 
     </section>
-      <div class="menu-group-wrap">
-        <button class="menu-group" onclick="goToScroll('topMovie')">
-          TOP
-        </button>
-        <button class="menu-group" onclick="goToScroll('similar-movie')">
-          SIMILAR
-        </button>
-        <button class="menu-group" onclick="goToScroll('popular-movies')">
-          POPULAR
-        </button>
-      </div>
+    <div class="menu-group-wrap">
+      <button class="menu-group" onclick="goToScroll('topMovie')">
+        TOP
+      </button>
+      <button class="menu-group" onclick="goToScroll('similar-movie')">
+        SIMILAR
+      </button>
+      <button class="menu-group" onclick="goToScroll('popular-movies')">
+        POPULAR
+      </button>
+    </div>
 
-    <div class="detail-vod top-movie" id="topMovie">
+    <div class="detail-vod similar-movie top-movie" id="topMovie">
       <h3 class="mb-4">TOP 20</h3>
       <div class="swiper-container">
         <ul class="vod-list swiper-wrapper flex" id="top-movies">
@@ -61,8 +61,8 @@
         <div class="swiper-button-prev slide-btn"></div>
       </div>
     </div>
-    <div class="similar-movie" id="similar-movie">
-      <h3  class="mb-4">비슷한 영화</h3>
+    <div class="similar-movie">
+      <h3 class="mb-4">Popular</h3>
       <div class="swiper-container">
         <ul class="vod-list swiper-wrapper flex" id="popular-movies">
           <!-- <li class="swiper-slide moveup">
@@ -73,10 +73,22 @@
         <div class="swiper-button-prev slide-btn"></div>
       </div>
     </div>
-    <div class="similar-movie" id="similar-movie">
-      <h3  class="mb-4"></h3>
+    <div class="similar-movie">
+      <h3 class="mb-4"></h3>
       <div class="swiper-container">
-        <ul class="vod-list swiper-wrapper flex" id="popular-movies">
+        <ul class="vod-list swiper-wrapper flex" id="playing-movies">
+          <!-- <li class="swiper-slide moveup">
+            <img src="https://image.tving.com/upload/cms/caim/CAIM2100/M000364433.jpg/dims/resize/400" alt="랑종" />
+          </li> -->
+        </ul>
+        <div class="swiper-button-next slide-btn"></div>
+        <div class="swiper-button-prev slide-btn"></div>
+      </div>
+    </div>
+    <div class="similar-movie">
+      <h3 class="mb-4">Upcoming</h3>
+      <div class="swiper-container">
+        <ul class="vod-list swiper-wrapper flex" id="upcoming-movies">
           <!-- <li class="swiper-slide moveup">
             <img src="https://image.tving.com/upload/cms/caim/CAIM2100/M000364433.jpg/dims/resize/400" alt="랑종" />
           </li> -->
@@ -100,11 +112,11 @@
   <!--버튼 스크롤 이벤트 -->
   <script>
     function goToScroll(sectionId) {
-  let section = document.getElementById(sectionId);
-  if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-  }
-}
+      let section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   </script>
 </body>
 

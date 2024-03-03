@@ -43,42 +43,65 @@ document.addEventListener("DOMContentLoaded", function () {
 let movieList = [];
 let url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1`);
 const IMG_URL = `https://image.tmdb.org/t/p/w780`;
+const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDc2OGMxZTdlYWJmYWI5Y2Q5NGFiNzQyMjNhZjg1YyIsInN1YiI6IjY1ZGQ0NjZjMmFjNDk5MDE3ZGNhZGZjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xtPAVAUiJC6-xfEkO9tnDb_UHPDTIo3bJaKtMLNdMkg'
+  }
+};
 
-const getMoviesTrending = async () => {
-  url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1`);
-  const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDc2OGMxZTdlYWJmYWI5Y2Q5NGFiNzQyMjNhZjg1YyIsInN1YiI6IjY1ZGQ0NjZjMmFjNDk5MDE3ZGNhZGZjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xtPAVAUiJC6-xfEkO9tnDb_UHPDTIo3bJaKtMLNdMkg'
-    }
-  };
+// const getMoviesTrending = async () => {
+//   url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1`);
 
-  const response = await fetch(url, options);
-  const data = await response.json();
-  movieList = data.results;
-  render();
-  getMoviesTrending(data);
+//   const response = await fetch(url, options);
+//   const data = await response.json();
+//   movieList = data.results;
+//   render();
+//   getMoviesTrending(data);
 
-  return data;
-}
+//   return data;
+// }
 
 const getMoviesPopular = async () => {
   url = new URL(`https://api.themoviedb.org/3/movie/popular?language=ko&page=1`);
-  const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNDc2OGMxZTdlYWJmYWI5Y2Q5NGFiNzQyMjNhZjg1YyIsInN1YiI6IjY1ZGQ0NjZjMmFjNDk5MDE3ZGNhZGZjZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xtPAVAUiJC6-xfEkO9tnDb_UHPDTIo3bJaKtMLNdMkg'
-    }
 
-  };
   const response = await fetch(url, options);
   const data = await response.json();
   movieList = data.results;
 
   renderPopular();
+}
+
+const getMoviesUpcoming = async () => {
+  url = new URL(`https://api.themoviedb.org/3/movie/upcoming?language=ko&page=1`);
+
+  const response = await fetch(url, options);
+  const data = await response.json();
+  movieList = data.results;
+
+  renderUpcoming();
+}
+
+const getMoviesTop = async () => {
+  url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1`);
+
+  const response = await fetch(url, options);
+  const data = await response.json();
+  movieList = data.results;
+
+  render();
   renderTop();
+}
+
+const getMoviesPlaying = async () => {
+  url = new URL(`https://api.themoviedb.org/3/movie/now_playing?language=ko&page=1`);
+
+  const response = await fetch(url, options);
+  const data = await response.json();
+  movieList = data.results;
+
+  renderPlaying();
 }
 
 const render = () => {
@@ -104,6 +127,16 @@ const renderPopular = () => {
   document.getElementById('popular-movies').innerHTML += moviePopularHTML;
 }
 
+const renderUpcoming = () => {
+  let moviePopularHTML = movieList.map(movie => `<li class="swiper-slide moveup" id="${movie.id}" onclick="window.location.href='detail.html?id=${movie.id}'">
+  <img
+    src="${IMG_URL}${movie.poster_path}"
+    alt="${movie.title}"
+  />
+</li>`).join('');
+  document.getElementById('upcoming-movies').innerHTML += moviePopularHTML;
+}
+
 const renderTop = () => {
   let movieTopHTML = ``;
   for (let i = 0; i < movieList.length; i++) {
@@ -118,9 +151,10 @@ const renderTop = () => {
      alt="${movieList[i].title}" />
   </li>`
   }
-  console.log("mm", movieTopHTML);
   document.getElementById('top-movies').innerHTML += movieTopHTML;
 }
 
-getMoviesTrending();
+getMoviesPlaying();
 getMoviesPopular();
+getMoviesTop();
+getMoviesUpcoming();
