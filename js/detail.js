@@ -63,7 +63,7 @@ const getSimilarMovie = () => {
         // similarRender(movieList);
         if (Array.isArray(response.results)) {
             movieList = response.results;
-            console.log(movieList);
+            // console.log(movieList);
             similarRender(movieList);
         } else {
             console.error("Response results is not an array:", response.results);
