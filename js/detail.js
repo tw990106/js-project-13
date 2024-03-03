@@ -123,14 +123,9 @@ const similarRender = (movieList) => {
     </li>`
     }
     document.getElementById('similar-list').innerHTML += similarHTML;
-}
 
-
-
-
-
-let elements = document.getElementsByClassName('ellipsis');
-for (let i=0; i<elements.length; i++){
+    let elements = document.querySelector('ellipsis');
+    for (let i=0; i<elements.length; i++){
     let element = elements[i];
     let text = element.innerText;
     let maxLength = 100;
@@ -139,6 +134,14 @@ for (let i=0; i<elements.length; i++){
         element.innerText = trimmedText;
     }
 }
+}
+
+
+
+
+
+
+
 
 
 let summary = document.getElementsByClassName('.summary');
@@ -183,6 +186,8 @@ favBtn.addEventListener('click', function(){
     setTimeout(function(){
         popup.style.display = 'none';
     }, 3000);
+
+    
 });
 
 
