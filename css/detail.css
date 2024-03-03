@@ -247,7 +247,7 @@ button{
     }
     .main-btn{
         position: relative;
-        display: inline-block;
+        display: none;
         cursor: pointer;
     }
     .main-btn:after{
