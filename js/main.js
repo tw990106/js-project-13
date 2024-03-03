@@ -90,7 +90,7 @@ const render = () => {
     src="${IMG_URL}${movie.backdrop_path}"/>
   <div class="swiper-text">
     <h4 class="movie-title">${movie.title}</h4>
-    <p class="movie-release-date"></p>
+    <p class="movie-release-date">${movie.release_date}</p>
   </div>
 </div>`).join('');
   document.getElementById('trending-movies').innerHTML += movieHTML;
@@ -109,7 +109,8 @@ const renderPopular = () => {
 const renderTop = () => {
   let movieTopHTML = ``;
   for (let i = 0; i < movieList.length; i++) {
-    movieTopHTML += `<li class="swiper-slide moveup topMovie-item" id="${movieList[i].id}" onclick="window.location.href='detail.html?id=${movieList[i].id}'">
+    movieTopHTML += 
+    `<li class="swiper-slide moveup topMovie-item" id="${movieList[i].id}" onclick="window.location.href='detail.html?id=${movieList[i].id}'">
     <a class="rank-num">
       <object data="../img/main_top20/${i+1}.svg" type="image/svg+xml">
         <img src="../img/main_top20/${i+1}.svg" />
@@ -117,7 +118,7 @@ const renderTop = () => {
     </a>
     <img src="${IMG_URL}${movie.poster_path}"
      alt="${movieList[i].title}" />
-  </li>`;
+  </li>`
   }
   document.getElementById('top-movies').innerHTML += movieTopHTML;
 }

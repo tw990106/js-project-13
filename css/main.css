@@ -238,7 +238,9 @@ body{
     .swiper-container{
         position: relative;
     }
-    
+    #popular-movies li{
+        max-width: 246px;
+    }
     .swiper-container li{
         max-width: 320px;
         margin-right: 0;
