@@ -49,19 +49,20 @@ body{
 .auto-swiper-container{
   margin-top: 50px;
   /* max-width: 1778px; */
-  max-height: 70%;
+  max-height: 800px;
   width: 90%;
   border-radius: 8px;
 }
 .swiper-text {
   position: absolute;
-  bottom: 0;
+  top: 0;
   width: 100%;
   margin: 40px;
   height: 260px;
   z-index: 10;
 }
 .swiper-text h4 {
+
   color: white;
   font-weight: 700;
   margin-top: 10px;
@@ -71,8 +72,8 @@ body{
 .swiper-text p {
   color: white;
   font-weight: 700;
-  margin-top: 10px;
-  font-size: 1.2em;
+  margin-top: 20px;
+  font-size: 2em;
   margin-bottom: 0;
 }
 /*menu button*/
@@ -263,7 +264,7 @@ body{
     .slide-btn:hover{
         opacity: 1;
     }
-    
+
 }
 
 .top-movies-item{
