@@ -331,10 +331,10 @@ body {
     .swiper-text {
         position: absolute;
         bottom: 0;
-        left: 75px;
+        left: 55px;
         width: fit-content;
         margin: 10px;
-        padding: 15px;
+        padding: 10px;
         border-radius: 10px;
         height: fit-content;
         z-index: 10;
