@@ -74,8 +74,15 @@ const getSimilarMovie = () => {
 getSimilarMovie();
 
 const getPopular = () => {
-
+    fetch('https://api.themoviedb.org/3/movie/popular?language=ko&page=1', options)
+    .then(response => response.json())
+    .then(response => {
+        const popularList = response.results;
+        popularRender(popularList);
+    })
+    .catch(err => console.error(err));
 }
+getPopular();
 
 const render = () => {
     
@@ -154,6 +161,26 @@ const similarRender = (movieList) => {
     document.getElementById('similar-list').innerHTML += similarHTML;
 
     
+}
+
+const popularRender = (popularList) => {
+    console.log(popularList);
+    let popularHTML = ``;
+
+    for(let i=0; i < popularList.length; i++) {
+        const list = popularList[i];
+        const overviewText = list.overview && list.overview.length > 50 ? list.overview.substring(0, 100) + '...' : list.overview;
+
+        popularHTML += `
+        <li class="swiper-slide">
+        <img src="${IMG_URL}${list.poster_path}" alt="${list.title}">
+        <div class="list-txt">
+            <h5>${list.title}</h5>
+            ${list.overview ? `<p class="ellipsis mb-2">${overviewText}</p>` : '<p class="ellipsis mb-2">줄거리가 없습니다.</p>'}
+        </div>
+        `
+    }
+    document.getElementById('popular-list').innerHTML += similarHTML;
 }
 
 
