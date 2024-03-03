@@ -107,18 +107,19 @@ const render = () => {
     document.getElementById('detail-main').innerHTML = detailHTML;
 }
 
-const similarRender = (movie) => {
+const similarRender = (movieList) => {
     console.log(movieList);
     // const overviewHTML = movieList.overview ? `<p class="summary mb-2">${movieList.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>';
     
     let similarHTML = ``;
     for (let i=0; i < movieList.length; i++) {
+        const movie = movieList[i];
         similarHTML += `<li class="swiper-slide">
-        <img src="${IMG_URL}${movieList.poster_path}" alt="${movieList.title}">
+        <img src="${IMG_URL}${movie.poster_path}" alt="${movie.title}">
         <div class="list-txt">
-            <h5>${movieList.title}</h5>
+            <h5>${movie.title}</h5>
             <span>${movie.genres.map(genre => genre.name).join(', ')}</span>
-            ${movieList.overview ? `<p class="summary mb-2">${movieList.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>'}
+            ${movie.overview ? `<p class="summary mb-2">${movie.overview}</p>` : '<p class="summary mb-2">줄거리가 없습니다.</p>'}
         </div>
     </li>`
     }
