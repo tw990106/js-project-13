@@ -1,0 +1,597 @@
+
+
+.red {
+  color: #ff153c
+}
+
+ #ko-header {
+  width: 100%;
+  /* height: 5.83rem; */
+  height: 5.65vw;
+  max-height: 82px;
+  display: flex;
+  /* padding: 0 4rem 0 3rem; */
+  padding: 0 3vw 0 2vw;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 10000;
+  filter: blur(100%);
+  transition: all .5s ease-in;
+  background: #000;
+ }
+
+
+  /* 헤더 좌측 */
+
+ #ko-header .ko-header-left {
+  display: flex;
+  height: 70%;
+ }
+
+.ko-h1 {
+  font-size: 0px;
+  margin-right: 1.8vw;
+ }
+
+ .ko-h1 a {
+  display: block;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+
+ .ko-h1 a img {
+  height: 100%
+ }
+
+ #ko-header .ko-header-left .ko-header-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  font-size: 2rem;
+ }
+
+
+ /* 헤더 우측 */
+
+.ko-header-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.2em;
+  height: 100%;
+}
+
+.ko-header-btn li a {
+  text-decoration: none;
+  color: white;
+  font-size:  1.3rem;
+}
+
+.ko-header-right li {
+  height: 2.2vw;
+  max-height: 41px;
+  width: 2.2vw;
+  max-width: 41px;
+}
+
+.ko-header-right .ko-btn-search button {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.ko-header-right .ko-btn-search button img {
+  width: auto;
+  height: 100%;
+}
+
+.ko-header-right .ko-btn-account {
+  transition: all 0.1s linear;
+  position: relative;
+}
+.ko-header-right .ko-btn-account:after {
+  content:'';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  left: -1em;
+  top: -.8em;
+}
+
+.ko-header-right .ko-btn-account img {
+  cursor: pointer;
+  height: 100%;
+}
+
+.ko-btn-type{
+  background: none;
+  border: none;
+}
+
+/* 헤더 검색창 */
+
+.ko-dimmed {
+  position: fixed;
+  left:0;
+  top:0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  z-index: -2;
+  display: none;
+}
+
+.ko-search-area {
+  position: fixed;
+  z-index: -1;
+  left:0;
+  top: 0;
+  width: 100%;
+  height: 58vw;
+  /* height: 60rem; */
+  max-height: 900px;
+  background: #191919fc;
+  padding: 5.583em;
+  box-sizing: border-box;
+  display: none;
+}
+
+.ko-search-area .ko-search-box {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  padding: 3.75em 0 1em;
+  border-bottom: 2px solid #fff;
+  margin-bottom: 50px;
+}
+
+.ko-search-area .ko-search-box input {
+  height: 100%;
+  /* width: calc(100% - 3rem); */
+  width: calc(100% - 4vw);
+  outline: none;
+  border-width: 0px;
+  background: transparent;
+  font-size: 2em;
+  font-weight: 400;
+  color: #fff
+}
+
+.ko-search-area .ko-search-box button {
+  position: absolute;
+  bottom: 1em;
+  right: 0;
+  margin: 0;
+  width: 2.75em;
+  height: 2.75em;
+  cursor: pointer;
+}
+.ko-search-area .ko-search-box button img {
+  width: 90%;
+}
+
+.ko-search-area .ko-search-bottom {
+  display: flex;
+  color: #dedede;
+  height: 75%;
+}
+
+.ko-search-area .ko-search-bottom > ul {
+  height: 100%;
+  width: 100%
+}
+
+
+.ko-search-area .ko-search-bottom .ko-recent-area {
+  display: flex;
+  align-items: center;
+  gap: 1.17em;
+  margin-bottom: 1.62vw;
+}
+
+.ko-search-area .ko-search-bottom .ko-recent-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: block;
+}
+
+.ko-search-area .ko-search-bottom .ko-delete-all {
+  font-size: 1.3rem;
+  color: gray;
+  height: 100%;
+  margin-top: .5em;
+  display: none;
+}
+
+.ko-search-area .ko-search-bottom .ko-delete-all span {
+    display: inline-block;
+    width: 1.175em;
+    height: 1.175em;
+    vertical-align: middle;
+    margin-left: .3em;
+    background: url(../img/delete_recent.svg) no-repeat 50% 0 / 80%;
+    text-indent: -9999px;
+}
+
+
+
+.ko-search-area .ko-search-bottom .ko-search-content {
+  margin: .6em 0;
+  font-size: 1.3rem;
+  color: #dedede;
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+.ko-search-data .ko-search-content {
+  display: flex;
+  align-items: center;
+  gap: .5em;
+}
+
+.ko-search-area .ko-search-bottom .ko-search-content button {
+  height: 1.5em;
+  margin-top: .2em
+}
+
+.ko-search-area .ko-search-bottom .ko-search-content button img {
+  height: 100%;
+}
+
+.ko-search-area .ko-search-bottom .ko-search-popular {
+  padding-left: 3.35em;
+  border-left: 1px solid #2e2e2e;
+
+}
+
+.ko-search-area .ko-search-bottom .ko-search-popular .ko-search-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 1.62vw;
+}
+
+.ko-search-area .ko-search-bottom .ko-search-popular span {
+  margin-right: 1.5em;
+}
+.ko-search-area .ko-search-bottom .ko-search-popular .ko-trending-box {
+  overflow: hidden;
+}
+
+.ko-search-time {
+  display: inline-block;
+  font-size: 1.2rem;
+  margin-top: 1vw;
+  color: #646464;
+}
+
+.ko-search-content a{
+  text-decoration: none;
+  color: #646464;
+}
+
+
+.ko-search-content a:hover{
+  color: white;
+}
+
+
+/* 헥더 프로필 */
+
+.ko-account-area {
+  position: absolute;
+  right: 3.4em;
+  top: 100%;
+  /* top: 5.65em; */
+  background: #212121;
+  border: 1px solid #4d4d4d;
+
+  box-shadow: 0px 5px 10px 0 rgba(0,0,0,0.5);
+  padding: 1.5em 0 1.17em; 
+  z-index: 1000;
+  display: none;
+}
+
+.ko-account-area .ko-account-top {
+  display: flex;
+  align-items: center;
+  height: 30%;
+  padding: 0 1.67em;
+  box-sizing: border-box;
+}
+
+.ko-account-area .ko-account-top .ko-account-img {
+  width: 3.5em;
+  height: 3.5em;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.ko-account-area .ko-account-top .ko-account-img img {
+  border-radius: 0.5em;
+  height: 100%;
+}
+
+.ko-account-area .ko-account-top .ko-account-profile {
+  height: 100%;
+  width: 75%;
+  margin-left: 1em;
+}
+
+.ko-account-area .ko-account-top .ko-account-profile .name {
+  font-size: 1.25rem; 
+  color: #fff;
+  cursor:default;
+}
+
+
+.ko-account-area .ko-account-top .ko-account-profile button {
+  padding-top: 0.33em;
+  font-size: 1rem;
+  color: #a3a3a3;
+  cursor: pointer;
+}
+
+.ko-account-area .ko-account-top .ko-account-profile button:hover {
+  color: rgba(255,255,255,0.7);
+}
+
+
+.ko-account-area .ko-account-bottom {
+  border-top: 1px solid #2e2e2e;
+  margin-top: 1.17em;
+  padding-top: 1.17em;
+}
+
+.ko-account-area .ko-account-bottom li {
+  box-sizing: border-box;
+  padding: .8em 2em;
+}
+
+.ko-account-area .ko-account-bottom li:hover {
+  background: #2e2e2e;
+}
+
+.ko-account-area .ko-account-bottom li a {
+  display: block;
+  color: #a3a3a3;
+  font-size: 1.1rem;
+}
+
+.ko-account-area .ko-account-bottom li:hover a {
+  color: #fff;
+}
+
+/* 푸터 */
+
+#ko-footer {
+  background-color: #000;
+  padding: 2em 5em;
+}
+
+#ko-footer .footer_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2em;
+  white-space: nowrap;
+}
+
+#ko-footer .footer_top ul {
+  display: flex;
+  gap: 1.67em;
+  flex-wrap: wrap;
+}
+
+#ko-footer .footer_top .footer_link{
+  line-height: 10%;
+}
+
+#ko-footer .footer_top a {
+  display: block;
+  color: #a3a3a3;
+  font-size: 1.25rem;
+}
+
+#ko-footer .footer_top a:hover {
+  color: #fff;
+}
+
+#ko-footer .footer_top ul.footer_short {
+  gap: 3vw;
+  flex-wrap: nowrap;
+}
+
+#ko-footer .footer_short li:first-child {
+  position: relative;
+}
+
+#ko-footer .footer_short li:first-child:after {
+  content:'';
+  width: 1px;
+  height: 80%;
+  background: #fff; 
+  position: absolute;
+  right: -1.5vw;
+  top: .2vw;
+}
+
+
+/* 푸터 정보 */
+
+#ko-footer .footer_copyright {
+  margin-bottom: 2em;
+}
+
+#ko-footer .footer_copyright p, #ko-footer .footer_copyright a {
+  font-size: 1rem;
+  color: #6e6e6e
+}
+
+#ko-footer .footer_copyright p {
+  line-height: 170%;
+  margin-bottom: 0 !important;
+}
+
+#ko-footer .footer_copyright span {
+  margin-right: 1vw;
+  position: relative;
+  word-break: break-all;
+}
+
+#ko-footer .footer_copyright span::after {
+  content:'';
+  position: absolute;
+  right: -.6vw;
+  top: .35vw;
+  width: 1px;
+  height: 60%;
+  background: #2e2e2e;
+}
+
+#ko-footer .footer_copyright span:last-child:after {
+  display: none
+} 
+
+/* 푸터 sns */
+
+#ko-footer .footer_copyright span a {
+  text-decoration: underline;
+}
+
+#ko-footer .footer_sns {
+  margin-bottom: 1em;
+}
+
+#ko-footer .footer_sns ul {
+ display: flex;
+ gap: 1.5vw;
+}
+
+#ko-footer .footer_sns ul li {
+  width: 2.5vw;
+  height: 2.5vw;
+  max-width: 45px;
+  max-height: 45px;
+}
+
+#ko-footer .footer_sns ul li svg {
+  width: 100%;
+  height: 100%;
+}
+
+#ko-footer .footer_sns li:hover svg path {
+  fill: rgba(255, 255, 255, .8) !important
+}
+
+/* 푸터 저작권 */
+
+#ko-footer .footer_right p {
+  color: #6e6e6e;
+  font-size: 1rem;
+}
+
+
+
+
+
+
+@media (max-width: 1280px) {
+  
+  #ko-header {
+    height:8vw;
+   }
+
+  #ko-header .ko-header-left .ko-header-btn {
+    font-size: 1.3rem;
+  }
+
+  .ko-header-right li {
+    height: 3vw;
+    width: 3vw;
+  }
+
+/* 헤더 검색창 */
+
+.ko-search-area {
+  height: 65vw;
+}
+
+  #ko-footer .footer_sns ul li {
+    width: 3vw;
+    height: 3vw;
+  }
+
+  
+}
+
+@media (max-width: 1000px) {
+
+  .ko-search-area {
+    height: 70vw;
+  }
+  .ko-search-area .ko-search-bottom .ko-search-content {
+    line-height: 1.3;
+  }
+
+}
+
+
+
+@media (max-width: 768px) {
+
+ #ko-header {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 2vw;
+ }
+
+  .ko-header-btn li a {
+    font-size:  .8rem;
+    text-wrap: nowrap;
+  }
+
+  /* 헥더 프로필 */
+
+  .ko-account-area {
+    right: 3.4em;
+    padding: 3em 0; 
+    min-width: 220px;
+  }
+
+  .ko-search-area {
+    height: 90vw;
+  }
+
+  .ko-search-area .ko-search-bottom .ko-search-content {
+    line-height: 1.2;
+  }
+
+
+  .ko-account-area .ko-account-top {
+    padding: 0 2.5em;
+  }
+
+  .ko-account-area .ko-account-top .ko-account-profile {
+    margin-left: 2em;
+  }
+  
+  .ko-account-area .ko-account-bottom li {
+    box-sizing: border-box;
+    padding: 1em 2.5em;
+  }
+
+  /* 푸터 */
+  #ko-footer {
+    padding: 2.5em 1.33em;
+  }
+  
+  
+}

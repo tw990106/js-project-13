@@ -1,5 +1,5 @@
 body {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif !important;
 }
 .sun-logosize{
     width: 6rem;
@@ -52,13 +52,10 @@ body {
     cursor: pointer;
 }
 
-a{
+.afont{
     text-decoration: none;
 }
 
-h5{
-    margin: 0;
-}
 
 .auto-login-custom:checked + label .custom-checkbox {
     background: #dc3545;
@@ -77,7 +74,7 @@ h5{
     .sun-logosize{
         width: 5rem;
     }
-    h5{
+    .h5m{
         font-size: .8em;
     }
     .afont{

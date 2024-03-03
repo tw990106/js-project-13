@@ -16,7 +16,7 @@ const btnSearchImg = document.querySelector('.ko-btn-search img')
 const dimmed = document.querySelector('.ko-dimmed')
 const profileBox = document.querySelector('.ko-account-area')
 const searchArea = document.querySelector('.ko-search-area')
-const body = document.querySelector('.ko-body')
+const body = document.querySelector('body')
 const searchInput = document.getElementById('search_area')
 const recentBox = document.querySelector('.ko-search-data')
 const trendingBox = document.querySelector('.ko-trending-box')
@@ -196,7 +196,7 @@ deleteAll.addEventListener('click', () => {
 window.addEventListener('scroll', function () {
   let st = this.scrollY
 
-  console.log(st)
+  // console.log(st)
 
   if (st > 1) {
     header.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0))';

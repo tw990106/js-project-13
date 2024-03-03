@@ -74,8 +74,8 @@ window.addEventListener('scroll',()=>{
         scrollAnime(textAni4,1,760,3500,scroll)
         scrollAnime(textAniSub4,2,760,3500,scroll)
         scrollAnime(bgAni5,2,760,4000,scroll)
-        scrollAnime(textAni5,1,1200,4500,scroll)
-        scrollAnime(textAniSub5,2,1200,4500,scroll)
+        scrollAnime(textAni5,1,1200,5500,scroll)
+        scrollAnime(textAniSub5,2,1200,5500,scroll)
         scrollAnime(bgAni6,2,1200,5500,scroll)
     }else{
         scrollAnime(bgAni,1,0,800,scroll)
@@ -89,8 +89,8 @@ window.addEventListener('scroll',()=>{
         scrollAnime(textAni4,1,2500,3500,scroll)
         scrollAnime(textAniSub4,2,2500,3500,scroll)
         scrollAnime(bgAni5,2,2500,4000,scroll)
-        scrollAnime(textAni5,1,3500,4500,scroll)
-        scrollAnime(textAniSub5,2,3500,4500,scroll)
+        scrollAnime(textAni5,1,3500,5500,scroll)
+        scrollAnime(textAniSub5,2,3500,5500,scroll)
         scrollAnime(bgAni6,2,3500,5500,scroll)
     }
 })
@@ -169,6 +169,3 @@ const renderMovie2=(list)=>{
 
 getTopMovies()
 getPopularMovie()
-
-let movieTop = []
-let PopularMovie =[]

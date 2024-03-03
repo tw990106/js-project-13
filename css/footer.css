@@ -1,4 +1,9 @@
-
+.font{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.text-bold{
+    font-weight: bold;
+}
 
   .footer-border-color{
     border-color: rgb(75, 75, 75) !important;
