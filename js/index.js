@@ -169,6 +169,3 @@ const renderMovie2=(list)=>{
 
 getTopMovies()
 getPopularMovie()
-
-let movieTop = []
-let PopularMovie =[]
