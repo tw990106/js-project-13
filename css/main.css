@@ -75,8 +75,8 @@ body {
     border: none;
     background-color: #262626;
     color: #fff;
-    font-size: 3rem;
-    font-weight: 500;
+    font-size: 2.5rem;
+    font-weight: 400;
 }
 
 .swiper-background-img {
@@ -141,7 +141,7 @@ body {
         color: white;
         font-weight: 700;
         margin-top: initial;
-        font-size: 2em;
+        font-size: 1em;
         margin-bottom: 0;
     }
 
@@ -149,7 +149,7 @@ body {
         color: white;
         font-weight: 700;
         margin-top: initial;
-        font-size: 1.3em;
+        font-size: .7em;
         margin-bottom: 0;
     }
 
@@ -163,7 +163,7 @@ body {
     }
 
     .menu-group-wrap button {
-        font-size: 1.25rem;
+        font-size: .7rem;
     }
 
     .swiper-container>ul>li {
@@ -268,12 +268,14 @@ body {
         padding-top: 100px;
     }
 
+
     .swiper-wrapper,
     .swiper-background-img {
         margin: 0 75px;
         width: 85%;
-        max-height: 700px;
+        max-height: 650px;
     }
+
 
     .vod-list li img {
         width: 246px;
@@ -284,8 +286,10 @@ body {
         position: relative;
     }
 
+
     #popular-movies li,
-    #upcoming-movies li {
+    #upcoming-movies li,
+    #playing li {
         max-width: 246px;
     }
 
@@ -324,7 +328,7 @@ body {
     .swiper-text {
         position: absolute;
         bottom: 0;
-        left: 0;
+        left: 75px;
         width: fit-content;
         margin: 10px;
         padding: 15px;
@@ -338,7 +342,7 @@ body {
     .swiper-text h4 {
 
         color: white;
-        font-weight: 700;
+        font-weight: 400;
         margin-top: 10px;
         font-size: 3em;
         margin-bottom: 0;
@@ -347,7 +351,7 @@ body {
 
     .swiper-text p {
         color: white;
-        font-weight: 700;
+        font-weight: 300;
         margin-top: 20px;
         font-size: 2em;
         margin-bottom: 0;
