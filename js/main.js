@@ -108,7 +108,7 @@ const renderTop = () => {
   let movieTopHTML = ``;
   for (let i = 0; i < movieList.length; i++) {
     movieTopHTML +=
-      `<li class="swiper-slide moveup topMovie-item" id="${movieList[i].id}" onclick="window.location.href='detail.html?id=${movieList[i].id}'">
+      `<li class="swiper-slide moveup top-movies-item" id="${movieList[i].id}" onclick="window.location.href='detail.html?id=${movieList[i].id}'">
     <a class="rank-num">
       <object data="../img/main_top20/${i + 1}.svg" type="image/svg+xml">
         <img src="../img/main_top20/${i + 1}.svg" />

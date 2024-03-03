@@ -272,7 +272,7 @@ body{
 }
 
 .top-movies-item:not(:first-of-type){
-  margin-left: 50px;
+  margin-left: 10px;
 }
 
 .rank-num {
