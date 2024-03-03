@@ -1,7 +1,4 @@
 
-.bold {
-  font-weight: 700;
-}
 
 .red {
   color: #ff153c
@@ -74,7 +71,7 @@
 .ko-header-btn li a {
   text-decoration: none;
   color: white;
-  font-size:  1.3rem;;
+  font-size:  1.3rem;
 }
 
 .ko-header-right li {
@@ -111,6 +108,11 @@
 .ko-header-right .ko-btn-account img {
   cursor: pointer;
   height: 100%;
+}
+
+.ko-btn-type{
+  background: none;
+  border: none;
 }
 
 /* 헤더 검색창 */
@@ -270,6 +272,15 @@
   color: #646464;
 }
 
+.ko-search-content a{
+  text-decoration: none;
+  color: #646464;
+}
+
+
+.ko-search-content a:hover{
+  color: white;
+}
 
 
 /* 헥더 프로필 */
@@ -542,9 +553,9 @@
   padding: 0 2vw;
  }
 
-
-  #ko-header .ko-header-left .ko-header-btn {
-    font-size: 1rem;
+  .ko-header-btn li a {
+    font-size:  .8rem;
+    text-wrap: nowrap;
   }
 
   /* 헥더 프로필 */
