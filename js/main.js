@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 let movieList = [];
-let url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1`);
+let url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page=2`);
 const IMG_URL = `https://image.tmdb.org/t/p/w780`;
 const options = {
   method: 'GET',
@@ -63,28 +63,8 @@ const options = {
 //   return data;
 // }
 
-const getMoviesPopular = async () => {
-  url = new URL(`https://api.themoviedb.org/3/movie/popular?language=ko&page=1`);
-
-  const response = await fetch(url, options);
-  const data = await response.json();
-  movieList = data.results;
-
-  renderPopular();
-}
-
-const getMoviesUpcoming = async () => {
-  url = new URL(`https://api.themoviedb.org/3/movie/upcoming?language=ko&page=1`);
-
-  const response = await fetch(url, options);
-  const data = await response.json();
-  movieList = data.results;
-
-  renderUpcoming();
-}
-
 const getMoviesTop = async () => {
-  url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1`);
+  url = new URL(`https://api.themoviedb.org/3/movie/top_rated?language=ko&page=2`);
 
   const response = await fetch(url, options);
   const data = await response.json();
@@ -94,14 +74,34 @@ const getMoviesTop = async () => {
   renderTop();
 }
 
+const getMoviesPopular = async () => {
+  url = new URL(`https://api.themoviedb.org/3/movie/popular?language=ko&page=2`);
+
+  const response = await fetch(url, options);
+  const data = await response.json();
+  movieList = data.results;
+
+  renderPopular();
+}
+
 const getMoviesPlaying = async () => {
-  url = new URL(`https://api.themoviedb.org/3/movie/now_playing?language=ko&page=1`);
+  url = new URL(`https://api.themoviedb.org/3/movie/now_playing?language=ko&page=2`);
 
   const response = await fetch(url, options);
   const data = await response.json();
   movieList = data.results;
 
   renderPlaying();
+}
+
+const getMoviesUpcoming = async () => {
+  url = new URL(`https://api.themoviedb.org/3/movie/upcoming?language=ko&page=2`);
+
+  const response = await fetch(url, options);
+  const data = await response.json();
+  movieList = data.results;
+
+  renderUpcoming();
 }
 
 const render = () => {
@@ -114,27 +114,7 @@ const render = () => {
     <p class="movie-release-date">${movie.release_date}</p>
   </div>
 </div>`).join('');
-  document.getElementById('trending-movies').innerHTML += movieHTML;
-}
-
-const renderPopular = () => {
-  let moviePopularHTML = movieList.map(movie => `<li class="swiper-slide moveup" id="${movie.id}" onclick="window.location.href='detail.html?id=${movie.id}'">
-  <img
-    src="${IMG_URL}${movie.poster_path}"
-    alt="${movie.title}"
-  />
-</li>`).join('');
-  document.getElementById('popular-movies').innerHTML += moviePopularHTML;
-}
-
-const renderUpcoming = () => {
-  let moviePopularHTML = movieList.map(movie => `<li class="swiper-slide moveup" id="${movie.id}" onclick="window.location.href='detail.html?id=${movie.id}'">
-  <img
-    src="${IMG_URL}${movie.poster_path}"
-    alt="${movie.title}"
-  />
-</li>`).join('');
-  document.getElementById('upcoming-movies').innerHTML += moviePopularHTML;
+  document.getElementById('trending-movies').innerHTML = movieHTML;
 }
 
 const renderTop = () => {
@@ -151,10 +131,40 @@ const renderTop = () => {
      alt="${movieList[i].title}" />
   </li>`
   }
-  document.getElementById('top-movies').innerHTML += movieTopHTML;
+  document.getElementById('top-movies').innerHTML = movieTopHTML;
 }
 
-getMoviesPlaying();
-getMoviesPopular();
+const renderPopular = () => {
+  let moviePopularHTML = movieList.map(movie => `<li class="swiper-slide moveup" id="${movie.id}" onclick="window.location.href='detail.html?id=${movie.id}'">
+  <img
+    src="${IMG_URL}${movie.poster_path}"
+    alt="${movie.title}"
+  />
+</li>`).join('');
+  document.getElementById('popular-movies').innerHTML = moviePopularHTML;
+}
+
+const renderPlaying = () => {
+  let moviePlayingHTML = movieList.map(movie => `<li class="swiper-slide moveup" id="${movie.id}" onclick="window.location.href='detail.html?id=${movie.id}'">
+  <img
+    src="${IMG_URL}${movie.poster_path}"
+    alt="${movie.title}"
+  />
+</li>`).join('');
+  document.getElementById('playing-movies').innerHTML = moviePlayingHTML;
+}
+
+const renderUpcoming = () => {
+  let movieUpcomingHTML = movieList.map(movie => `<li class="swiper-slide moveup" id="${movie.id}" onclick="window.location.href='detail.html?id=${movie.id}'">
+  <img
+    src="${IMG_URL}${movie.poster_path}"
+    alt="${movie.title}"
+  />
+</li>`).join('');
+  document.getElementById('upcoming-movies').innerHTML = movieUpcomingHTML;
+}
+
 getMoviesTop();
+getMoviesPopular();
+getMoviesPlaying();
 getMoviesUpcoming();
