@@ -129,14 +129,18 @@ body{
 /* 모바일 */
 @media screen and (max-width: 767px){
     .container{
-        padding: 100px 50px 0 0;
+       padding-top:100px;
         box-sizing: border-box;
     }
 
+
     .swiper-container{
-        padding: 0 15px 15px 15px  ;
+        padding: 15px;
         position: relative;
         overflow: hidden;
+    }
+    .mb-4{
+        padding: 20px;
     }
     .menu-group-wrap{
         margin: 0 auto;
@@ -177,14 +181,17 @@ body{
 @media screen and (min-width: 768px) and (max-width: 1279px){
     .container{
 
-        padding: 100px 50px 0 0;
+        padding-top: 100px ;
         box-sizing: border-box;
     }
 
     .swiper-container{
-        
+        padding: 15px;
         position: relative;
         overflow: hidden;
+    }
+    .mb-4{
+        padding: 20px;
     }
     .menu-group-wrap{
         margin: 0 auto;
