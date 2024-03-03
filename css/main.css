@@ -9,10 +9,6 @@
     font-family: "Noto Sans KR", sans-serif;
 }
 
-img {
-    /* vertical-align: top;*/
-}
-
 a {
     text-decoration: none;
 }
@@ -32,6 +28,10 @@ body {
     overflow-x: hidden !important;
 }
 
+.padding-top {
+    padding-top: 100px;
+}
+
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
     color: white;
@@ -42,15 +42,6 @@ body {
     display: flex;
 }
 
-.mb-4 {
-    margin-bottom: 1.5rem;
-    font-size: 1.75rem;
-}
-
-.rank-num {
-    margin-right: 7.5px;
-}
-
 .swiper-button-next.swiper-button-disabled,
 .swiper-button-prev.swiper-button-disabled {
     display: none;
@@ -58,42 +49,14 @@ body {
 
 /*메인 큰 슬라이드*/
 .auto-swiper-container {
-    margin-top: 50px;
     /* max-width: 1778px; */
-    max-height: 800px;
+    max-height: 700px;
     width: 90%;
     border-radius: 8px;
 }
 
-.swiper-text {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    margin: 40px;
-    height: 260px;
-    z-index: 10;
-}
-
-.swiper-text h4 {
-
-    color: white;
-    font-weight: 700;
-    margin-top: 10px;
-    font-size: 3em;
-    margin-bottom: 0;
-}
-
-.swiper-text p {
-    color: white;
-    font-weight: 700;
-    margin-top: 20px;
-    font-size: 2em;
-    margin-bottom: 0;
-}
-
-/*menu button*/
 .menu-group-wrap {
-    margin: -62.4px -60.653px -39px -60.653px;
+
     padding: 62.4px 60.653px 39px 60.653px;
     overflow: visible;
     height: 220px;
@@ -114,6 +77,16 @@ body {
     color: #fff;
     font-size: 3rem;
     font-weight: 500;
+}
+
+.swiper-background-img {
+    width: 100%;
+    max-height: 70%;
+}
+
+.similar-movie {
+    padding-top: 60px;
+    box-sizing: border-box;
 }
 
 .menu-group:hover {
@@ -228,7 +201,7 @@ body {
         font-size: 1.25rem;
     }
 
-    .ul:not(:first-of-type){
+    .ul:not(:first-of-type) {
         padding-left: 0 !important
     }
 }
@@ -291,11 +264,15 @@ body {
 /* 데스크탑 */
 @media screen and (min-width: 1280px) {
     .container-fluid {
-        /* max-width: 1780px; */
-        padding: 0 50px;
-        margin: 40px;
         box-sizing: border-box;
-        padding-top: 50px;
+        padding-top: 100px;
+    }
+
+    .swiper-wrapper,
+    .swiper-background-img {
+        margin: 0 75px;
+        width: 85%;
+        max-height: 700px;
     }
 
     .vod-list li img {
@@ -344,6 +321,38 @@ body {
         opacity: 1;
     }
 
+    .swiper-text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: fit-content;
+        margin: 10px;
+        padding: 15px;
+        border-radius: 10px;
+        height: fit-content;
+        z-index: 10;
+        background-color: black;
+        opacity: .7;
+    }
+
+    .swiper-text h4 {
+
+        color: white;
+        font-weight: 700;
+        margin-top: 10px;
+        font-size: 3em;
+        margin-bottom: 0;
+        opacity: .9;
+    }
+
+    .swiper-text p {
+        color: white;
+        font-weight: 700;
+        margin-top: 20px;
+        font-size: 2em;
+        margin-bottom: 0;
+        opacity: .9;
+    }
 }
 
 .top-movies-item {
