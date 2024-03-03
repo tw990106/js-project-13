@@ -271,13 +271,11 @@ body {
 
     .swiper-wrapper,
     .swiper-background-img {
-        margin: 0 75px;
+        margin: 0 55px 0 75px;
         width: 85%;
         max-height: 650px;
     }
-
-
-
+    
     .swiper-background-img {
         margin-left: 3em;
     }
@@ -364,7 +362,8 @@ body {
     }
 
     .mb-4 {
-        margin: 0 75px;
+        font-size: 2em;
+        margin: 0 75px 30px;
     }
 }
 
