@@ -115,7 +115,8 @@ const renderTop = () => {
         <img src="../img/main_top20/${i+1}.svg" />
       </object>
     </a>
-    <img src="https://image.tving.com/upload/cms/caim/CAIM2100/M000364433.jpg/dims/resize/400" alt="${movieList[i].title}" />
+    <img src="${IMG_URL}${movie.poster_path}"
+     alt="${movieList[i].title}" />
   </li>`;
   }
   document.getElementById('top-movies').innerHTML += movieTopHTML;
