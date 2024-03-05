@@ -55,6 +55,10 @@
   gap: 2vw;
   font-size: 2rem;
  }
+ 
+ .ko-header-left .ko-header-btn li a{
+  font-size: 1.333rem;
+ }
 
 
  /* 헤더 우측 */
