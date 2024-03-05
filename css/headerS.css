@@ -51,7 +51,6 @@
 
  #ko-header .ko-header-left .ko-header-btn {
   display: flex;
-  align-items: center;
   justify-content: center;
   gap: 2vw;
   font-size: 2rem;
