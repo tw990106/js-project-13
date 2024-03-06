@@ -12,7 +12,7 @@ img{
 a{
     text-decoration: none;
 }
-ul,ol{
+.detail-top ul,ol{
     padding-left: 0 !important;
 }
 li{
